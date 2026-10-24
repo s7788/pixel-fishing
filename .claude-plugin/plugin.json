@@ -1,0 +1,21 @@
+{
+  "name": "lure-8bit",
+  "version": "0.1.0",
+  "description": "An 8-bit lure angler in a side pane who casts while Claude works and lands (or loses) the fish when Claude answers. Lake, coast and boat, twelve species, six lures. Local only: no model calls, no network.",
+  "author": {
+    "name": "s7788"
+  },
+  "homepage": "https://github.com/s7788/pixel-fishing",
+  "repository": "https://github.com/s7788/pixel-fishing",
+  "keywords": [
+    "game",
+    "pixel-art",
+    "8-bit",
+    "pane",
+    "companion",
+    "idle",
+    "fun",
+    "fishing"
+  ],
+  "types": "./types/index.d.ts"
+}

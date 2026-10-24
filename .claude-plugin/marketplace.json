@@ -1,0 +1,14 @@
+{
+  "name": "pixel-fishing",
+  "owner": {
+    "name": "s7788"
+  },
+  "description": "pixel-fishing: an 8-bit lure fishing trip that plays beside Claude Code while it works.",
+  "plugins": [
+    {
+      "name": "lure-8bit",
+      "source": "./",
+      "description": "An 8-bit lure angler in a side pane who casts while Claude works and lands (or loses) the fish when Claude answers. Local only: no model calls, no network."
+    }
+  ]
+}
