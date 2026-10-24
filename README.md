@@ -21,7 +21,7 @@ claude plugin install lure-8bit --marketplace s7788/pixel-fishing
 本機開發載入：
 
 ```bash
-claude --plugin-dir D:/Github/VibeCoding/pixel-fishing
+claude --plugin-dir <此資料夾>
 ```
 
 Desktop／SDK 可設環境變數 `CLAUDE_CODE_PLUGIN_DIRS=<此資料夾>`。需要 Claude Code 2.1.275 以上（在 2.1.304 測試）。語言跟著 Claude 的 `language` 設定：繁體中文顯示中文，其他一律英文。
