@@ -1,0 +1,7554 @@
+{
+  "version": 1,
+  "canvas": [
+    384,
+    216
+  ],
+  "backgroundScale": 3,
+  "pixelFilter": "nearest",
+  "alpha": "binary",
+  "sprites": {
+    "angler/idle/0": {
+      "file": "assets/angler/idle/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 36,
+        "h": 60
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          35,
+          32
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/idle/1": {
+      "file": "assets/angler/idle/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 36,
+        "h": 60
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          37,
+          31
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/idle/2": {
+      "file": "assets/angler/idle/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 7,
+        "y": 2,
+        "w": 35,
+        "h": 60
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          36,
+          31
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/idle/3": {
+      "file": "assets/angler/idle/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 37,
+        "h": 60
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          34,
+          31
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 0,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/cast/0": {
+      "file": "assets/angler/cast/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 9,
+        "w": 44,
+        "h": 53
+      },
+      "colors": 21,
+      "kind": "angler",
+      "equipment": "gear/rod/cast_back",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          8,
+          26
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/cast/1": {
+      "file": "assets/angler/cast/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 39,
+        "h": 60
+      },
+      "colors": 24,
+      "kind": "angler",
+      "equipment": "gear/rod/cast_back",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          14,
+          14
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/cast/2": {
+      "file": "assets/angler/cast/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 17,
+        "w": 44,
+        "h": 45
+      },
+      "colors": 20,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          41,
+          33
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/cast/3": {
+      "file": "assets/angler/cast/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 19,
+        "w": 44,
+        "h": 43
+      },
+      "colors": 20,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          42,
+          39
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 64,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/retrieve/0": {
+      "file": "assets/angler/retrieve/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 36,
+        "h": 60
+      },
+      "colors": 23,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          34,
+          31
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/retrieve/1": {
+      "file": "assets/angler/retrieve/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 37,
+        "h": 60
+      },
+      "colors": 23,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          34,
+          31
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/retrieve/2": {
+      "file": "assets/angler/retrieve/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 37,
+        "h": 60
+      },
+      "colors": 23,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          34,
+          30
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/retrieve/3": {
+      "file": "assets/angler/retrieve/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 3,
+        "w": 36,
+        "h": 59
+      },
+      "colors": 23,
+      "kind": "angler",
+      "equipment": "gear/rod/straight",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          35,
+          32
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 128,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/twitch/0": {
+      "file": "assets/angler/twitch/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 39,
+        "h": 60
+      },
+      "colors": 20,
+      "kind": "angler",
+      "equipment": "gear/rod/light_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          37,
+          34
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/twitch/1": {
+      "file": "assets/angler/twitch/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 39,
+        "h": 60
+      },
+      "colors": 21,
+      "kind": "angler",
+      "equipment": "gear/rod/light_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          38,
+          29
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/twitch/2": {
+      "file": "assets/angler/twitch/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 2,
+        "w": 40,
+        "h": 60
+      },
+      "colors": 21,
+      "kind": "angler",
+      "equipment": "gear/rod/light_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          34,
+          26
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/twitch/3": {
+      "file": "assets/angler/twitch/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 39,
+        "h": 60
+      },
+      "colors": 23,
+      "kind": "angler",
+      "equipment": "gear/rod/light_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          37,
+          34
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 192,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/hookset/0": {
+      "file": "assets/angler/hookset/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 44,
+        "h": 60
+      },
+      "colors": 21,
+      "kind": "angler",
+      "equipment": "gear/rod/light_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          40,
+          34
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/hookset/1": {
+      "file": "assets/angler/hookset/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 10,
+        "w": 44,
+        "h": 52
+      },
+      "colors": 21,
+      "kind": "angler",
+      "equipment": "gear/rod/light_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          32,
+          26
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/hookset/2": {
+      "file": "assets/angler/hookset/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 9,
+        "w": 44,
+        "h": 53
+      },
+      "colors": 21,
+      "kind": "angler",
+      "equipment": "gear/rod/cast_back",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          12,
+          17
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/hookset/3": {
+      "file": "assets/angler/hookset/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 21,
+        "w": 44,
+        "h": 41
+      },
+      "colors": 19,
+      "kind": "angler",
+      "equipment": "gear/rod/light_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          42,
+          36
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 256,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/fight/0": {
+      "file": "assets/angler/fight/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 11,
+        "w": 44,
+        "h": 51
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/heavy_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          41,
+          29
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/fight/1": {
+      "file": "assets/angler/fight/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 9,
+        "w": 44,
+        "h": 53
+      },
+      "colors": 21,
+      "kind": "angler",
+      "equipment": "gear/rod/heavy_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          30,
+          33
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/fight/2": {
+      "file": "assets/angler/fight/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 12,
+        "w": 44,
+        "h": 50
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/heavy_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          41,
+          30
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/fight/3": {
+      "file": "assets/angler/fight/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 8,
+        "w": 44,
+        "h": 54
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/heavy_bend",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          33,
+          31
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 320,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/land/0": {
+      "file": "assets/angler/land/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 39,
+        "h": 60
+      },
+      "colors": 20,
+      "kind": "angler",
+      "equipment": "gear/landing-net",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          38,
+          36
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/land/1": {
+      "file": "assets/angler/land/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 15,
+        "w": 44,
+        "h": 47
+      },
+      "colors": 20,
+      "kind": "angler",
+      "equipment": "gear/landing-net",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          41,
+          43
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/land/2": {
+      "file": "assets/angler/land/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 24,
+        "w": 44,
+        "h": 38
+      },
+      "colors": 24,
+      "kind": "angler",
+      "equipment": "gear/landing-net",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          42,
+          57
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/land/3": {
+      "file": "assets/angler/land/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 42,
+        "h": 60
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": null,
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          40,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 384,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/release/0": {
+      "file": "assets/angler/release/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 2,
+        "w": 40,
+        "h": 60
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": null,
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          40,
+          34
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/release/1": {
+      "file": "assets/angler/release/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 11,
+        "w": 44,
+        "h": 51
+      },
+      "colors": 23,
+      "kind": "angler",
+      "equipment": null,
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          41,
+          46
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/release/2": {
+      "file": "assets/angler/release/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 24,
+        "w": 44,
+        "h": 38
+      },
+      "colors": 20,
+      "kind": "angler",
+      "equipment": null,
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          42,
+          57
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/release/3": {
+      "file": "assets/angler/release/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 7,
+        "y": 2,
+        "w": 34,
+        "h": 60
+      },
+      "colors": 20,
+      "kind": "angler",
+      "equipment": null,
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          34,
+          33
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 448,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/boat_drop/0": {
+      "file": "assets/angler/boat_drop/0.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 38,
+        "h": 60
+      },
+      "colors": 20,
+      "kind": "angler",
+      "equipment": "gear/rod/drop",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          38,
+          33
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 0,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/boat_drop/1": {
+      "file": "assets/angler/boat_drop/1.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 44,
+        "h": 59
+      },
+      "colors": 23,
+      "kind": "angler",
+      "equipment": "gear/rod/drop",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          23,
+          37
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 48,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/boat_drop/2": {
+      "file": "assets/angler/boat_drop/2.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 44,
+        "h": 60
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/drop",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          24,
+          35
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 96,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "angler/boat_drop/3": {
+      "file": "assets/angler/boat_drop/3.png",
+      "size": [
+        48,
+        64
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 36,
+        "h": 60
+      },
+      "colors": 22,
+      "kind": "angler",
+      "equipment": "gear/rod/drop",
+      "anchors": {
+        "feet": [
+          24,
+          62
+        ],
+        "grip": [
+          36,
+          32
+        ]
+      },
+      "atlas": {
+        "id": "atlas/angler",
+        "x": 144,
+        "y": 512,
+        "w": 48,
+        "h": 64
+      }
+    },
+    "atlas/angler": {
+      "file": "assets/atlases/angler.png",
+      "size": [
+        192,
+        576
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 188,
+        "h": 572
+      },
+      "colors": 24,
+      "kind": "atlas"
+    },
+    "fish/largemouth_bass/0": {
+      "file": "assets/fish/largemouth_bass/0.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 24,
+        "h": 15
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          35,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 0,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/largemouth_bass/1": {
+      "file": "assets/fish/largemouth_bass/1.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 24,
+        "h": 15
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          35,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 0,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/largemouth_bass/2": {
+      "file": "assets/fish/largemouth_bass/2.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 25,
+        "h": 15
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          36,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 0,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/largemouth_bass/3": {
+      "file": "assets/fish/largemouth_bass/3.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 25,
+        "h": 14
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          36,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 0,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/largemouth_bass/4": {
+      "file": "assets/fish/largemouth_bass/4.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 3,
+        "w": 16,
+        "h": 19
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          31,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 0,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/largemouth_bass/5": {
+      "file": "assets/fish/largemouth_bass/5.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 3,
+        "w": 18,
+        "h": 18
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          15,
+          8
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 0,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/largemouth_bass/6": {
+      "file": "assets/fish/largemouth_bass/6.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 13,
+        "y": 2,
+        "w": 22,
+        "h": 20
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          34,
+          7
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 0,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/largemouth_bass/7": {
+      "file": "assets/fish/largemouth_bass/7.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 24,
+        "h": 14
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          35,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 0,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/largemouth_bass/portrait": {
+      "file": "assets/fish/largemouth_bass/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 13,
+        "y": 2,
+        "w": 71,
+        "h": 44
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/largemouth_bass/icon": {
+      "file": "assets/fish/largemouth_bass/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 19,
+        "h": 12
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/largemouth_bass/unknown": {
+      "file": "assets/fish/largemouth_bass/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 19,
+        "h": 12
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/striped_snakehead/0": {
+      "file": "assets/fish/striped_snakehead/0.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 5,
+        "w": 32,
+        "h": 14
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          39,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 32,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/striped_snakehead/1": {
+      "file": "assets/fish/striped_snakehead/1.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 10,
+        "y": 4,
+        "w": 29,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          38,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 32,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/striped_snakehead/2": {
+      "file": "assets/fish/striped_snakehead/2.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 5,
+        "w": 31,
+        "h": 14
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          39,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 32,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/striped_snakehead/3": {
+      "file": "assets/fish/striped_snakehead/3.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 5,
+        "w": 31,
+        "h": 14
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          39,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 32,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/striped_snakehead/4": {
+      "file": "assets/fish/striped_snakehead/4.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 3,
+        "w": 18,
+        "h": 19
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          32,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 32,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/striped_snakehead/5": {
+      "file": "assets/fish/striped_snakehead/5.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 4,
+        "w": 24,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          12,
+          8
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 32,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/striped_snakehead/6": {
+      "file": "assets/fish/striped_snakehead/6.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 2,
+        "w": 27,
+        "h": 20
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          36,
+          7
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 32,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/striped_snakehead/7": {
+      "file": "assets/fish/striped_snakehead/7.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 4,
+        "w": 31,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          37,
+          14
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 32,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/striped_snakehead/portrait": {
+      "file": "assets/fish/striped_snakehead/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 5,
+        "w": 92,
+        "h": 39
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/striped_snakehead/icon": {
+      "file": "assets/fish/striped_snakehead/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 8
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/striped_snakehead/unknown": {
+      "file": "assets/fish/striped_snakehead/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 8
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/peacock_bass/0": {
+      "file": "assets/fish/peacock_bass/0.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 4,
+        "w": 27,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          37,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 64,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/peacock_bass/1": {
+      "file": "assets/fish/peacock_bass/1.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 4,
+        "w": 27,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          37,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 64,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/peacock_bass/2": {
+      "file": "assets/fish/peacock_bass/2.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 4,
+        "w": 27,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          37,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 64,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/peacock_bass/3": {
+      "file": "assets/fish/peacock_bass/3.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 4,
+        "w": 26,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          36,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 64,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/peacock_bass/4": {
+      "file": "assets/fish/peacock_bass/4.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 3,
+        "w": 18,
+        "h": 18
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          32,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 64,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/peacock_bass/5": {
+      "file": "assets/fish/peacock_bass/5.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 3,
+        "w": 18,
+        "h": 18
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          15,
+          8
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 64,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/peacock_bass/6": {
+      "file": "assets/fish/peacock_bass/6.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 2,
+        "w": 24,
+        "h": 20
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          35,
+          7
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 64,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/peacock_bass/7": {
+      "file": "assets/fish/peacock_bass/7.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 25,
+        "h": 15
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          36,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 64,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/peacock_bass/portrait": {
+      "file": "assets/fish/peacock_bass/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 10,
+        "y": 2,
+        "w": 76,
+        "h": 44
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/peacock_bass/icon": {
+      "file": "assets/fish/peacock_bass/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 12
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/peacock_bass/unknown": {
+      "file": "assets/fish/peacock_bass/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 12
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/topmouth_culter/0": {
+      "file": "assets/fish/topmouth_culter/0.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 10,
+        "y": 6,
+        "w": 29,
+        "h": 13
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          38,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 96,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/topmouth_culter/1": {
+      "file": "assets/fish/topmouth_culter/1.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 10,
+        "y": 4,
+        "w": 28,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          37,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 96,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/topmouth_culter/2": {
+      "file": "assets/fish/topmouth_culter/2.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 10,
+        "y": 6,
+        "w": 29,
+        "h": 13
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          38,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 96,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/topmouth_culter/3": {
+      "file": "assets/fish/topmouth_culter/3.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 6,
+        "w": 30,
+        "h": 13
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          38,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 96,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/topmouth_culter/4": {
+      "file": "assets/fish/topmouth_culter/4.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 5,
+        "w": 18,
+        "h": 15
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          32,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 96,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/topmouth_culter/5": {
+      "file": "assets/fish/topmouth_culter/5.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 4,
+        "w": 21,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          14,
+          8
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 96,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/topmouth_culter/6": {
+      "file": "assets/fish/topmouth_culter/6.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 2,
+        "w": 24,
+        "h": 20
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          35,
+          7
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 96,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/topmouth_culter/7": {
+      "file": "assets/fish/topmouth_culter/7.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 4,
+        "w": 27,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          24,
+          12
+        ],
+        "mouth": [
+          34,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 96,
+        "w": 48,
+        "h": 24
+      }
+    },
+    "fish/topmouth_culter/portrait": {
+      "file": "assets/fish/topmouth_culter/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 92,
+        "h": 42
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/topmouth_culter/icon": {
+      "file": "assets/fish/topmouth_culter/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 9
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/topmouth_culter/unknown": {
+      "file": "assets/fish/topmouth_culter/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 9
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/spotted_seabass/0": {
+      "file": "assets/fish/spotted_seabass/0.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 6,
+        "w": 35,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 128,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/spotted_seabass/1": {
+      "file": "assets/fish/spotted_seabass/1.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 5,
+        "w": 35,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 128,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/spotted_seabass/2": {
+      "file": "assets/fish/spotted_seabass/2.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 6,
+        "w": 35,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 128,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/spotted_seabass/3": {
+      "file": "assets/fish/spotted_seabass/3.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 6,
+        "w": 37,
+        "h": 20
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          50,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 128,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/spotted_seabass/4": {
+      "file": "assets/fish/spotted_seabass/4.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 20,
+        "y": 4,
+        "w": 24,
+        "h": 25
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          43,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 128,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/spotted_seabass/5": {
+      "file": "assets/fish/spotted_seabass/5.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 3,
+        "w": 26,
+        "h": 26
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          20,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 128,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/spotted_seabass/6": {
+      "file": "assets/fish/spotted_seabass/6.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 2,
+        "w": 34,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          48,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 128,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/spotted_seabass/7": {
+      "file": "assets/fish/spotted_seabass/7.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 6,
+        "w": 35,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          17
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 128,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/spotted_seabass/portrait": {
+      "file": "assets/fish/spotted_seabass/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 2,
+        "w": 74,
+        "h": 44
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/spotted_seabass/icon": {
+      "file": "assets/fish/spotted_seabass/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 12
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/spotted_seabass/unknown": {
+      "file": "assets/fish/spotted_seabass/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 12
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/indo_pacific_tarpon/0": {
+      "file": "assets/fish/indo_pacific_tarpon/0.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 7,
+        "w": 34,
+        "h": 19
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          48,
+          14
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 160,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/indo_pacific_tarpon/1": {
+      "file": "assets/fish/indo_pacific_tarpon/1.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 5,
+        "w": 33,
+        "h": 22
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          48,
+          15
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 160,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/indo_pacific_tarpon/2": {
+      "file": "assets/fish/indo_pacific_tarpon/2.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 7,
+        "w": 35,
+        "h": 19
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          14
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 160,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/indo_pacific_tarpon/3": {
+      "file": "assets/fish/indo_pacific_tarpon/3.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 13,
+        "y": 7,
+        "w": 38,
+        "h": 19
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          50,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 160,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/indo_pacific_tarpon/4": {
+      "file": "assets/fish/indo_pacific_tarpon/4.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 5,
+        "w": 22,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          42,
+          15
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 160,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/indo_pacific_tarpon/5": {
+      "file": "assets/fish/indo_pacific_tarpon/5.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 4,
+        "w": 31,
+        "h": 25
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          17,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 160,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/indo_pacific_tarpon/6": {
+      "file": "assets/fish/indo_pacific_tarpon/6.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 2,
+        "w": 31,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          45,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 160,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/indo_pacific_tarpon/7": {
+      "file": "assets/fish/indo_pacific_tarpon/7.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 5,
+        "w": 33,
+        "h": 22
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          46,
+          18
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 160,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/indo_pacific_tarpon/portrait": {
+      "file": "assets/fish/indo_pacific_tarpon/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 2,
+        "w": 79,
+        "h": 44
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/indo_pacific_tarpon/icon": {
+      "file": "assets/fish/indo_pacific_tarpon/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 4,
+        "w": 19,
+        "h": 10
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/indo_pacific_tarpon/unknown": {
+      "file": "assets/fish/indo_pacific_tarpon/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 4,
+        "w": 19,
+        "h": 10
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/great_barracuda/0": {
+      "file": "assets/fish/great_barracuda/0.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 7,
+        "w": 40,
+        "h": 18
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          51,
+          14
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 192,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/great_barracuda/1": {
+      "file": "assets/fish/great_barracuda/1.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 13,
+        "y": 5,
+        "w": 38,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          50,
+          18
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 192,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/great_barracuda/2": {
+      "file": "assets/fish/great_barracuda/2.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 8,
+        "w": 40,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          51,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 192,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/great_barracuda/3": {
+      "file": "assets/fish/great_barracuda/3.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 7,
+        "w": 41,
+        "h": 18
+      },
+      "colors": 14,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          52,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 192,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/great_barracuda/4": {
+      "file": "assets/fish/great_barracuda/4.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 6,
+        "w": 26,
+        "h": 21
+      },
+      "colors": 14,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          44,
+          19
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 192,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/great_barracuda/5": {
+      "file": "assets/fish/great_barracuda/5.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 3,
+        "w": 31,
+        "h": 26
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          18,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 192,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/great_barracuda/6": {
+      "file": "assets/fish/great_barracuda/6.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 2,
+        "w": 37,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          47,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 192,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/great_barracuda/7": {
+      "file": "assets/fish/great_barracuda/7.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 7,
+        "w": 37,
+        "h": 19
+      },
+      "colors": 14,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          50,
+          18
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 192,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/great_barracuda/portrait": {
+      "file": "assets/fish/great_barracuda/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 92,
+        "h": 41
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/great_barracuda/icon": {
+      "file": "assets/fish/great_barracuda/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 9
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/great_barracuda/unknown": {
+      "file": "assets/fish/great_barracuda/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 9
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/malabar_grouper/0": {
+      "file": "assets/fish/malabar_grouper/0.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 40,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          51,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 224,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/malabar_grouper/1": {
+      "file": "assets/fish/malabar_grouper/1.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 13,
+        "y": 5,
+        "w": 38,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          50,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 224,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/malabar_grouper/2": {
+      "file": "assets/fish/malabar_grouper/2.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 13,
+        "y": 5,
+        "w": 38,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          50,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 224,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/malabar_grouper/3": {
+      "file": "assets/fish/malabar_grouper/3.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 41,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          52,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 224,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/malabar_grouper/4": {
+      "file": "assets/fish/malabar_grouper/4.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 3,
+        "w": 28,
+        "h": 26
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          45,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 224,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/malabar_grouper/5": {
+      "file": "assets/fish/malabar_grouper/5.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 5,
+        "w": 32,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          16,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 224,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/malabar_grouper/6": {
+      "file": "assets/fish/malabar_grouper/6.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 2,
+        "w": 36,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 224,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/malabar_grouper/7": {
+      "file": "assets/fish/malabar_grouper/7.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 5,
+        "w": 37,
+        "h": 22
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          50,
+          17
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 224,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/malabar_grouper/portrait": {
+      "file": "assets/fish/malabar_grouper/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 10,
+        "y": 2,
+        "w": 77,
+        "h": 44
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/malabar_grouper/icon": {
+      "file": "assets/fish/malabar_grouper/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 20,
+        "h": 11
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/malabar_grouper/unknown": {
+      "file": "assets/fish/malabar_grouper/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 20,
+        "h": 11
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/greater_amberjack/0": {
+      "file": "assets/fish/greater_amberjack/0.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 8,
+        "w": 35,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          15
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 256,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/greater_amberjack/1": {
+      "file": "assets/fish/greater_amberjack/1.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 8,
+        "w": 35,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          15
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 256,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/greater_amberjack/2": {
+      "file": "assets/fish/greater_amberjack/2.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 8,
+        "w": 36,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          15
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 256,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/greater_amberjack/3": {
+      "file": "assets/fish/greater_amberjack/3.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 8,
+        "w": 35,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          49,
+          14
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 256,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/greater_amberjack/4": {
+      "file": "assets/fish/greater_amberjack/4.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 20,
+        "y": 5,
+        "w": 25,
+        "h": 22
+      },
+      "colors": 14,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          43,
+          16
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 256,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/greater_amberjack/5": {
+      "file": "assets/fish/greater_amberjack/5.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 6,
+        "w": 29,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          18,
+          11
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 256,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/greater_amberjack/6": {
+      "file": "assets/fish/greater_amberjack/6.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 2,
+        "w": 33,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          46,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 256,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/greater_amberjack/7": {
+      "file": "assets/fish/greater_amberjack/7.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 4,
+        "w": 30,
+        "h": 24
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          44,
+          18
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 256,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/greater_amberjack/portrait": {
+      "file": "assets/fish/greater_amberjack/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 92,
+        "h": 43
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/greater_amberjack/icon": {
+      "file": "assets/fish/greater_amberjack/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 4,
+        "w": 19,
+        "h": 9
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/greater_amberjack/unknown": {
+      "file": "assets/fish/greater_amberjack/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 4,
+        "w": 19,
+        "h": 9
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/mahi_mahi/0": {
+      "file": "assets/fish/mahi_mahi/0.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 8,
+        "w": 32,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          47,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 288,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/mahi_mahi/1": {
+      "file": "assets/fish/mahi_mahi/1.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 8,
+        "w": 31,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          47,
+          16
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 288,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/mahi_mahi/2": {
+      "file": "assets/fish/mahi_mahi/2.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 8,
+        "w": 31,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          47,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 288,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/mahi_mahi/3": {
+      "file": "assets/fish/mahi_mahi/3.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 8,
+        "w": 32,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          47,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 288,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/mahi_mahi/4": {
+      "file": "assets/fish/mahi_mahi/4.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 6,
+        "w": 23,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          43,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 288,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/mahi_mahi/5": {
+      "file": "assets/fish/mahi_mahi/5.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 19,
+        "y": 6,
+        "w": 26,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          44,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 288,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/mahi_mahi/6": {
+      "file": "assets/fish/mahi_mahi/6.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 2,
+        "w": 31,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          47,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 288,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/mahi_mahi/7": {
+      "file": "assets/fish/mahi_mahi/7.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 4,
+        "w": 31,
+        "h": 25
+      },
+      "colors": 14,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          44,
+          16
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 288,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/mahi_mahi/portrait": {
+      "file": "assets/fish/mahi_mahi/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 87,
+        "h": 44
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/mahi_mahi/icon": {
+      "file": "assets/fish/mahi_mahi/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 9
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/mahi_mahi/unknown": {
+      "file": "assets/fish/mahi_mahi/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 9
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/yellowfin_tuna/0": {
+      "file": "assets/fish/yellowfin_tuna/0.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 6,
+        "w": 33,
+        "h": 20
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          48,
+          14
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 320,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/yellowfin_tuna/1": {
+      "file": "assets/fish/yellowfin_tuna/1.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 6,
+        "w": 32,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          47,
+          16
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 320,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/yellowfin_tuna/2": {
+      "file": "assets/fish/yellowfin_tuna/2.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 6,
+        "w": 34,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          48,
+          15
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 320,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/yellowfin_tuna/3": {
+      "file": "assets/fish/yellowfin_tuna/3.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 6,
+        "w": 33,
+        "h": 20
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          48,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 320,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/yellowfin_tuna/4": {
+      "file": "assets/fish/yellowfin_tuna/4.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 21,
+        "y": 5,
+        "w": 23,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          43,
+          15
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 320,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/yellowfin_tuna/5": {
+      "file": "assets/fish/yellowfin_tuna/5.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 4,
+        "w": 28,
+        "h": 24
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          19,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 320,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/yellowfin_tuna/6": {
+      "file": "assets/fish/yellowfin_tuna/6.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 2,
+        "w": 30,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          45,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 320,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/yellowfin_tuna/7": {
+      "file": "assets/fish/yellowfin_tuna/7.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 16,
+        "y": 6,
+        "w": 32,
+        "h": 21
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          47,
+          17
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 320,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/yellowfin_tuna/portrait": {
+      "file": "assets/fish/yellowfin_tuna/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 2,
+        "w": 73,
+        "h": 44
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/yellowfin_tuna/icon": {
+      "file": "assets/fish/yellowfin_tuna/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 12
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/yellowfin_tuna/unknown": {
+      "file": "assets/fish/yellowfin_tuna/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 12
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "fish/narrow_barred_mackerel/0": {
+      "file": "assets/fish/narrow_barred_mackerel/0.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 8,
+        "w": 41,
+        "h": 17
+      },
+      "colors": 14,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          52,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 0,
+        "y": 352,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/narrow_barred_mackerel/1": {
+      "file": "assets/fish/narrow_barred_mackerel/1.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 41,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          52,
+          17
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 64,
+        "y": 352,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/narrow_barred_mackerel/2": {
+      "file": "assets/fish/narrow_barred_mackerel/2.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 7,
+        "w": 41,
+        "h": 18
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          52,
+          13
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 128,
+        "y": 352,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/narrow_barred_mackerel/3": {
+      "file": "assets/fish/narrow_barred_mackerel/3.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 7,
+        "w": 42,
+        "h": 19
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          52,
+          12
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 192,
+        "y": 352,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/narrow_barred_mackerel/4": {
+      "file": "assets/fish/narrow_barred_mackerel/4.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 17,
+        "y": 5,
+        "w": 30,
+        "h": 22
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          46,
+          14
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 256,
+        "y": 352,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/narrow_barred_mackerel/5": {
+      "file": "assets/fish/narrow_barred_mackerel/5.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 15,
+        "y": 4,
+        "w": 34,
+        "h": 24
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "left",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          18,
+          10
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 320,
+        "y": 352,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/narrow_barred_mackerel/6": {
+      "file": "assets/fish/narrow_barred_mackerel/6.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 2,
+        "w": 37,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          48,
+          9
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 384,
+        "y": 352,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/narrow_barred_mackerel/7": {
+      "file": "assets/fish/narrow_barred_mackerel/7.png",
+      "size": [
+        64,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 5,
+        "w": 41,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "fish",
+      "facing": "right",
+      "anchors": {
+        "center": [
+          32,
+          16
+        ],
+        "mouth": [
+          50,
+          19
+        ]
+      },
+      "atlas": {
+        "id": "atlas/fish",
+        "x": 448,
+        "y": 352,
+        "w": 64,
+        "h": 32
+      }
+    },
+    "fish/narrow_barred_mackerel/portrait": {
+      "file": "assets/fish/narrow_barred_mackerel/portrait.png",
+      "size": [
+        96,
+        48
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 5,
+        "w": 92,
+        "h": 39
+      },
+      "colors": 15,
+      "kind": "fish-portrait"
+    },
+    "fish/narrow_barred_mackerel/icon": {
+      "file": "assets/fish/narrow_barred_mackerel/icon.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 9
+      },
+      "colors": 15,
+      "kind": "fish-icon"
+    },
+    "fish/narrow_barred_mackerel/unknown": {
+      "file": "assets/fish/narrow_barred_mackerel/unknown.png",
+      "size": [
+        24,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 4,
+        "w": 20,
+        "h": 9
+      },
+      "colors": 1,
+      "kind": "fish-unknown"
+    },
+    "atlas/fish": {
+      "file": "assets/atlases/fish.png",
+      "size": [
+        512,
+        384
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 2,
+        "w": 493,
+        "h": 380
+      },
+      "colors": 1383,
+      "kind": "atlas"
+    },
+    "lure/minnow": {
+      "file": "assets/lures/minnow.png",
+      "size": [
+        32,
+        16
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 2,
+        "w": 25,
+        "h": 12
+      },
+      "colors": 14,
+      "kind": "lure",
+      "anchors": {
+        "tie": [
+          28,
+          8
+        ]
+      },
+      "atlas": {
+        "id": "atlas/lures",
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 16
+      }
+    },
+    "lure/minnow/world": {
+      "file": "assets/lures/minnow-world.png",
+      "size": [
+        16,
+        8
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 7,
+        "h": 4
+      },
+      "colors": 11,
+      "kind": "lure-world",
+      "anchors": {
+        "tie": [
+          11,
+          3
+        ]
+      }
+    },
+    "lure/popper": {
+      "file": "assets/lures/popper.png",
+      "size": [
+        32,
+        16
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 20,
+        "h": 12
+      },
+      "colors": 14,
+      "kind": "lure",
+      "anchors": {
+        "tie": [
+          25,
+          5
+        ]
+      },
+      "atlas": {
+        "id": "atlas/lures",
+        "x": 32,
+        "y": 0,
+        "w": 32,
+        "h": 16
+      }
+    },
+    "lure/popper/world": {
+      "file": "assets/lures/popper-world.png",
+      "size": [
+        16,
+        8
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 2,
+        "w": 7,
+        "h": 4
+      },
+      "colors": 15,
+      "kind": "lure-world",
+      "anchors": {
+        "tie": [
+          11,
+          3
+        ]
+      }
+    },
+    "lure/pencil": {
+      "file": "assets/lures/pencil.png",
+      "size": [
+        32,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 12
+      },
+      "colors": 15,
+      "kind": "lure",
+      "anchors": {
+        "tie": [
+          29,
+          5
+        ]
+      },
+      "atlas": {
+        "id": "atlas/lures",
+        "x": 64,
+        "y": 0,
+        "w": 32,
+        "h": 16
+      }
+    },
+    "lure/pencil/world": {
+      "file": "assets/lures/pencil-world.png",
+      "size": [
+        16,
+        8
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 10,
+        "h": 3
+      },
+      "colors": 15,
+      "kind": "lure-world",
+      "anchors": {
+        "tie": [
+          12,
+          3
+        ]
+      }
+    },
+    "lure/soft_worm": {
+      "file": "assets/lures/soft_worm.png",
+      "size": [
+        32,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 28,
+        "h": 12
+      },
+      "colors": 15,
+      "kind": "lure",
+      "anchors": {
+        "tie": [
+          29,
+          5
+        ]
+      },
+      "atlas": {
+        "id": "atlas/lures",
+        "x": 0,
+        "y": 16,
+        "w": 32,
+        "h": 16
+      }
+    },
+    "lure/soft_worm/world": {
+      "file": "assets/lures/soft_worm-world.png",
+      "size": [
+        16,
+        8
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 2,
+        "w": 9,
+        "h": 4
+      },
+      "colors": 15,
+      "kind": "lure-world",
+      "anchors": {
+        "tie": [
+          12,
+          3
+        ]
+      }
+    },
+    "lure/shore_jig": {
+      "file": "assets/lures/shore_jig.png",
+      "size": [
+        32,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 28,
+        "h": 11
+      },
+      "colors": 15,
+      "kind": "lure",
+      "anchors": {
+        "tie": [
+          29,
+          6
+        ]
+      },
+      "atlas": {
+        "id": "atlas/lures",
+        "x": 32,
+        "y": 16,
+        "w": 32,
+        "h": 16
+      }
+    },
+    "lure/shore_jig/world": {
+      "file": "assets/lures/shore_jig-world.png",
+      "size": [
+        16,
+        8
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 9,
+        "h": 4
+      },
+      "colors": 15,
+      "kind": "lure-world",
+      "anchors": {
+        "tie": [
+          11,
+          3
+        ]
+      }
+    },
+    "lure/boat_jig": {
+      "file": "assets/lures/boat_jig.png",
+      "size": [
+        32,
+        16
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 27,
+        "h": 12
+      },
+      "colors": 15,
+      "kind": "lure",
+      "anchors": {
+        "tie": [
+          29,
+          5
+        ]
+      },
+      "atlas": {
+        "id": "atlas/lures",
+        "x": 64,
+        "y": 16,
+        "w": 32,
+        "h": 16
+      }
+    },
+    "lure/boat_jig/world": {
+      "file": "assets/lures/boat_jig-world.png",
+      "size": [
+        16,
+        8
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 2,
+        "w": 9,
+        "h": 2
+      },
+      "colors": 11,
+      "kind": "lure-world",
+      "anchors": {
+        "tie": [
+          4,
+          3
+        ]
+      }
+    },
+    "atlas/lures": {
+      "file": "assets/atlases/lures.png",
+      "size": [
+        96,
+        32
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 92,
+        "h": 28
+      },
+      "colors": 87,
+      "kind": "atlas"
+    },
+    "effect/entry/0": {
+      "file": "assets/effects/entry/0.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 6,
+        "w": 26,
+        "h": 20
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 0,
+        "y": 0,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/entry/1": {
+      "file": "assets/effects/entry/1.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 36,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 48,
+        "y": 0,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/entry/2": {
+      "file": "assets/effects/entry/2.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 5,
+        "w": 33,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 96,
+        "y": 0,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/entry/3": {
+      "file": "assets/effects/entry/3.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 9,
+        "w": 37,
+        "h": 15
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 144,
+        "y": 0,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/chase/0": {
+      "file": "assets/effects/chase/0.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 14,
+        "y": 13,
+        "w": 20,
+        "h": 6
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 0,
+        "y": 32,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/chase/1": {
+      "file": "assets/effects/chase/1.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 13,
+        "w": 24,
+        "h": 7
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 48,
+        "y": 32,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/chase/2": {
+      "file": "assets/effects/chase/2.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 11,
+        "w": 26,
+        "h": 10
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 96,
+        "y": 32,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/chase/3": {
+      "file": "assets/effects/chase/3.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 10,
+        "w": 44,
+        "h": 13
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 144,
+        "y": 32,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/popper/0": {
+      "file": "assets/effects/popper/0.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 9,
+        "w": 32,
+        "h": 15
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 0,
+        "y": 64,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/popper/1": {
+      "file": "assets/effects/popper/1.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 44,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 48,
+        "y": 64,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/popper/2": {
+      "file": "assets/effects/popper/2.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 3,
+        "w": 38,
+        "h": 26
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 96,
+        "y": 64,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/popper/3": {
+      "file": "assets/effects/popper/3.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 7,
+        "w": 37,
+        "h": 19
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 144,
+        "y": 64,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/bite/0": {
+      "file": "assets/effects/bite/0.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 5,
+        "w": 37,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 0,
+        "y": 96,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/bite/1": {
+      "file": "assets/effects/bite/1.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 44,
+        "h": 27
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 48,
+        "y": 96,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/bite/2": {
+      "file": "assets/effects/bite/2.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 3,
+        "w": 41,
+        "h": 27
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 96,
+        "y": 96,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/bite/3": {
+      "file": "assets/effects/bite/3.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 5,
+        "y": 7,
+        "w": 39,
+        "h": 18
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 144,
+        "y": 96,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/leap/0": {
+      "file": "assets/effects/leap/0.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 3,
+        "w": 30,
+        "h": 27
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 0,
+        "y": 128,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/leap/1": {
+      "file": "assets/effects/leap/1.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 2,
+        "w": 30,
+        "h": 28
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 48,
+        "y": 128,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/leap/2": {
+      "file": "assets/effects/leap/2.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 5,
+        "w": 27,
+        "h": 23
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 96,
+        "y": 128,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/leap/3": {
+      "file": "assets/effects/leap/3.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 11,
+        "y": 11,
+        "w": 27,
+        "h": 11
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 144,
+        "y": 128,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/release/0": {
+      "file": "assets/effects/release/0.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 9,
+        "w": 31,
+        "h": 15
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 0,
+        "y": 160,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/release/1": {
+      "file": "assets/effects/release/1.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 12,
+        "y": 9,
+        "w": 25,
+        "h": 14
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 48,
+        "y": 160,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/release/2": {
+      "file": "assets/effects/release/2.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 8,
+        "w": 40,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 96,
+        "y": 160,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "effect/release/3": {
+      "file": "assets/effects/release/3.png",
+      "size": [
+        48,
+        32
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 10,
+        "w": 44,
+        "h": 13
+      },
+      "colors": 15,
+      "kind": "effect",
+      "anchors": {
+        "water": [
+          24,
+          25
+        ]
+      },
+      "atlas": {
+        "id": "atlas/effects",
+        "x": 144,
+        "y": 160,
+        "w": 48,
+        "h": 32
+      }
+    },
+    "atlas/effects": {
+      "file": "assets/atlases/effects.png",
+      "size": [
+        192,
+        192
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 2,
+        "w": 184,
+        "h": 183
+      },
+      "colors": 335,
+      "kind": "atlas"
+    },
+    "prop/pier": {
+      "file": "assets/scenes/pier.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 50,
+        "w": 52,
+        "h": 22
+      },
+      "colors": 15,
+      "kind": "prop"
+    },
+    "prop/rocks": {
+      "file": "assets/scenes/rocks.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 54,
+        "w": 72,
+        "h": 18
+      },
+      "colors": 15,
+      "kind": "prop"
+    },
+    "prop/boat": {
+      "file": "assets/scenes/boat.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 15,
+        "w": 76,
+        "h": 30
+      },
+      "colors": 14,
+      "kind": "prop"
+    },
+    "scene/lake/far": {
+      "file": "assets/scenes/lake-far.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 36
+      },
+      "colors": 16,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/lake/water": {
+      "file": "assets/scenes/lake-water.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 36,
+        "w": 128,
+        "h": 36
+      },
+      "colors": 11,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/lake/platform": {
+      "file": "assets/scenes/lake-platform.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 50,
+        "w": 52,
+        "h": 22
+      },
+      "colors": 15,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/lake/foreground": {
+      "file": "assets/scenes/lake-foreground.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 55,
+        "w": 52,
+        "h": 17
+      },
+      "colors": 15,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/lake/preview": {
+      "file": "assets/scenes/lake-composite.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 72
+      },
+      "colors": 31,
+      "kind": "scene-preview",
+      "displayScale": 3
+    },
+    "scene/coast/far": {
+      "file": "assets/scenes/coast-far.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 34
+      },
+      "colors": 15,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/coast/water": {
+      "file": "assets/scenes/coast-water.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 34,
+        "w": 128,
+        "h": 38
+      },
+      "colors": 13,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/coast/platform": {
+      "file": "assets/scenes/coast-platform.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 54,
+        "w": 72,
+        "h": 18
+      },
+      "colors": 15,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/coast/foreground": {
+      "file": "assets/scenes/coast-foreground.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 56,
+        "w": 72,
+        "h": 16
+      },
+      "colors": 15,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/coast/preview": {
+      "file": "assets/scenes/coast-composite.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 72
+      },
+      "colors": 31,
+      "kind": "scene-preview",
+      "displayScale": 3
+    },
+    "scene/boat/far": {
+      "file": "assets/scenes/boat-far.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 26
+      },
+      "colors": 9,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/boat/water": {
+      "file": "assets/scenes/boat-water.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 26,
+        "w": 128,
+        "h": 46
+      },
+      "colors": 15,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/boat/platform": {
+      "file": "assets/scenes/boat-platform.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 15,
+        "w": 76,
+        "h": 30
+      },
+      "colors": 14,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/boat/foreground": {
+      "file": "assets/scenes/boat-foreground.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 36,
+        "w": 75,
+        "h": 9
+      },
+      "colors": 7,
+      "kind": "scene-layer",
+      "displayScale": 3
+    },
+    "scene/boat/preview": {
+      "file": "assets/scenes/boat-composite.png",
+      "size": [
+        128,
+        72
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 72
+      },
+      "colors": 30,
+      "kind": "scene-preview",
+      "displayScale": 3
+    },
+    "gear/rod/straight": {
+      "file": "assets/gear/rod-straight.png",
+      "size": [
+        96,
+        96
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 12,
+        "w": 78,
+        "h": 81
+      },
+      "colors": 4,
+      "kind": "rod",
+      "anchors": {
+        "grip": [
+          12,
+          84
+        ],
+        "tip": [
+          84,
+          12
+        ]
+      }
+    },
+    "gear/rod/light_bend": {
+      "file": "assets/gear/rod-light_bend.png",
+      "size": [
+        96,
+        96
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 24,
+        "w": 84,
+        "h": 69
+      },
+      "colors": 4,
+      "kind": "rod",
+      "anchors": {
+        "grip": [
+          12,
+          84
+        ],
+        "tip": [
+          90,
+          33
+        ]
+      }
+    },
+    "gear/rod/heavy_bend": {
+      "file": "assets/gear/rod-heavy_bend.png",
+      "size": [
+        96,
+        96
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 30,
+        "w": 80,
+        "h": 63
+      },
+      "colors": 4,
+      "kind": "rod",
+      "anchors": {
+        "grip": [
+          12,
+          84
+        ],
+        "tip": [
+          86,
+          44
+        ]
+      }
+    },
+    "gear/rod/cast_back": {
+      "file": "assets/gear/rod-cast_back.png",
+      "size": [
+        96,
+        96
+      ],
+      "bounds": {
+        "x": 8,
+        "y": 20,
+        "w": 14,
+        "h": 73
+      },
+      "colors": 4,
+      "kind": "rod",
+      "anchors": {
+        "grip": [
+          12,
+          84
+        ],
+        "tip": [
+          14,
+          20
+        ]
+      }
+    },
+    "gear/rod/drop": {
+      "file": "assets/gear/rod-drop.png",
+      "size": [
+        96,
+        96
+      ],
+      "bounds": {
+        "x": 9,
+        "y": 46,
+        "w": 73,
+        "h": 47
+      },
+      "colors": 4,
+      "kind": "rod",
+      "anchors": {
+        "grip": [
+          12,
+          84
+        ],
+        "tip": [
+          79,
+          51
+        ]
+      }
+    },
+    "gear/landing-net": {
+      "file": "assets/gear/landing-net.png",
+      "size": [
+        64,
+        64
+      ],
+      "bounds": {
+        "x": 4,
+        "y": 6,
+        "w": 59,
+        "h": 57
+      },
+      "colors": 3,
+      "kind": "gear",
+      "anchors": {
+        "grip": [
+          5,
+          59
+        ],
+        "basket": [
+          43,
+          19
+        ]
+      }
+    },
+    "gear/reel": {
+      "file": "assets/gear/reel.png",
+      "size": [
+        16,
+        16
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 2,
+        "w": 14,
+        "h": 12
+      },
+      "colors": 4,
+      "kind": "gear"
+    },
+    "ui/catch-panel": {
+      "file": "assets/ui/catch-panel.png",
+      "size": [
+        280,
+        112
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "w": 278,
+        "h": 110
+      },
+      "colors": 3,
+      "kind": "ui",
+      "nineSlice": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "contentPadding": [
+        8,
+        8
+      ]
+    },
+    "ui/encyclopedia-panel": {
+      "file": "assets/ui/encyclopedia-panel.png",
+      "size": [
+        288,
+        176
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "w": 286,
+        "h": 174
+      },
+      "colors": 3,
+      "kind": "ui",
+      "nineSlice": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "contentPadding": [
+        8,
+        8
+      ]
+    },
+    "ui/tackle-panel": {
+      "file": "assets/ui/tackle-panel.png",
+      "size": [
+        176,
+        112
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "w": 174,
+        "h": 110
+      },
+      "colors": 3,
+      "kind": "ui",
+      "nineSlice": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "contentPadding": [
+        8,
+        8
+      ]
+    },
+    "ui/fish-slot": {
+      "file": "assets/ui/fish-slot.png",
+      "size": [
+        40,
+        32
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "w": 38,
+        "h": 30
+      },
+      "colors": 3,
+      "kind": "ui",
+      "nineSlice": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "contentPadding": [
+        8,
+        8
+      ]
+    },
+    "ui/button": {
+      "file": "assets/ui/button.png",
+      "size": [
+        72,
+        20
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "w": 70,
+        "h": 18
+      },
+      "colors": 3,
+      "kind": "ui",
+      "nineSlice": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "contentPadding": [
+        8,
+        8
+      ]
+    },
+    "ui/button-selected": {
+      "file": "assets/ui/button-selected.png",
+      "size": [
+        72,
+        20
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "w": 70,
+        "h": 18
+      },
+      "colors": 3,
+      "kind": "ui",
+      "nineSlice": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "contentPadding": [
+        8,
+        8
+      ]
+    },
+    "ui/button-disabled": {
+      "file": "assets/ui/button-disabled.png",
+      "size": [
+        72,
+        20
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "w": 70,
+        "h": 18
+      },
+      "colors": 3,
+      "kind": "ui",
+      "nineSlice": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "contentPadding": [
+        8,
+        8
+      ]
+    },
+    "ui/tension-track": {
+      "file": "assets/ui/tension-track.png",
+      "size": [
+        104,
+        10
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 1,
+        "w": 102,
+        "h": 8
+      },
+      "colors": 3,
+      "kind": "ui",
+      "nineSlice": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "contentPadding": [
+        8,
+        8
+      ]
+    },
+    "ui/tension-low": {
+      "file": "assets/ui/tension-low.png",
+      "size": [
+        96,
+        4
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 4
+      },
+      "colors": 1,
+      "kind": "ui"
+    },
+    "ui/tension-mid": {
+      "file": "assets/ui/tension-mid.png",
+      "size": [
+        96,
+        4
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 4
+      },
+      "colors": 1,
+      "kind": "ui"
+    },
+    "ui/tension-high": {
+      "file": "assets/ui/tension-high.png",
+      "size": [
+        96,
+        4
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 4
+      },
+      "colors": 1,
+      "kind": "ui"
+    },
+    "ui/icon/length-record": {
+      "file": "assets/ui/icon-length-record.png",
+      "size": [
+        20,
+        20
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 6,
+        "w": 18,
+        "h": 8
+      },
+      "colors": 3,
+      "kind": "ui-icon"
+    },
+    "ui/icon/weight-record": {
+      "file": "assets/ui/icon-weight-record.png",
+      "size": [
+        20,
+        20
+      ],
+      "bounds": {
+        "x": 2,
+        "y": 3,
+        "w": 16,
+        "h": 16
+      },
+      "colors": 2,
+      "kind": "ui-icon"
+    },
+    "ui/icon/lake": {
+      "file": "assets/ui/icon-lake.png",
+      "size": [
+        20,
+        20
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 3,
+        "w": 18,
+        "h": 15
+      },
+      "colors": 4,
+      "kind": "ui-icon"
+    },
+    "ui/icon/coast": {
+      "file": "assets/ui/icon-coast.png",
+      "size": [
+        20,
+        20
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 6,
+        "w": 18,
+        "h": 13
+      },
+      "colors": 3,
+      "kind": "ui-icon"
+    },
+    "ui/icon/boat": {
+      "file": "assets/ui/icon-boat.png",
+      "size": [
+        20,
+        20
+      ],
+      "bounds": {
+        "x": 1,
+        "y": 6,
+        "w": 18,
+        "h": 13
+      },
+      "colors": 4,
+      "kind": "ui-icon"
+    },
+    "ui/icon/catch": {
+      "file": "assets/ui/icon-catch.png",
+      "size": [
+        20,
+        20
+      ],
+      "bounds": {
+        "x": 3,
+        "y": 2,
+        "w": 12,
+        "h": 17
+      },
+      "colors": 1,
+      "kind": "ui-icon"
+    },
+    "ui/icon/unknown": {
+      "file": "assets/ui/icon-unknown.png",
+      "size": [
+        20,
+        20
+      ],
+      "bounds": {
+        "x": 6,
+        "y": 3,
+        "w": 9,
+        "h": 15
+      },
+      "colors": 1,
+      "kind": "ui-icon"
+    },
+    "font/measurements": {
+      "file": "assets/ui/measurements-font.png",
+      "size": [
+        48,
+        24
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 45,
+        "h": 21
+      },
+      "colors": 1,
+      "kind": "font"
+    }
+  },
+  "scenes": {
+    "lake": {
+      "name": "湖泊",
+      "layers": [
+        "scene/lake/far",
+        "scene/lake/water",
+        "scene/lake/platform",
+        "scene/lake/foreground"
+      ],
+      "feet": [
+        75,
+        159
+      ],
+      "waterline": 174,
+      "horizon": 108,
+      "foregroundAfterActor": true
+    },
+    "coast": {
+      "name": "海岸",
+      "layers": [
+        "scene/coast/far",
+        "scene/coast/water",
+        "scene/coast/platform",
+        "scene/coast/foreground"
+      ],
+      "feet": [
+        72,
+        162
+      ],
+      "waterline": 174,
+      "horizon": 102,
+      "foregroundAfterActor": true
+    },
+    "boat": {
+      "name": "船上",
+      "layers": [
+        "scene/boat/far",
+        "scene/boat/water",
+        "scene/boat/platform",
+        "scene/boat/foreground"
+      ],
+      "feet": [
+        174,
+        102
+      ],
+      "waterline": 132,
+      "horizon": 78,
+      "foregroundAfterActor": true
+    }
+  },
+  "animations": {
+    "angler": {
+      "idle": {
+        "frames": [
+          "angler/idle/0",
+          "angler/idle/1",
+          "angler/idle/2",
+          "angler/idle/3"
+        ],
+        "frameMs": 250,
+        "loop": true
+      },
+      "cast": {
+        "frames": [
+          "angler/cast/0",
+          "angler/cast/1",
+          "angler/cast/2",
+          "angler/cast/3"
+        ],
+        "frameMs": 125,
+        "loop": false
+      },
+      "retrieve": {
+        "frames": [
+          "angler/retrieve/0",
+          "angler/retrieve/1",
+          "angler/retrieve/2",
+          "angler/retrieve/3"
+        ],
+        "frameMs": 125,
+        "loop": true
+      },
+      "twitch": {
+        "frames": [
+          "angler/twitch/0",
+          "angler/twitch/1",
+          "angler/twitch/2",
+          "angler/twitch/3"
+        ],
+        "frameMs": 125,
+        "loop": true
+      },
+      "hookset": {
+        "frames": [
+          "angler/hookset/0",
+          "angler/hookset/1",
+          "angler/hookset/2",
+          "angler/hookset/3"
+        ],
+        "frameMs": 125,
+        "loop": false
+      },
+      "fight": {
+        "frames": [
+          "angler/fight/0",
+          "angler/fight/1",
+          "angler/fight/2",
+          "angler/fight/3"
+        ],
+        "frameMs": 125,
+        "loop": true
+      },
+      "land": {
+        "frames": [
+          "angler/land/0",
+          "angler/land/1",
+          "angler/land/2",
+          "angler/land/3"
+        ],
+        "frameMs": 125,
+        "loop": false
+      },
+      "release": {
+        "frames": [
+          "angler/release/0",
+          "angler/release/1",
+          "angler/release/2",
+          "angler/release/3"
+        ],
+        "frameMs": 125,
+        "loop": false
+      },
+      "boat_drop": {
+        "frames": [
+          "angler/boat_drop/0",
+          "angler/boat_drop/1",
+          "angler/boat_drop/2",
+          "angler/boat_drop/3"
+        ],
+        "frameMs": 125,
+        "loop": true
+      }
+    },
+    "fish": {
+      "largemouth_bass": {
+        "name": "大口黑鱸",
+        "primaryVenue": "lake",
+        "swim": {
+          "frames": [
+            "fish/largemouth_bass/0",
+            "fish/largemouth_bass/1",
+            "fish/largemouth_bass/2",
+            "fish/largemouth_bass/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/largemouth_bass/4",
+            "fish/largemouth_bass/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/largemouth_bass/6",
+            "fish/largemouth_bass/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/largemouth_bass/portrait",
+        "icon": "fish/largemouth_bass/icon",
+        "unknown": "fish/largemouth_bass/unknown"
+      },
+      "striped_snakehead": {
+        "name": "線鱧",
+        "primaryVenue": "lake",
+        "swim": {
+          "frames": [
+            "fish/striped_snakehead/0",
+            "fish/striped_snakehead/1",
+            "fish/striped_snakehead/2",
+            "fish/striped_snakehead/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/striped_snakehead/4",
+            "fish/striped_snakehead/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/striped_snakehead/6",
+            "fish/striped_snakehead/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/striped_snakehead/portrait",
+        "icon": "fish/striped_snakehead/icon",
+        "unknown": "fish/striped_snakehead/unknown"
+      },
+      "peacock_bass": {
+        "name": "孔雀鱸",
+        "primaryVenue": "lake",
+        "swim": {
+          "frames": [
+            "fish/peacock_bass/0",
+            "fish/peacock_bass/1",
+            "fish/peacock_bass/2",
+            "fish/peacock_bass/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/peacock_bass/4",
+            "fish/peacock_bass/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/peacock_bass/6",
+            "fish/peacock_bass/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/peacock_bass/portrait",
+        "icon": "fish/peacock_bass/icon",
+        "unknown": "fish/peacock_bass/unknown"
+      },
+      "topmouth_culter": {
+        "name": "翹嘴鮊",
+        "primaryVenue": "lake",
+        "swim": {
+          "frames": [
+            "fish/topmouth_culter/0",
+            "fish/topmouth_culter/1",
+            "fish/topmouth_culter/2",
+            "fish/topmouth_culter/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/topmouth_culter/4",
+            "fish/topmouth_culter/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/topmouth_culter/6",
+            "fish/topmouth_culter/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/topmouth_culter/portrait",
+        "icon": "fish/topmouth_culter/icon",
+        "unknown": "fish/topmouth_culter/unknown"
+      },
+      "spotted_seabass": {
+        "name": "花鱸",
+        "primaryVenue": "coast",
+        "swim": {
+          "frames": [
+            "fish/spotted_seabass/0",
+            "fish/spotted_seabass/1",
+            "fish/spotted_seabass/2",
+            "fish/spotted_seabass/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/spotted_seabass/4",
+            "fish/spotted_seabass/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/spotted_seabass/6",
+            "fish/spotted_seabass/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/spotted_seabass/portrait",
+        "icon": "fish/spotted_seabass/icon",
+        "unknown": "fish/spotted_seabass/unknown"
+      },
+      "indo_pacific_tarpon": {
+        "name": "大眼海鰱",
+        "primaryVenue": "coast",
+        "swim": {
+          "frames": [
+            "fish/indo_pacific_tarpon/0",
+            "fish/indo_pacific_tarpon/1",
+            "fish/indo_pacific_tarpon/2",
+            "fish/indo_pacific_tarpon/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/indo_pacific_tarpon/4",
+            "fish/indo_pacific_tarpon/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/indo_pacific_tarpon/6",
+            "fish/indo_pacific_tarpon/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/indo_pacific_tarpon/portrait",
+        "icon": "fish/indo_pacific_tarpon/icon",
+        "unknown": "fish/indo_pacific_tarpon/unknown"
+      },
+      "great_barracuda": {
+        "name": "大梭魚",
+        "primaryVenue": "coast",
+        "swim": {
+          "frames": [
+            "fish/great_barracuda/0",
+            "fish/great_barracuda/1",
+            "fish/great_barracuda/2",
+            "fish/great_barracuda/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/great_barracuda/4",
+            "fish/great_barracuda/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/great_barracuda/6",
+            "fish/great_barracuda/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/great_barracuda/portrait",
+        "icon": "fish/great_barracuda/icon",
+        "unknown": "fish/great_barracuda/unknown"
+      },
+      "malabar_grouper": {
+        "name": "點帶石斑魚",
+        "primaryVenue": "coast",
+        "swim": {
+          "frames": [
+            "fish/malabar_grouper/0",
+            "fish/malabar_grouper/1",
+            "fish/malabar_grouper/2",
+            "fish/malabar_grouper/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/malabar_grouper/4",
+            "fish/malabar_grouper/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/malabar_grouper/6",
+            "fish/malabar_grouper/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/malabar_grouper/portrait",
+        "icon": "fish/malabar_grouper/icon",
+        "unknown": "fish/malabar_grouper/unknown"
+      },
+      "greater_amberjack": {
+        "name": "紅甘／杜氏鰤",
+        "primaryVenue": "boat",
+        "swim": {
+          "frames": [
+            "fish/greater_amberjack/0",
+            "fish/greater_amberjack/1",
+            "fish/greater_amberjack/2",
+            "fish/greater_amberjack/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/greater_amberjack/4",
+            "fish/greater_amberjack/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/greater_amberjack/6",
+            "fish/greater_amberjack/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/greater_amberjack/portrait",
+        "icon": "fish/greater_amberjack/icon",
+        "unknown": "fish/greater_amberjack/unknown"
+      },
+      "mahi_mahi": {
+        "name": "鬼頭刀",
+        "primaryVenue": "boat",
+        "swim": {
+          "frames": [
+            "fish/mahi_mahi/0",
+            "fish/mahi_mahi/1",
+            "fish/mahi_mahi/2",
+            "fish/mahi_mahi/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/mahi_mahi/4",
+            "fish/mahi_mahi/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/mahi_mahi/6",
+            "fish/mahi_mahi/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/mahi_mahi/portrait",
+        "icon": "fish/mahi_mahi/icon",
+        "unknown": "fish/mahi_mahi/unknown"
+      },
+      "yellowfin_tuna": {
+        "name": "黃鰭鮪",
+        "primaryVenue": "boat",
+        "swim": {
+          "frames": [
+            "fish/yellowfin_tuna/0",
+            "fish/yellowfin_tuna/1",
+            "fish/yellowfin_tuna/2",
+            "fish/yellowfin_tuna/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/yellowfin_tuna/4",
+            "fish/yellowfin_tuna/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/yellowfin_tuna/6",
+            "fish/yellowfin_tuna/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/yellowfin_tuna/portrait",
+        "icon": "fish/yellowfin_tuna/icon",
+        "unknown": "fish/yellowfin_tuna/unknown"
+      },
+      "narrow_barred_mackerel": {
+        "name": "土魠／康氏馬加鰆",
+        "primaryVenue": "boat",
+        "swim": {
+          "frames": [
+            "fish/narrow_barred_mackerel/0",
+            "fish/narrow_barred_mackerel/1",
+            "fish/narrow_barred_mackerel/2",
+            "fish/narrow_barred_mackerel/3"
+          ],
+          "frameMs": 125,
+          "loop": true
+        },
+        "turn": {
+          "frames": [
+            "fish/narrow_barred_mackerel/4",
+            "fish/narrow_barred_mackerel/5"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "leap": {
+          "frames": [
+            "fish/narrow_barred_mackerel/6",
+            "fish/narrow_barred_mackerel/7"
+          ],
+          "frameMs": 150,
+          "loop": false
+        },
+        "portrait": "fish/narrow_barred_mackerel/portrait",
+        "icon": "fish/narrow_barred_mackerel/icon",
+        "unknown": "fish/narrow_barred_mackerel/unknown"
+      }
+    },
+    "effects": {
+      "entry": {
+        "frames": [
+          "effect/entry/0",
+          "effect/entry/1",
+          "effect/entry/2",
+          "effect/entry/3"
+        ],
+        "frameMs": 100,
+        "loop": false
+      },
+      "chase": {
+        "frames": [
+          "effect/chase/0",
+          "effect/chase/1",
+          "effect/chase/2",
+          "effect/chase/3"
+        ],
+        "frameMs": 100,
+        "loop": false
+      },
+      "popper": {
+        "frames": [
+          "effect/popper/0",
+          "effect/popper/1",
+          "effect/popper/2",
+          "effect/popper/3"
+        ],
+        "frameMs": 100,
+        "loop": false
+      },
+      "bite": {
+        "frames": [
+          "effect/bite/0",
+          "effect/bite/1",
+          "effect/bite/2",
+          "effect/bite/3"
+        ],
+        "frameMs": 100,
+        "loop": false
+      },
+      "leap": {
+        "frames": [
+          "effect/leap/0",
+          "effect/leap/1",
+          "effect/leap/2",
+          "effect/leap/3"
+        ],
+        "frameMs": 100,
+        "loop": false
+      },
+      "release": {
+        "frames": [
+          "effect/release/0",
+          "effect/release/1",
+          "effect/release/2",
+          "effect/release/3"
+        ],
+        "frameMs": 100,
+        "loop": false
+      }
+    }
+  },
+  "lures": {
+    "minnow": {
+      "icon": "lure/minnow",
+      "world": "lure/minnow/world"
+    },
+    "popper": {
+      "icon": "lure/popper",
+      "world": "lure/popper/world"
+    },
+    "pencil": {
+      "icon": "lure/pencil",
+      "world": "lure/pencil/world"
+    },
+    "soft_worm": {
+      "icon": "lure/soft_worm",
+      "world": "lure/soft_worm/world"
+    },
+    "shore_jig": {
+      "icon": "lure/shore_jig",
+      "world": "lure/shore_jig/world"
+    },
+    "boat_jig": {
+      "icon": "lure/boat_jig",
+      "world": "lure/boat_jig/world"
+    }
+  },
+  "ui": {
+    "catch-panel": "ui/catch-panel",
+    "encyclopedia-panel": "ui/encyclopedia-panel",
+    "tackle-panel": "ui/tackle-panel",
+    "fish-slot": "ui/fish-slot",
+    "button": "ui/button",
+    "button-selected": "ui/button-selected",
+    "button-disabled": "ui/button-disabled",
+    "tension-track": "ui/tension-track",
+    "tension-low": "ui/tension-low",
+    "tension-mid": "ui/tension-mid",
+    "tension-high": "ui/tension-high",
+    "length-record": "ui/icon/length-record",
+    "weight-record": "ui/icon/weight-record",
+    "lake": "ui/icon/lake",
+    "coast": "ui/icon/coast",
+    "boat": "ui/icon/boat",
+    "catch": "ui/icon/catch",
+    "unknown": "ui/icon/unknown"
+  },
+  "fonts": {
+    "measurements": {
+      "sprite": "font/measurements",
+      "glyphs": {
+        "0": {
+          "x": 0,
+          "y": 0,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "1": {
+          "x": 6,
+          "y": 0,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "2": {
+          "x": 12,
+          "y": 0,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "3": {
+          "x": 18,
+          "y": 0,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "4": {
+          "x": 24,
+          "y": 0,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "5": {
+          "x": 30,
+          "y": 0,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "6": {
+          "x": 36,
+          "y": 0,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "7": {
+          "x": 42,
+          "y": 0,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "8": {
+          "x": 0,
+          "y": 8,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "9": {
+          "x": 6,
+          "y": 8,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        ".": {
+          "x": 12,
+          "y": 8,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        ":": {
+          "x": 18,
+          "y": 8,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "c": {
+          "x": 24,
+          "y": 8,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "m": {
+          "x": 30,
+          "y": 8,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "k": {
+          "x": 36,
+          "y": 8,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "g": {
+          "x": 42,
+          "y": 8,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "+": {
+          "x": 0,
+          "y": 16,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "-": {
+          "x": 6,
+          "y": 16,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        "/": {
+          "x": 12,
+          "y": 16,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        },
+        " ": {
+          "x": 18,
+          "y": 16,
+          "w": 3,
+          "h": 5,
+          "advance": 4
+        }
+      },
+      "lineHeight": 8,
+      "localizedText": "Render Chinese fish names using the host font."
+    }
+  },
+  "sourceMode": "built-in image_gen",
+  "notes": [
+    "Image files contain no localized text or catch values.",
+    "Fishing line is drawn at runtime between rod tip and lure/fish mouth.",
+    "Preview is an asset demonstration, not game logic."
+  ]
+}

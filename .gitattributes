@@ -1,0 +1,8 @@
+* text=auto
+*.png -text
+*.zip -text
+*.md text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.cjs text eol=lf
+*.ts text eol=lf

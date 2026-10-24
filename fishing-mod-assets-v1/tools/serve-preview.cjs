@@ -1,0 +1,4 @@
+const http=require('http'),fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'..','..');
+const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.md':'text/plain; charset=utf-8','.zip':'application/zip'};
+http.createServer((req,res)=>{let p;try{p=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!p.startsWith(root+path.sep)||req.method!=='GET'){res.writeHead(403);return res.end()}if(fs.statSync(p).isDirectory())p=path.join(p,'preview.html');const bytes=fs.readFileSync(p);res.writeHead(200,{'Content-Type':mime[path.extname(p)]||'application/octet-stream','Cache-Control':'no-cache'});res.end(bytes)}catch(e){res.writeHead(404);res.end('Not found')}}).listen(8766,'127.0.0.1',()=>console.log('Asset preview at http://127.0.0.1:8766/fishing-mod-assets-v1/preview.html'));

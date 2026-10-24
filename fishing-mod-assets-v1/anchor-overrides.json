@@ -1,0 +1,12 @@
+{
+  "angler/idle/3": [34,31],
+  "angler/cast/0": [8,26],
+  "angler/cast/1": [14,14],
+  "angler/retrieve/0": [34,31],
+  "angler/retrieve/2": [34,30],
+  "angler/hookset/2": [12,17],
+  "angler/land/2": [42,57],
+  "angler/release/2": [42,57],
+  "angler/boat_drop/1": [23,37],
+  "angler/boat_drop/2": [24,35]
+}

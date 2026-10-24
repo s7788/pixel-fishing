@@ -1,0 +1,13 @@
+{
+  "name": "pixel-fishing-assets",
+  "version": "0.1.0",
+  "private": true,
+  "engines": { "node": ">=20.9.0" },
+  "scripts": {
+    "preview": "node tools/serve-preview.cjs",
+    "validate": "node tools/validate-assets.cjs",
+    "build:assets": "node tools/build-assets.cjs",
+    "build:preview": "node tools/build-preview.cjs"
+  },
+  "devDependencies": { "sharp": "0.35.5" }
+}

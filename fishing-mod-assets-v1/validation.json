@@ -1,0 +1,175 @@
+{
+  "sources": [
+    {
+      "id": "angler-a",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha": true
+    },
+    {
+      "id": "angler-b",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha": true
+    },
+    {
+      "id": "angler-c",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha": true
+    },
+    {
+      "id": "fish-lake",
+      "size": [
+        1774,
+        887
+      ],
+      "alpha": true
+    },
+    {
+      "id": "fish-coast",
+      "size": [
+        1774,
+        887
+      ],
+      "alpha": true
+    },
+    {
+      "id": "fish-offshore",
+      "size": [
+        1774,
+        887
+      ],
+      "alpha": true
+    },
+    {
+      "id": "fish-amberjack",
+      "size": [
+        1774,
+        887
+      ],
+      "alpha": true
+    },
+    {
+      "id": "fish-mahi",
+      "size": [
+        1774,
+        887
+      ],
+      "alpha": true
+    },
+    {
+      "id": "lures",
+      "size": [
+        1536,
+        1024
+      ],
+      "alpha": true
+    },
+    {
+      "id": "effects",
+      "size": [
+        1024,
+        1536
+      ],
+      "alpha": true
+    },
+    {
+      "id": "effects-b",
+      "size": [
+        1448,
+        1086
+      ],
+      "alpha": true
+    },
+    {
+      "id": "platforms",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha": true
+    },
+    {
+      "id": "coast-ledge",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha": true
+    },
+    {
+      "id": "bg-lake",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha": false
+    },
+    {
+      "id": "bg-coast",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha": false
+    },
+    {
+      "id": "bg-boat",
+      "size": [
+        1672,
+        941
+      ],
+      "alpha": false
+    }
+  ],
+  "warnings": [],
+  "checks": [
+    "fish-lake: extracted 32 complete alpha-connected fish, independent of nominal grid",
+    "fish-coast: extracted 32 complete alpha-connected fish, independent of nominal grid",
+    "fish-offshore: extracted 32 complete alpha-connected fish, independent of nominal grid",
+    "fish-amberjack: extracted 8 complete alpha-connected fish, independent of nominal grid",
+    "fish-mahi: extracted 8 complete alpha-connected fish, independent of nominal grid",
+    "Clipped source chase ring replaced with complete repaired release-ring keyframe",
+    "platforms: extracted 4 complete alpha-connected fish, independent of nominal grid",
+    "All required generation sources present",
+    "All extracted frames are nonempty",
+    "All runtime image alpha values are 0 or 255",
+    "All scene layers are 128x72",
+    "Every fish has swim4 + turn2 + leap2 + portrait + icon + unknown",
+    "Rod tips and actor hand anchors are explicit; runtime connector preview required"
+  ],
+  "counts": {
+    "pngs": 252,
+    "fishSpecies": 12,
+    "anglerAnimations": 9,
+    "anglerFrames": 36,
+    "fishFrames": 96,
+    "effectFrames": 24,
+    "scenes": 3,
+    "lureTypes": 6
+  },
+  "validation": {
+    "passed": true,
+    "checkedRuntimePngs": 252,
+    "rleExactRoundTrips": 248,
+    "anchorIssues": [],
+    "duplicateActorFrames": [],
+    "checks": [
+      "PNG dimensions and RGBA",
+      "Binary transparency; no baked backdrop",
+      "Per-sprite color limits",
+      "All frame/portrait/icon references",
+      "Atlas bounds",
+      "Grip, rod-tip and mouth anchors near opaque pixels",
+      "Scene feet on opaque platform",
+      "Exact PNG/RLE byte equality"
+    ]
+  }
+}

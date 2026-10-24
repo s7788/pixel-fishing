@@ -1,0 +1,14 @@
+{
+  "name": "pixel-fishing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "8-bit lure fishing reference assets and animation previews",
+  "engines": { "node": ">=20.9.0" },
+  "scripts": {
+    "preview": "node fishing-mod-assets-v1/tools/serve-preview.cjs",
+    "validate:assets": "node fishing-mod-assets-v1/tools/validate-assets.cjs",
+    "build:assets": "node fishing-mod-assets-v1/tools/build-assets.cjs",
+    "build:preview": "node fishing-mod-assets-v1/tools/build-preview.cjs"
+  },
+  "devDependencies": { "sharp": "0.35.5" }
+}

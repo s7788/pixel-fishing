@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "reference": "reference/approved-8bit.png",
+  "mode": "built-in image_gen",
+  "jobs": [
+    {
+      "id": "bg-lake",
+      "kind": "background",
+      "transparent": false,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE single flat 16:9 background image only, exactly 1280x720 if possible, conceived as a128x72 grid enlarged10x. NO UI, NO characters, NO fish, NO fishing lines, NO fishing rods, NO lure, NO dock, NO rocks in foreground, NO boat. Horizon at y40% of image; water occupies bottom60%. Keep entire left foreground open for a later separate platform sprite. Limit background to16 flat colors. Coarse simple shapes and sparse water highlights. SCENE: tranquil teal freshwater lake, broad simple dark-green conifer silhouettes framing edges, distant two-tone blue mountains, bright flat blue sky, two blocky clouds. Sparse teal horizontal water marks. Similar lake to approved top screen but REMOVE pier and fisherman entirely."
+    },
+    {
+      "id": "bg-coast",
+      "kind": "background",
+      "transparent": false,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE single flat 16:9 background image only, exactly 1280x720 if possible, conceived as a128x72 grid enlarged10x. NO UI, NO characters, NO fish, NO fishing lines, NO fishing rods, NO lure, NO dock, NO rocks in foreground, NO boat. Horizon at y40% of image; water occupies bottom60%. Keep entire left foreground open for a later separate platform sprite. Limit background to16 flat colors. Coarse simple shapes and sparse water highlights. SCENE: open medium-blue coastal sea, simple low blue headlands on horizon, tiny distant lighthouse on far right, bright flat azure sky and two coarse cream clouds. Sparse chunky cyan water marks. Rocks and shore will be layered separately; keep foreground entirely water."
+    },
+    {
+      "id": "bg-boat",
+      "kind": "background",
+      "transparent": false,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE single flat 16:9 background image only, exactly 1280x720 if possible, conceived as a128x72 grid enlarged10x. NO UI, NO characters, NO fish, NO fishing lines, NO fishing rods, NO lure, NO dock, NO rocks in foreground, NO boat. Horizon at y40% of image; water occupies bottom60%. Keep entire left foreground open for a later separate platform sprite. Limit background to16 flat colors. Coarse simple shapes and sparse water highlights. SCENE: deep-blue open ocean, very distant tiny blue island on right horizon, bright flat blue sky and two coarse clouds. Below waterline use a dark navy schematic underwater field, sparse fish-free empty water, slightly darker big simple rock silhouettes in bottom corners. No vessel, no fish. Similar approved bottom screen, with all objects removed."
+    },
+    {
+      "id": "angler-a",
+      "kind": "angler",
+      "cols": 4,
+      "rows": 3,
+      "actions": [
+        "idle",
+        "cast",
+        "retrieve"
+      ],
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Create ONE transparent RGBA sprite sheet, EXACTLY4 equal columns by3 equal rows,12 character sprites, canvas1024x768, each invisible cell256x256. NO labels, NO cell borders, NO background or ground. Same full-body male angler faces RIGHT in ALL12 frames, same height and clothes, clean black/navy outline, top/bottom padding, boots at SAME baseline within each cell, character centered. Character only about40x56 logical pixels then enlarged4x; fit wholly inside each cell. No fish, no water, NO FISHING ROD and NO LINE: rods are separate sprites. Hands closed as if gripping a rod, visible coherent arms. Row1 IDLE:4 subtly different breathing/checking-tackle poses standing upright. Row2 CAST:4 clear key poses: windup arms back, arms raised overhead, forward release arms extended right, follow-through. Row3 RETRIEVE:4 frames standing steady, right hand holding invisible rod at waist, left hand cyclically turning reel. Individual sprites isolated, do not let anything cross cell boundaries. Same person as approved reference."
+    },
+    {
+      "id": "angler-b",
+      "kind": "angler",
+      "cols": 4,
+      "rows": 3,
+      "actions": [
+        "twitch",
+        "hookset",
+        "fight"
+      ],
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Create ONE transparent RGBA sprite sheet EXACTLY4 equal columns by3 equal rows,12 character sprites, canvas1024x768, each invisible cell256x256. No labels, no grid, no background, no ground. SAME red-white-cap angler faces RIGHT in every frame, same40x56 logical-pixel body size, centered in each cell, boot soles SAME baseline and same character identity as approved. No rod and no fishing line, NO FISH: equipment is separate. Hands close as if gripping an invisible rod. Row1 TWITCH:4 frames short upward forearm jerk from waist toward chest then return, moderate body movement. Row2 HOOKSET:4 frames strong sudden backward lean and both hands pulled up, clearly different from small twitch. Row3 FIGHT:4 frames bent knees braced leaning back, both hands forward-upward gripping imaginary handle, alternate pulling and cranking, feet grounded. Do not rotate camera. All twelve separate silhouettes must be fully inside cells with padding."
+    },
+    {
+      "id": "angler-c",
+      "kind": "angler",
+      "cols": 4,
+      "rows": 3,
+      "actions": [
+        "land",
+        "release",
+        "boat_drop"
+      ],
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Create ONE transparent RGBA sprite sheet EXACTLY4 equal columns by3 equal rows,12 character sprites, canvas1024x768, each invisible cell256x256. NO labels/grid/background/ground. SAME red-white-cap angler facing RIGHT, same40x56 logical-pixel character size, dark outline, centered with boot soles on identical baseline. NO rod, NO line, NO fish and NO net: these are separate assets. Hands are posed naturally for the actions. Row1 LAND:4 frames gradually crouching and extending hand or arms toward lower right to operate a separate landing net, finish upright proud small fist raised (do not hold fish). Row2 RELEASE:4 frames crouching and lowering cupped empty hands toward right, then standing up. Row3 BOAT_DROP:4 frames upright steady stance, one hand in front at waist holding imaginary spinning rod, other hand opening bail and feeding line down; rod will be added separately. Preserve padding and consistent head size; isolated full bodies."
+    },
+    {
+      "id": "fish-lake",
+      "kind": "fish",
+      "cols": 8,
+      "rows": 4,
+      "species": [
+        "largemouth_bass",
+        "striped_snakehead",
+        "peacock_bass",
+        "topmouth_culter"
+      ],
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE transparent RGBA sprite atlas, EXACTLY8 equal columns by4 equal rows (32 isolated sprites), canvas2048x1024, each invisible cell256x256. No labels, NO grid/borders, NO water, NO people/hooks. Every fish faces RIGHT, one consistent pixel-art fish species per ROW, ALL body parts remain within that cell and fish remains centered at SAME anchor within every cell. Use only4-6 flat colors per species and dark navy contour. Each fish designed as about48x24 logical pixels, enlarged4x; broad transparent margin. The8 columns are animation keys:col1 neutral swim, col2 tail curved slightly upward, col3 neutral/body slight bend, col4 tail curved slightly downward, col5 narrow three-quarter TURN toward viewer, col6 narrow three-quarter turn away, col7 leap pose body tilted30degrees nose upward, col8 leap pose body tilted15degrees nose downward. Four swim poses must be similar species and size but visibly different tail bends, NOT copies. Keep whole fish and fin tips visible. Row1 LARGEMOUTH BASS:chunky green body, huge mouth, dark horizontal stripe. Row2 STRIPED SNAKEHEAD:long cylindrical dark olive body, broad head, continuous long dorsal fin, round tail. Row3 PEACOCK BASS:golden-green body, three dark vertical bars, distinct black eyespot at tail base. Row4 TOPMOUTH CULTER:slender silver fish, upward turned mouth, forked tail."
+    },
+    {
+      "id": "fish-coast",
+      "kind": "fish",
+      "cols": 8,
+      "rows": 4,
+      "species": [
+        "spotted_seabass",
+        "indo_pacific_tarpon",
+        "great_barracuda",
+        "malabar_grouper"
+      ],
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE transparent RGBA sprite atlas, EXACTLY8 equal columns by4 equal rows (32 isolated sprites), canvas2048x1024, each invisible cell256x256. No labels, NO grid/borders, NO water, NO people/hooks. Every fish faces RIGHT, one consistent pixel-art fish species per ROW, ALL body parts remain within that cell and fish remains centered at SAME anchor within every cell. Use only4-6 flat colors per species and dark navy contour. Each fish designed as about48x24 logical pixels, enlarged4x; broad transparent margin. The8 columns are animation keys:col1 neutral swim, col2 tail curved slightly upward, col3 neutral/body slight bend, col4 tail curved slightly downward, col5 narrow three-quarter TURN toward viewer, col6 narrow three-quarter turn away, col7 leap pose body tilted30degrees nose upward, col8 leap pose body tilted15degrees nose downward. Four swim poses must be similar species and size but visibly different tail bends, NOT copies. Keep whole fish and fin tips visible. Row1 SPOTTED SEA BASS:sturdy silver-gray bass with large mouth and sparse dark flank spots. Row2 INDO-PACIFIC TARPON:deep silver body, very large eye, upward mouth, distinct long thin trailing dorsal ray. Row3 GREAT BARRACUDA:very long slender silver body, pointed long jaw, two separated dorsal fins and dark bars, distinctly unlike bass. Row4 MALABAR GROUPER:stocky broad mottled brown body, very large fleshy head/mouth, rounded tail, sparse cream spots."
+    },
+    {
+      "id": "fish-offshore",
+      "kind": "fish",
+      "cols": 8,
+      "rows": 4,
+      "species": [
+        "greater_amberjack",
+        "mahi_mahi",
+        "yellowfin_tuna",
+        "narrow_barred_mackerel"
+      ],
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE transparent RGBA sprite atlas, EXACTLY8 equal columns by4 equal rows (32 isolated sprites), canvas2048x1024, each invisible cell256x256. No labels, NO grid/borders, NO water, NO people/hooks. Every fish faces RIGHT, one consistent pixel-art fish species per ROW, ALL body parts remain within that cell and fish remains centered at SAME anchor within every cell. Use only4-6 flat colors per species and dark navy contour. Each fish designed as about48x24 logical pixels, enlarged4x; broad transparent margin. The8 columns are animation keys:col1 neutral swim, col2 tail curved slightly upward, col3 neutral/body slight bend, col4 tail curved slightly downward, col5 narrow three-quarter TURN toward viewer, col6 narrow three-quarter turn away, col7 leap pose body tilted30degrees nose upward, col8 leap pose body tilted15degrees nose downward. Four swim poses must be similar species and size but visibly different tail bends, NOT copies. Keep whole fish and fin tips visible. Row1 GREATER AMBERJACK:streamlined blue-gray body, forked tail, gold/amber side band and dark eye band. Row2 MAHI-MAHI:distinct blunt high forehead of adult male, long continuous dark-blue dorsal fin, bright yellow-green body and forked tail. Row3 YELLOWFIN TUNA:thick torpedo body, deep crescent tail, bright yellow second dorsal/anal fins and tiny yellow finlets before tail. Row4 NARROW-BARRED SPANISH MACKEREL:long narrow silver-blue body, pointed snout, many vertical dark bars and forked tail. Very different from tuna."
+    },
+    {
+      "id": "platforms",
+      "kind": "platform",
+      "cols": 2,
+      "rows": 2,
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE TRANSPARENT RGBA production environment overlay atlas, EXACTLY2 columns x2 rows, canvas1536x864; each invisible cell768x432 is a full16:9 scene overlay equivalent128x72 logical pixels. No grid, no text. Each cell has extensive EMPTY TRANSPARENT sky/water; only listed solid foreground object. All objects are entirely within their cell, separate from each other. TOP LEFT:chunky brown wooden LAKE PIER, enters from left edge, deck flat top at logical y54, extends from logical x0 to46, wood pillars reach bottomy72. No plants blocking top of deck. TOP RIGHT:chunky gray COAST ROCK LEDGE, enters left and bottom, flat walkable top at logical y53, extends x0to44; black/navy outlines, gray geometric slabs. BOTTOM LEFT:small side-view fishing BOAT, entirely in left60% of cell, stern atx4 bowx73, cabin toward left, red/brown hull white rail, horizontal deck at logicaly48; waterliney58. NO PEOPLE. BOTTOM RIGHT:the SAME boat's FRONT GUNWALE AND HULL ONLY at exactly same coordinates as bottomleft, cut away all cabin, mast and background boat pieces so this narrow front rim/hull can overlay an angler's feet. Precisely match boat scale/position bottom left and right. Absolutely no water, waves, shadows on ground or backdrop; all empty areas alpha0."
+    },
+    {
+      "id": "lures",
+      "kind": "lures",
+      "cols": 3,
+      "rows": 2,
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE transparent RGBA sprite atlas, EXACTLY3 columns by2 rows, SIX isolated SIDE-VIEW artificial fishing lures on canvas1536x1024, invisible cells512x512. All lures face RIGHT, tie-eye at right, tails/hooks left or underneath. Center each object with broad transparent margin, pixel art only (each lure designed approx24x12 logical pixels). NO labels/grid/scene/lines/hands/shadows. Top row left:MINNOW blue-silver small fish with short clear diving lip at right and small treble hooks. Topmiddle:POPPER red-white short fat plug with concave cup face at right and little hooks. Topright:PENCIL green-silver slim floating stickbait NO diving lip. Bottomleft:SOFT WORM AND JIGHEAD purple soft curly-tail worm with round lead jighead/eye at right, single hook. Bottommiddle:SHORE METAL JIG short narrow silver-blue asymmetric metal lure with a small hook, NO diving lip. Bottomright:VERTICAL BOAT METAL JIG long narrow pink-silver jig, eye at right, assist hook near eye, visibly longer than shore jig. Bold 8-bit silhouettes and 4-6 flat colors per lure."
+    },
+    {
+      "id": "effects",
+      "kind": "effects",
+      "cols": 4,
+      "rows": 6,
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Deliver ONE transparent RGBA game effect sprite sheet EXACTLY4 columns x6 rows,24 sprites, canvas1024x1536, invisible cells256x256. Each row one four-frame chronological effect, centered per cell, constant scale, transparent margin. Effects use only white, cream, cyan, medium blue and navy. NO text/grid/fish/angler/objects/background. Coarse8-bit hard-square pixels, NO glow/soft opacity gradients. Row1 WATER ENTRY:small droplet hits water, short splash rises, droplets fall, two tiny residual droplets. Row2 CHASE RIPPLE:small flat ellipse ripple grows into wider ellipse in four stages, sparse horizontal ripples. Row3 POPPER SPLASH:small horizontal cup-shaped water burst expands and settles, energetic but low. Row4 STRIKE/BITE:small sharp white-cyan impact star and water burst then scattered droplets. Row5 LEAP SPLASH:larger vertical fountain rises, expands, breaks into droplets, settles. Row6 RELEASE RIPPLE:gentle low water splash followed by expanding paired ripples. All effects in SAME 48x32 logical-pixel cell shape; fit wholly in cell with at least15% padding. NO giant water illustration."
+    }
+  ]
+}

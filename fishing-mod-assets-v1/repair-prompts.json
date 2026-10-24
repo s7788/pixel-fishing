@@ -1,0 +1,36 @@
+{
+  "mode": "built-in image_gen",
+  "jobs": [
+    {
+      "id": "effects-b",
+      "kind": "effects",
+      "cols": 4,
+      "rows": 3,
+      "effectNames": [
+        "bite",
+        "leap",
+        "release"
+      ],
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. Create ONE transparent RGBA sprite sheet with EXACTLY THREE rows and FOUR columns, TWELVE isolated effect sprites. Canvas1024x768. Row1:four chronological BITE IMPACT frames:compact sharp white/cyan impact star, burst, droplets, fading tiny residual splash. Row2:four chronological LARGE FISH LEAP SPLASH frames:rising tall water fountain, fully raised splash, falling separate droplets, low settled ring. Row3:four chronological GENTLE RELEASE RIPPLE frames:small low splash, two thin rings, larger ellipse rings, widest sparse ellipse. Each sprite fits center70% of its own256x256 invisible cell, no content crosses cells. Strict chunky8-bit squares, only white/cyan/blue/navy, no glows, no shadows, no full water backgrounds, no labels, no grid, no fish. TRUE ALPHA transparency."
+    },
+    {
+      "id": "fish-amberjack",
+      "kind": "fish-override",
+      "cols": 4,
+      "rows": 2,
+      "species": "greater_amberjack",
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. ONE isolated species animation atlas, exactly4 columns by2 rows, EIGHT sprites, transparent RGBA canvas1024x512. Each sprite in its own256x256 invisible cell, centered, broad margin. Species GREATER AMBERJACK Seriola dumerili, red kanpachi fishing target:long moderately deep streamlined silvery-blue body, small pale amber/gold lateral band, slanted dark band crossing eye, two dorsal fins, sharply forked tail. IMPORTANT anatomical silhouette: NO TUNA FINLETS before tail, NO enormous long yellow sickle fins, do not draw a tuna. Fish body longer and more elegant than a tuna, head tapered but relatively blunt mouth. Coarse8-bit4-6 flat-color clusters and navy outline. Toprow four slightly different swimming poses all facing RIGHT with alternating tail bends. Bottomrow:three-quarter turn toward viewer facing right; turn away facing LEFT; leap nose up30degrees facing right; leap nose down15degrees facing right. Same fish and scale in ALL8 frames. No labels/grid/water/hooks/people. Each fish wholly inside cell."
+    },
+    {
+      "id": "fish-mahi",
+      "kind": "fish-override",
+      "cols": 4,
+      "rows": 2,
+      "species": "mahi_mahi",
+      "transparent": true,
+      "prompt": "STYLE REFERENCE is the approved fishing screenshot sheet in input image 1; use its COARSE chunky low-resolution 8-bit aesthetic, dark navy outlines, red-and-white cap, red backpack, cream shirt, blue pants, brown boots. Match the pixel density of hunt-8bit: scenery logical128x72 and characters about48x64. Flat limited colors, square hard pixel edges, big color clusters, no gradients, no antialiasing, no detailed painting, no photorealism, no fine texture, no dithering noise. Original fishing game assets, no logos, no text, no watermarks. This is a PRODUCTION ASSET, not a presentation board. ONE isolated species animation atlas, exactly4 columns by2 rows, EIGHT sprites, transparent RGBA canvas1024x512. Each sprite in its own256x256 invisible cell, centered, broad padding. Species ADULT MALE MAHI-MAHI (Coryphaena hippurus). Critical recognizable outline: VERY TALL NEARLY VERTICAL BLUNT FOREHEAD, like a flat squared-off front above the mouth; elongated compressed body, extremely long continuous blue dorsal fin almost from forehead to tail, yellow-green body, deeply forked tail. MUST NOT have the round little head of a bass or tuna. Head is a broad tall rectangle with eye and small mouth at lower front, enormous steep bull forehead plainly visible even as a silhouette. Long body, bright gold belly, teal upper side, sparse dark teal dots. Coarse8-bit4-6 flat-color clusters and navy outline, no scale texture. Toprow four slightly different swimming poses all facing RIGHT with alternating tail bends. Bottomrow:three-quarter turn toward viewer facing right; turn away facing LEFT; leap nose up30degrees facing right; leap nose down15degrees facing right. Same adult bull mahi in all8 frames; preserve high forehead during poses. No labels/grid/water/hooks/people. Whole fish within each cell."
+    }
+  ]
+}
