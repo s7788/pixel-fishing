@@ -57,6 +57,10 @@ claude plugin test .
 
 `hooks/gen/*.ts` 由 `node tools/gen-sprites.cjs` 從 `fishing-mod-assets-v1/pixel-data.json` 與 `manifest.json` 產生，不要手改。設計決策與檔案地圖見 [HANDOFF.md](HANDOFF.md)。
 
+## 贊助
+
+lure-8bit 是 s7788 的原創作品。如果你喜歡這個小遊戲，歡迎透過 [PayPal 請作者喝杯咖啡](https://www.paypal.me/s7788pixel)，支持後續開發。
+
 ---
 
 ## 素材包
