@@ -8,9 +8,9 @@ Claude Code 的側邊面板外掛（`lure-8bit`）。你送出提示，釣手就
 
 在湖泊、海岸與船上輪流下竿，搭配六種路亞，收集 12 種魚的圖鑑，刷新最長與最重紀錄。回合越長，越有機會釣到大魚與稀有魚。
 
-![Pixel Fishing 素材總覽：三個釣場、釣手動作、魚種與釣具](fishing-mod-assets-v1/overview.png)
+![Pixel Fishing 遊戲展示：湖泊、海岸與船上的拋竿、搏魚、起魚、漁獲卡與放流](docs/media/demo.zh-TW.gif)
 
-上圖為素材總覽；可下載[完整素材包](fishing-mod-assets-v1.zip)，開啟其中的 `preview.html` 檢視場景與動作。
+動圖直接使用遊戲繪圖程式，展示三趟成功釣獲的範例，較長回合的操作時間採片段呈現。完整素材可看[繁中總覽圖](fishing-mod-assets-v1/overview.png)，或下載[完整素材包](fishing-mod-assets-v1.zip)，開啟其中的 `preview.html` 檢視場景與動作。
 
 ## 安裝
 
@@ -127,6 +127,14 @@ claude plugin test .
 ```
 
 `hooks/gen/*.ts` 由 `node tools/gen-sprites.cjs` 從素材包的 `pixel-data.json` 與 `manifest.json` 產生。更新素材後請重新產生，不要手改產出檔。設計決策與檔案地圖見 [HANDOFF.md](HANDOFF.md)。
+
+若要重建兩種語言的 README 動圖，先執行 `npm install` 安裝開發依賴，確認 PATH 中有 `ffmpeg`，再執行：
+
+```bash
+npm run build:demo
+```
+
+程式會用固定的範例下竿執行遊戲狀態機與 SVG 繪圖，將英文、繁中 GIF 輸出至 `docs/media`，不讀取玩家存檔，也不呼叫 Claude。
 
 ## 素材包與預覽
 

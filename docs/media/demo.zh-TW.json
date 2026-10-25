@@ -1,0 +1,24 @@
+{
+  "language": "zh-TW",
+  "source": "hooks/engine.ts + hooks/svg.ts",
+  "note": "Three successful example turns; longer working periods are excerpted.",
+  "frameCount": 440,
+  "tickMs": 125,
+  "scenes": [
+    {
+      "venue": "lake",
+      "fish": "topmouth_culter",
+      "elapsedMs": 36875
+    },
+    {
+      "venue": "coast",
+      "fish": "spotted_seabass",
+      "elapsedMs": 126875
+    },
+    {
+      "venue": "boat",
+      "fish": "yellowfin_tuna",
+      "elapsedMs": 306875
+    }
+  ]
+}
