@@ -30,5 +30,76 @@ gallery=gallery.replace("let rodName=", "const rodScale=scene==='boat'?.8:1;let 
  .replace('scene=b.dataset.scene;', "scene=b.dataset.scene;action=scene==='boat'?'boat_drop':'retrieve';document.getElementById('action').value=action;");
 fs.writeFileSync(path.join(ROOT,'preview.html'),gallery);
 
-async function overview(){let layers=[];const W=1200,H=1280;const bg=sharp({create:{width:W,height:H,channels:4,background:'#081325'}});function label(x,y,s,size=20){layers.push({input:Buffer.from(`<svg width="${W-x}" height="48"><text x="0" y="${size+3}" font-family="Microsoft JhengHei, Arial, sans-serif" font-size="${size}" fill="#f5e7c5">${s.replaceAll('&','&amp;')}</text></svg>`),left:x,top:y})}label(24,14,'LURE 8-BIT · 素材包 v1',28);label(24,55,'3 場地 · 12 魚種 · 36 釣手影格 · 96 魚影格 · 6 路亞 · 24 特效',16);let col=0;for(const[id,s]of Object.entries(m.scenes)){const a=await sharp(path.join(ROOT,m.sprites['scene/'+id+'/preview'].file)).resize(384,216,{kernel:'nearest'}).png().toBuffer();layers.push({input:a,left:12+col*396,top:101});label(18+col*396,321,s.name,18);col++}label(24,370,'釣手動作｜每組四個影格',20);for(let r=0;r<3;r++)for(let c=0;c<3;c++){let key=Object.keys(m.animations.angler)[r*3+c];label(24+c*396,410+r*110,labels[key],15);for(let i=0;i<4;i++){const id=m.animations.angler[key].frames[i],a=await sharp(path.join(ROOT,m.sprites[id].file)).resize(48,64,{kernel:'nearest'}).png().toBuffer();layers.push({input:a,left:40+c*396+i*72,top:438+r*110})}}label(24,754,'魚種圖鑑｜12 種獨立輪廓',20);let i=0;for(const[id,s]of Object.entries(m.animations.fish)){const a=await sharp(path.join(ROOT,m.sprites[s.portrait].file)).resize(144,72,{kernel:'nearest'}).png().toBuffer();let x=24+(i%6)*196,y=800+Math.floor(i/6)*118;layers.push({input:a,left:x+12,top:y});label(x,y+76,s.name,13);i++}label(24,1050,'路亞與特效',20);i=0;for(const[id,s]of Object.entries(m.lures)){const a=await sharp(path.join(ROOT,m.sprites[s.icon].file)).resize(96,48,{kernel:'nearest'}).png().toBuffer();layers.push({input:a,left:36+i*196,top:1100});label(24+i*196,1150,lures[id],14);i++}i=0;for(const[id,s]of Object.entries(m.animations.effects)){const a=await sharp(path.join(ROOT,m.sprites[s.frames[1]].file)).resize(96,64,{kernel:'nearest'}).png().toBuffer();layers.push({input:a,left:36+i*196,top:1187});i++}await bg.composite(layers).png().toFile(path.join(ROOT,'overview.png'))}
-overview().catch(e=>{console.error(e);process.exit(1)});
+const overviewEnglish = {
+  scenes: { lake: 'Lake', coast: 'Coast', boat: 'Boat' },
+  actions: { idle: 'Idle', cast: 'Cast', retrieve: 'Retrieve', twitch: 'Twitch', hookset: 'Hookset', fight: 'Fight', land: 'Land', release: 'Release', boat_drop: 'Boat Drop' },
+  fish: {
+    largemouth_bass: 'Largemouth Bass', topmouth_culter: 'Topmouth Culter',
+    striped_snakehead: 'Striped Snakehead', peacock_bass: 'Peacock Bass',
+    spotted_seabass: 'Spotted Seabass', great_barracuda: 'Great Barracuda',
+    indo_pacific_tarpon: 'Indo-Pacific Tarpon', malabar_grouper: 'Malabar Grouper',
+    narrow_barred_mackerel: 'Spanish Mackerel', mahi_mahi: 'Mahi-mahi',
+    greater_amberjack: 'Greater Amberjack', yellowfin_tuna: 'Yellowfin Tuna',
+  },
+  lures: { minnow: 'Minnow', popper: 'Popper', pencil: 'Pencil', soft_worm: 'Soft Worm', shore_jig: 'Shore Jig', boat_jig: 'Boat Jig' },
+};
+
+async function overview(locale = 'zh-TW') {
+  const english = locale === 'en';
+  const layers = [];
+  const W = 1200, H = 1280;
+  const bg = sharp({ create: { width: W, height: H, channels: 4, background: '#081325' } });
+  function label(x, y, text, size = 20) {
+    if (typeof text !== 'string') throw new Error(`Missing ${locale} overview label at ${x},${y}`);
+    layers.push({
+      input: Buffer.from(`<svg width="${W-x}" height="48"><text x="0" y="${size+3}" font-family="Microsoft JhengHei, Arial, sans-serif" font-size="${size}" fill="#f5e7c5">${text.replaceAll('&', '&amp;')}</text></svg>`),
+      left: x, top: y,
+    });
+  }
+  async function sprite(id, width, height, left, top) {
+    const input = await sharp(path.join(ROOT, m.sprites[id].file))
+      .resize(width, height, { kernel: 'nearest' }).png().toBuffer();
+    layers.push({ input, left, top });
+  }
+  label(24, 14, english ? 'PIXEL FISHING · ASSET PACK v1' : 'LURE 8-BIT · 素材包 v1', 28);
+  label(24, 55, english
+    ? '3 spots · 12 species · 36 angler frames · 96 fish frames · 6 lures · 24 effect frames'
+    : '3 場地 · 12 魚種 · 36 釣手影格 · 96 魚影格 · 6 路亞 · 24 特效', 16);
+  let col = 0;
+  for (const [id, scene] of Object.entries(m.scenes)) {
+    await sprite('scene/' + id + '/preview', 384, 216, 12 + col * 396, 101);
+    label(18 + col * 396, 321, english ? overviewEnglish.scenes[id] : scene.name, 18);
+    col++;
+  }
+  label(24, 370, english ? 'Angler actions | Four frames each' : '釣手動作｜每組四個影格', 20);
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) {
+    const key = Object.keys(m.animations.angler)[r * 3 + c];
+    label(24 + c * 396, 410 + r * 110, english ? overviewEnglish.actions[key] : labels[key], 15);
+    for (let i = 0; i < 4; i++) {
+      await sprite(m.animations.angler[key].frames[i], 48, 64, 40 + c * 396 + i * 72, 438 + r * 110);
+    }
+  }
+  label(24, 754, english ? 'Fish collection | 12 distinct silhouettes' : '魚種圖鑑｜12 種獨立輪廓', 20);
+  let i = 0;
+  for (const [id, fish] of Object.entries(m.animations.fish)) {
+    const x = 24 + (i % 6) * 196, y = 800 + Math.floor(i / 6) * 118;
+    await sprite(fish.portrait, 144, 72, x + 12, y);
+    label(x, y + 76, english ? overviewEnglish.fish[id] : fish.name, 13);
+    i++;
+  }
+  label(24, 1050, english ? 'Lures and effects' : '路亞與特效', 20);
+  i = 0;
+  for (const [id, lure] of Object.entries(m.lures)) {
+    await sprite(lure.icon, 96, 48, 36 + i * 196, 1100);
+    label(24 + i * 196, 1150, english ? overviewEnglish.lures[id] : lures[id], 14);
+    i++;
+  }
+  i = 0;
+  for (const effect of Object.values(m.animations.effects)) {
+    await sprite(effect.frames[1], 96, 64, 36 + i * 196, 1187);
+    i++;
+  }
+  await bg.composite(layers).png().toFile(path.join(ROOT, english ? 'overview.en.png' : 'overview.png'));
+}
+
+overview().then(() => overview('en')).catch(e => { console.error(e); process.exit(1); });

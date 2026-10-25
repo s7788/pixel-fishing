@@ -8,7 +8,7 @@ A side pane plugin for Claude Code (`lure-8bit`). Send a prompt and your angler 
 
 Rotate between a lake, the coast, and a boat. Choose from six lures, collect 12 fish species, and set separate records for your longest and heaviest catches. Longer turns improve your chances of larger and rarer fish.
 
-![Pixel Fishing asset overview: three fishing spots, angler animations, fish, and tackle](fishing-mod-assets-v1/overview.png)
+![Pixel Fishing asset overview: three fishing spots, angler animations, fish, and tackle](fishing-mod-assets-v1/overview.en.png)
 
 The image above is an asset overview. Download the [full asset pack](fishing-mod-assets-v1.zip) and open its `preview.html` to explore the scenes and animations. The asset preview currently has Traditional Chinese labels.
 
