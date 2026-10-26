@@ -1,5 +1,15 @@
 # pixel-fishing outreach
 
+## Publication status — 2026-10-26
+
+- GitHub About and eight relevant Topics are configured.
+- [v0.2.0](https://github.com/s7788/pixel-fishing/releases/tag/v0.2.0) is published with the asset-pack ZIP.
+- [AwesomeClaudeCodeMods submission](https://github.com/DrishtantKaushal/AwesomeClaudeCodeMods/issues/5) is open; listing acceptance is pending.
+- The ClaudeMods update request was emailed to `support@claudemods.dev` after its contact form failed twice. The requested title, animated About section, install commands, and stored README still require the site's action.
+- [r/ClaudeCode weekly showcase comment](https://www.reddit.com/r/ClaudeCode/comments/1xfu9ul/comment/19rol5dwioaw4/) is posted and was confirmed after reloading the thread. It links to the repository's animated demos. Reddit could not process the uploaded video for the comment, so the final comment is text with a project link.
+- The initial [r/ClaudeAI standalone post](https://www.reddit.com/r/ClaudeAI/comments/1xfvt4o/i_made_pixelfishing_an_8bit_fishing_companion_for/) was removed by that community's moderators. No specific removal reason was displayed; it was not reposted there.
+- X is not posted; the copy below remains a draft as requested.
+
 ## Project facts
 
 - Repository: https://github.com/s7788/pixel-fishing
