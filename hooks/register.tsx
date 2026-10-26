@@ -8,19 +8,19 @@ import { beginTurn, chooseLure, endTurn, lose, newGame, restore, step } from './
 import { cmText, kgText, pickLang, t } from './i18n'
 import { LURE_SIZE, STATS_SIZE, hudText, lureSvg, statsSvg, statsText } from './svg'
 
-const PLUGIN = 'lure-8bit'
-const PANE = 'lure-8bit'
-const TITLE = 'Lure'
+const PLUGIN = 'pixel-fishing'
+const PANE = 'pixel-fishing'
+const TITLE = 'pixel-fishing'
 const SAVE_KEY = 'save'
 const DEX_KEY = 'dexOpen'
 
-const phase = atom({ plugin: 'lure-8bit', key: 'phase' } as const, 'idle' as LurePhase)
-const turnStartedAt = atom({ plugin: 'lure-8bit', key: 'turnStartedAt' } as const, null as number | null)
-const lastElapsedMs = atom({ plugin: 'lure-8bit', key: 'lastElapsedMs' } as const, 0)
-const world = atom({ plugin: 'lure-8bit', key: 'world' } as const, null as LureWorld | null)
-const log = atom({ plugin: 'lure-8bit', key: 'log' } as const, [] as LureEvent[])
-const lang = atom({ plugin: 'lure-8bit', key: 'lang' } as const, 'en' as LureLang)
-const dexOpen = atom({ plugin: 'lure-8bit', key: 'dexOpen' } as const, false)
+const phase = atom({ plugin: 'pixel-fishing', key: 'phase' } as const, 'idle' as LurePhase)
+const turnStartedAt = atom({ plugin: 'pixel-fishing', key: 'turnStartedAt' } as const, null as number | null)
+const lastElapsedMs = atom({ plugin: 'pixel-fishing', key: 'lastElapsedMs' } as const, 0)
+const world = atom({ plugin: 'pixel-fishing', key: 'world' } as const, null as LureWorld | null)
+const log = atom({ plugin: 'pixel-fishing', key: 'log' } as const, [] as LureEvent[])
+const lang = atom({ plugin: 'pixel-fishing', key: 'lang' } as const, 'en' as LureLang)
+const dexOpen = atom({ plugin: 'pixel-fishing', key: 'dexOpen' } as const, false)
 
 /** working_elapsed: MM:SS, HH:MM:SS past an hour. */
 const fmt = (ms: number): string => {
@@ -136,8 +136,8 @@ export const register: Register = on => {
   }
 
   on('session.start', async ($, e, next) => {
-    await $.command.register({ name: 'lure', description: 'Open the 8-bit lure fishing pane' })
-    await $.command.register({ name: 'lure-demo', description: 'Cast or reel in without a Claude turn (debug)' })
+    await $.command.register({ name: 'pixel-fishing', description: 'Open the 8-bit lure fishing pane' })
+    await $.command.register({ name: 'pixel-fishing-demo', description: 'Cast or reel in without a Claude turn (debug)' })
     const stored = (await $.store.get(SAVE_KEY)) as Game | undefined
     const language = await detectLang($)
     await update($, lang, () => language)
@@ -155,16 +155,16 @@ export const register: Register = on => {
     return next(e)
   })
 
-  on('command.run', { command: 'lure' }, async $ => {
+  on('command.run', { command: 'pixel-fishing' }, async $ => {
     await $.ui.open({ id: PANE, title: TITLE })
-    return { text: 'Lure pane opened.' }
+    return { text: 'pixel-fishing pane opened.' }
   })
 
-  on('command.run', { command: 'lure-demo' }, async $ => {
+  on('command.run', { command: 'pixel-fishing-demo' }, async $ => {
     const isFishing = (await read($, phase)) === 'fishing'
-    await serial(() => (isFishing ? finishTurn($, 'answer') : startTurn($, 'lure-demo')))
+    await serial(() => (isFishing ? finishTurn($, 'answer') : startTurn($, 'pixel-fishing-demo')))
     await $.ui.open({ id: PANE, title: TITLE })
-    return { text: `Lure demo: ${isFishing ? 'reel in' : 'cast'}.` }
+    return { text: `pixel-fishing demo: ${isFishing ? 'reel in' : 'cast'}.` }
   })
 
   /**

@@ -1,0 +1,24 @@
+pixel-fishing
+Copyright (c) 2026 s7788
+
+License scope
+
+The MIT License in LICENSE applies to the source code and accompanying textual
+documentation. It does not license the pixel artwork or its encoded forms.
+
+Artwork is reserved, including:
+- The images in fishing-mod-assets-v1/assets/ and fishing-mod-assets-v1/sources/.
+- fishing-mod-assets-v1/overview*.png and the generated artwork previews.
+- fishing-mod-assets-v1/pixel-data.json and pixel-data.ts.
+- The encoded sprite and scene data in hooks/gen/.
+- .claude-plugin/icon.png and game imagery in docs/media/.
+- These same artwork files distributed inside the asset-pack ZIP.
+
+All rights to that artwork are reserved by s7788. It is supplied for use with
+pixel-fishing. Redistribution or reuse of the artwork in another project
+requires separate permission from the author. The source-code MIT license
+does not grant rights to these excluded assets.
+
+Catalogue listings may link to the public GitHub repository and hosted demo
+media for displaying this project. This does not grant permission to copy or
+redistribute the artwork as a separate asset collection.

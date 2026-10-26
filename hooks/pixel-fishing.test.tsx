@@ -11,11 +11,11 @@ import { layoutOf } from './layout'
 import { lureSvg, statsSvg, statsText } from './svg'
 
 const PANE = {
-  plugin: 'lure-8bit',
+  plugin: 'pixel-fishing',
   component: 'Pane',
-  requestId: 'lure-8bit',
+  requestId: 'pixel-fishing',
   props: {
-    title: 'Lure',
+    title: 'pixel-fishing',
     isFocused: false,
     bodyColumns: 43,
     placement: 'dock',
@@ -320,17 +320,36 @@ test('a save from a session that ended mid-cast comes back idle, dex and records
   expect(migrated.heaviest).toBeNull()
 })
 
-const boot = async ($: Parameters<TestBody>[0], on: On, store?: Record<string, unknown>, language = 'English') => {
+const boot = async ($: Parameters<TestBody>[0], on: On, store?: Record<string, unknown>, language = 'English', observed?: { commands: string[]; panes: { id: string; title: string }[] }) => {
   mock.clock(on)
   mock.store(on, store)
   on('settings.read', () => ({ value: { language } }))
-  on('ui.open', () => ({ value: { isPlaced: true as const } }))
+  on('ui.open', (_, e) => {
+    observed?.panes.push({ id: e.id, title: e.title })
+    return { value: { isPlaced: true as const } }
+  })
   on('turn.start', ($, e) => ({ turnId: e.turnId }))
   on('turn.complete', () => ({ text: '' }))
   on('session.start', (_, e) => ({ cwd: e.cwd }))
-  on('command.register', (_, e) => ({ value: { command: e.name } }))
+  on('command.register', (_, e) => {
+    observed?.commands.push(e.name)
+    return { value: { command: e.name } }
+  })
   await $.session.start({ cwd: '/tmp', surface: 'desktop', isInteractive: true })
 }
+
+test('the published commands open the renamed pane and run a demo trip', async ($, on) => {
+  const observed = { commands: [] as string[], panes: [] as { id: string; title: string }[] }
+  await boot($, on, undefined, 'English', observed)
+  expect(observed.commands).toEqual(['pixel-fishing', 'pixel-fishing-demo'])
+  await $.command.run({ command: 'pixel-fishing', args: '' } as never)
+  await $.command.run({ command: 'pixel-fishing-demo', args: '' } as never)
+  expect(observed.panes.length).toBe(3)
+  expect(observed.panes.every(pane => pane.id === 'pixel-fishing' && pane.title === 'pixel-fishing')).toBe(true)
+  const ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect((await ui.find({ type: 'Svg' }))?.props.alt).toBe('8-bit lure fishing: working')
+  await ui.unmount()
+})
 
 test('main turns cast, answers bring the fish in, interrupts lose it; subagent turns change nothing', async ($, on) => {
   await boot($, on)
@@ -366,15 +385,15 @@ test('the terminal draws the pane as text, with the tally; the desktop draws two
   await desk.unmount()
 })
 
-test('/lure-demo casts and reels in without a turn, and the lure buttons pick', async ($, on) => {
+test('/pixel-fishing-demo casts and reels in without a turn, and the lure buttons pick', async ($, on) => {
   await boot($, on)
-  await $.command.run({ command: 'lure-demo', args: '' } as never)
+  await $.command.run({ command: 'pixel-fishing-demo', args: '' } as never)
   let ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
   expect((await ui.find({ type: 'Svg' }))?.props.alt).toBe('8-bit lure fishing: working')
   // a cast is out: the buttons give way to the lure in hand
   expect(await ui.find({ type: 'Text', text: /pick after the turn/ })).toBeDefined()
   await ui.unmount()
-  await $.command.run({ command: 'lure-demo', args: '' } as never)
+  await $.command.run({ command: 'pixel-fishing-demo', args: '' } as never)
   ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
   expect(['8-bit lure fishing: bite', '8-bit lure fishing: empty']).toContain((await ui.find({ type: 'Svg' }))?.props.alt)
   await ui.press({ key: 'lure-popper' })

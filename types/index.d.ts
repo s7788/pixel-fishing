@@ -98,7 +98,7 @@ export type LureWorld = { tick: number; now: number; game: LureGame }
 
 declare module 'claude-code' {
   interface PluginState {
-    'lure-8bit': {
+    'pixel-fishing': {
       phase: LurePhase
       turnStartedAt: number | null
       lastElapsedMs: number

@@ -1,0 +1,9 @@
+pixel-fishing artwork
+Copyright (c) 2026 s7788. All rights reserved.
+
+The pixel artwork, source images, atlases, overview images, and encoded pixel
+data in this pack are provided for use with pixel-fishing. Redistribution or
+reuse in another project requires separate permission from the author.
+
+The repository's source-code MIT license does not apply to the artwork.
+See https://github.com/s7788/pixel-fishing/blob/main/NOTICE for the scope.

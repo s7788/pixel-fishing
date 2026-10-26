@@ -1,14 +1,14 @@
-# Pixel Fishing
+# pixel-fishing
 
 **Claude works. Your 8-bit angler goes fishing.**
 
 [繁體中文](README.zh-TW.md)
 
-A side pane plugin for Claude Code (`lure-8bit`). Send a prompt and your angler casts, retrieves, and works a lure. When Claude finishes answering, the cast ends with a catch or an empty line. A catch plays out automatically: hookset, fight, landing net, catch card, and release. Interrupt the turn and the fish gets away.
+A side pane plugin for Claude Code (`pixel-fishing`). Send a prompt and your angler casts, retrieves, and works a lure. When Claude finishes answering, the cast ends with a catch or an empty line. A catch plays out automatically: hookset, fight, landing net, catch card, and release. Interrupt the turn and the fish gets away.
 
 Rotate between a lake, the coast, and a boat. Choose from six lures, collect 12 fish species, and set separate records for your longest and heaviest catches. Longer turns improve your chances of larger and rarer fish.
 
-![Pixel Fishing gameplay: casting, fighting, landing, catch cards, and release at the lake, coast, and boat](docs/media/demo.gif)
+![pixel-fishing gameplay: casting, fighting, landing, catch cards, and release at the lake, coast, and boat](docs/media/demo.gif)
 
 The animation uses the game's own renderer and shows three successful example trips, with excerpts from longer working periods. See the [English asset overview](fishing-mod-assets-v1/overview.en.png) for all sprites, or download the [full asset pack](fishing-mod-assets-v1.zip) and open its `preview.html`. The asset preview currently has Traditional Chinese labels.
 
@@ -19,7 +19,7 @@ Requires Claude Code with mod side pane support. The in-session install command 
 At the prompt of a Claude Code terminal session:
 
 ```text
-/plugin install lure-8bit --marketplace s7788/pixel-fishing
+/plugin install pixel-fishing --marketplace s7788/pixel-fishing
 ```
 
 Confirm adding the marketplace, then choose an installation scope. If Claude Code asks you to reload the plugin, follow its instructions.
@@ -27,7 +27,7 @@ Confirm adding the marketplace, then choose an installation scope. If Claude Cod
 Or install from PowerShell or another shell:
 
 ```bash
-claude plugin install lure-8bit --marketplace s7788/pixel-fishing
+claude plugin install pixel-fishing --marketplace s7788/pixel-fishing
 ```
 
 After installing from a shell, start a new Claude Code session or run `/reload-plugins` in an existing one. See the [official installation guide](https://code.claude.com/docs/en/discover-plugins) for details.
@@ -35,17 +35,17 @@ After installing from a shell, start a new Claude Code session or run `/reload-p
 If you have already added this marketplace, you can also install by its full plugin name:
 
 ```bash
-claude plugin install lure-8bit@pixel-fishing
+claude plugin install pixel-fishing@pixel-fishing
 ```
 
 ### Your first cast
 
-1. The **Lure** pane opens automatically when a session starts with the plugin loaded. You can also open it with `/lure`.
+1. The **pixel-fishing** pane opens automatically when a session starts with the plugin loaded. You can also open it with `/pixel-fishing`.
 2. Pick a lure below the scene, or leave the default **Random** selection.
 3. Send Claude a prompt as usual. Your angler starts fishing, and the catch is decided when Claude finishes answering.
 4. Expand **Dex** to see discovered species, catch counts, and records.
 
-To try it without a Claude turn, run `/lure-demo` to cast, wait a while, then run it again to reel in.
+To try it without a Claude turn, run `/pixel-fishing-demo` to cast, wait a while, then run it again to reel in.
 
 **Display and language:** Surfaces with `Svg` support show the pixel art scene. The terminal currently shows text status, catch statistics, and the fish collection. The game checks Claude's `language` setting first, then the system locale if no language is set. It uses Traditional Chinese for Traditional Chinese settings and English for other languages.
 
@@ -81,8 +81,8 @@ Turns under 30 seconds cannot draw rare fish. Other tiers use weighted draws bas
 
 | Command | What it does |
 |---|---|
-| `/lure` | Opens the fishing pane; it also opens automatically at session start |
-| `/lure-demo` | Starts a fishing trip without a Claude prompt; run it again to reel in and decide the catch |
+| `/pixel-fishing` | Opens the fishing pane; it also opens automatically at session start |
+| `/pixel-fishing-demo` | Starts a fishing trip without a Claude prompt; run it again to reel in and decide the catch |
 
 ## Saves and runtime
 
@@ -98,14 +98,18 @@ From PowerShell or another shell:
 
 ```bash
 claude plugin marketplace update pixel-fishing
-claude plugin update lure-8bit@pixel-fishing
+claude plugin update pixel-fishing@pixel-fishing
 ```
 
 Restart Claude Code afterward to load the new version.
 
+### Switching from an earlier installation
+
+Version 0.2.0 uses `pixel-fishing` as the plugin name and `/pixel-fishing` and `/pixel-fishing-demo` as its commands. Disable the previous fishing plugin in `/plugin` before installing this version, so only one fishing plugin handles each turn. The new plugin identity uses its own store; records from an earlier identity are not transferred automatically. Keep the previous installation's data if you want to retain those records.
+
 ### The pane did not appear after installation
 
-Try `/lure`. If the command is missing, run `/plugin`, check that `lure-8bit` is installed and enabled, then follow the reload instructions or start a new session. The terminal currently shows text only; pixel art requires a host surface with `Svg` support.
+Try `/pixel-fishing`. If the command is missing, run `/plugin`, check that `pixel-fishing` is installed and enabled, then follow the reload instructions or start a new session. The terminal currently shows text only; pixel art requires a host surface with `Svg` support.
 
 ### Why did I catch nothing, or why did my lure change?
 
@@ -164,6 +168,10 @@ The main canvas is **384×216**. Background layers are **128×72**, scaled by an
 
 Images were generated with image_gen, then cropped, palette-adjusted, aligned to the pixel grid, and checked for transparency. Rods and simple UI use integer-pixel drawing. Generation prompts and style references are included in the asset pack.
 
+## License
+
+Source code and textual documentation are licensed under [MIT](LICENSE). Pixel artwork is reserved, including sprites, scenes, encoded pixel data, preview images, and demo media. The artwork is provided for use with pixel-fishing; reuse or redistribution in another project requires separate permission. See [NOTICE](NOTICE) and the [asset license](fishing-mod-assets-v1/LICENSE.assets.txt).
+
 ## Support
 
-lure-8bit is an original project by s7788. If you enjoy it, you can [buy the author a coffee on PayPal](https://www.paypal.me/s7788pixel) to support further development.
+pixel-fishing is an original project by s7788. If you enjoy it, you can [buy the author a coffee on PayPal](https://www.paypal.me/s7788pixel) to support further development.

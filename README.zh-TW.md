@@ -1,14 +1,14 @@
-# Pixel Fishing
+# pixel-fishing
 
 [English](README.md) | 繁體中文
 
 **Claude 在工作，你的 8-bit 釣手在釣魚。**
 
-Claude Code 的側邊面板外掛（`lure-8bit`）。你送出提示，釣手就拋竿、收線、操作路亞；Claude 回答完，這一竿會釣到魚或空軍。釣到魚後，自動演出作合、搏魚、抄網上岸、展示漁獲與放流。中斷回合則脫鉤。
+Claude Code 的側邊面板外掛（`pixel-fishing`）。你送出提示，釣手就拋竿、收線、操作路亞；Claude 回答完，這一竿會釣到魚或空軍。釣到魚後，自動演出作合、搏魚、抄網上岸、展示漁獲與放流。中斷回合則脫鉤。
 
 在湖泊、海岸與船上輪流下竿，搭配六種路亞，收集 12 種魚的圖鑑，刷新最長與最重紀錄。回合越長，越有機會釣到大魚與稀有魚。
 
-![Pixel Fishing 遊戲展示：湖泊、海岸與船上的拋竿、搏魚、起魚、漁獲卡與放流](docs/media/demo.zh-TW.gif)
+![pixel-fishing 遊戲展示：湖泊、海岸與船上的拋竿、搏魚、起魚、漁獲卡與放流](docs/media/demo.zh-TW.gif)
 
 動圖直接使用遊戲繪圖程式，展示三趟成功釣獲的範例，較長回合的操作時間採片段呈現。完整素材可看[繁中總覽圖](fishing-mod-assets-v1/overview.png)，或下載[完整素材包](fishing-mod-assets-v1.zip)，開啟其中的 `preview.html` 檢視場景與動作。
 
@@ -19,7 +19,7 @@ Claude Code 的側邊面板外掛（`lure-8bit`）。你送出提示，釣手就
 在 Claude Code 終端機 session 的提示列輸入：
 
 ```text
-/plugin install lure-8bit --marketplace s7788/pixel-fishing
+/plugin install pixel-fishing --marketplace s7788/pixel-fishing
 ```
 
 依提示確認新增 marketplace，再選擇安裝範圍。若安裝後提示需要重新載入，依提示操作。
@@ -27,7 +27,7 @@ Claude Code 的側邊面板外掛（`lure-8bit`）。你送出提示，釣手就
 也可以從 PowerShell 或其他 shell 安裝：
 
 ```bash
-claude plugin install lure-8bit --marketplace s7788/pixel-fishing
+claude plugin install pixel-fishing --marketplace s7788/pixel-fishing
 ```
 
 從 shell 安裝後，開啟新的 Claude Code session，或在已開啟的 session 執行 `/reload-plugins`。安裝流程詳見 [Claude Code 官方說明](https://code.claude.com/docs/en/discover-plugins)。
@@ -35,17 +35,17 @@ claude plugin install lure-8bit --marketplace s7788/pixel-fishing
 若已經加入過這個 marketplace，也可以直接使用完整外掛名稱安裝：
 
 ```bash
-claude plugin install lure-8bit@pixel-fishing
+claude plugin install pixel-fishing@pixel-fishing
 ```
 
 ### 開始第一趟釣行
 
-1. 外掛載入後會在 session 開始時自動開啟 **Lure** 面板；也可以輸入 `/lure` 開啟。
+1. 外掛載入後會在 session 開始時自動開啟 **pixel-fishing** 面板；也可以輸入 `/pixel-fishing` 開啟。
 2. 在面板下方選擇路亞，或保留預設的「隨機」。
 3. 照常送出提示給 Claude，釣手會自動開始釣魚，等 Claude 回答完再結算。
 4. 展開「圖鑑」，查看已釣到的魚種、數量與紀錄。
 
-想先試玩，可以輸入 `/lure-demo` 拋竿，等一段時間後再輸入一次收竿。
+想先試玩，可以輸入 `/pixel-fishing-demo` 拋竿，等一段時間後再輸入一次收竿。
 
 **畫面與語言：** 支援像素畫面的介面顯示釣魚場景；終端機目前顯示文字狀態、漁獲統計與圖鑑。遊戲先讀取 Claude 的 `language` 設定，未設定時再看系統地區；繁體中文顯示中文，其他語言顯示英文。
 
@@ -81,8 +81,8 @@ claude plugin install lure-8bit@pixel-fishing
 
 | 指令 | 用途 |
 |---|---|
-| `/lure` | 開啟釣魚面板；session 開始時也會自動開啟 |
-| `/lure-demo` | 不送出 Claude 提示，手動開始一趟釣行；再次執行時收竿結算 |
+| `/pixel-fishing` | 開啟釣魚面板；session 開始時也會自動開啟 |
+| `/pixel-fishing-demo` | 不送出 Claude 提示，手動開始一趟釣行；再次執行時收竿結算 |
 
 ## 存檔與執行方式
 
@@ -98,14 +98,18 @@ claude plugin install lure-8bit@pixel-fishing
 
 ```bash
 claude plugin marketplace update pixel-fishing
-claude plugin update lure-8bit@pixel-fishing
+claude plugin update pixel-fishing@pixel-fishing
 ```
 
 完成後重新啟動 Claude Code，載入新版本。
 
+### 從先前的安裝切換
+
+0.2.0 版統一使用 `pixel-fishing` 作為外掛名稱，指令為 `/pixel-fishing` 與 `/pixel-fishing-demo`。安裝本版前，請先在 `/plugin` 停用原本的釣魚外掛，避免兩個外掛同時處理回合。新的外掛識別使用獨立存檔，先前識別下的紀錄不會自動轉入；若要保留那些紀錄，請保留原安裝的資料。
+
 ### 安裝後沒有看到面板？
 
-先輸入 `/lure`。若找不到指令，執行 `/plugin`，確認 `lure-8bit` 已安裝並啟用，再依提示重新載入外掛或開啟新的 session。終端機目前只顯示文字介面；像素場景需要宿主介面支援 `Svg` 元件。
+先輸入 `/pixel-fishing`。若找不到指令，執行 `/plugin`，確認 `pixel-fishing` 已安裝並啟用，再依提示重新載入外掛或開啟新的 session。終端機目前只顯示文字介面；像素場景需要宿主介面支援 `Svg` 元件。
 
 ### 為什麼沒釣到魚，或路亞自己換了？
 
@@ -164,6 +168,10 @@ npm run validate:assets
 
 圖片由內建 image_gen 生成，再經切圖、調色、像素對齊與透明度檢查；釣竿和簡單介面採整數像素繪製。生成提示詞與風格參考保存在素材包內。
 
+## 授權
+
+程式碼與文字文件採 [MIT 授權](LICENSE)。像素素材保留權利，包括角色、場景、編碼像素資料、預覽圖與展示媒體；素材提供於 pixel-fishing 使用，若要在其他專案重用或重新散布，需另取得作者許可。詳見 [NOTICE](NOTICE) 與[素材授權](fishing-mod-assets-v1/LICENSE.assets.txt)。
+
 ## 贊助
 
-lure-8bit 是 s7788 的原創作品。如果你喜歡這個小遊戲，歡迎透過 [PayPal 請作者喝杯咖啡](https://www.paypal.me/s7788pixel)，支持後續開發。
+pixel-fishing 是 s7788 的原創作品。如果你喜歡這個小遊戲，歡迎透過 [PayPal 請作者喝杯咖啡](https://www.paypal.me/s7788pixel)，支持後續開發。

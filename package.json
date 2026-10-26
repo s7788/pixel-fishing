@@ -1,12 +1,14 @@
 {
   "name": "pixel-fishing",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "license": "MIT",
   "private": true,
-  "description": "8-bit lure fishing mod for Claude Code (lure-8bit) and its reference asset pack",
+  "description": "8-bit lure fishing mod for Claude Code (pixel-fishing) and its reference asset pack",
   "engines": {
     "node": ">=20.9.0"
   },
   "scripts": {
+    "build:icon": "node tools/build-icon.cjs",
     "build:demo": "tsx --tsconfig tools/tsconfig.demo.json tools/build-demo.mts",
     "gen:sprites": "node tools/gen-sprites.cjs",
     "validate": "claude plugin validate .",
