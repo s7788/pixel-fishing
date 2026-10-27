@@ -15,6 +15,7 @@ const SAVE_KEY = 'save'
 const DEX_KEY = 'dexOpen'
 
 const phase = atom({ plugin: 'pixel-fishing', key: 'phase' } as const, 'idle' as LurePhase)
+const activeTurnId = atom({ plugin: 'pixel-fishing', key: 'activeTurnId' } as const, null as string | null)
 const turnStartedAt = atom({ plugin: 'pixel-fishing', key: 'turnStartedAt' } as const, null as number | null)
 const lastElapsedMs = atom({ plugin: 'pixel-fishing', key: 'lastElapsedMs' } as const, 0)
 const world = atom({ plugin: 'pixel-fishing', key: 'world' } as const, null as LureWorld | null)
@@ -103,8 +104,9 @@ async function toggleDex($: EngineInterface): Promise<void> {
 }
 
 /** A turn (or the demo) starts: the angler heads to the next venue and casts. */
-async function startTurn($: EngineInterface, label: string): Promise<void> {
+async function startTurn($: EngineInterface, label: string, turnId: string | null = null): Promise<void> {
   const now = await $.clock.now()
+  await update($, activeTurnId, () => turnId)
   await update($, turnStartedAt, () => now)
   await update($, phase, () => 'fishing')
   const game = await changeGame($, beginTurn)
@@ -113,7 +115,10 @@ async function startTurn($: EngineInterface, label: string): Promise<void> {
 }
 
 /** The turn ended: answered, the bite comes (or nothing does); interrupted, the fish gets off. */
-async function finishTurn($: EngineInterface, reason: string): Promise<void> {
+async function finishTurn($: EngineInterface, reason: string, turnId?: string): Promise<void> {
+  // Delayed/duplicate completion events must not end a newer running turn.
+  if (turnId !== undefined && turnId !== await read($, activeTurnId)) return
+  await update($, activeTurnId, () => null)
   const started = await read($, turnStartedAt)
   const now = await $.clock.now()
   const elapsed = started === null ? 0 : now - started
@@ -189,13 +194,13 @@ export const register: Register = on => {
 
   on('turn.start', async ($, e, next) => {
     if (e.agentId !== undefined) return next(e)
-    await serial(() => startTurn($, `turn.start ${e.turnId.slice(0, 8)}`))
+    await serial(() => startTurn($, `turn.start ${e.turnId.slice(0, 8)}`, e.turnId))
     return next(e)
   })
 
   on('turn.complete', async ($, e, next) => {
     if (e.agentId !== undefined) return next(e)
-    await serial(() => finishTurn($, e.reason))
+    await serial(() => finishTurn($, e.reason, e.turnId))
     return next(e)
   })
 

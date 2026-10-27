@@ -108,6 +108,8 @@ declare module 'claude-code' {
   interface PluginState {
     'pixel-fishing': {
       phase: LurePhase
+      /** Only this main turn's completion may end the current cast. */
+      activeTurnId: string | null
       turnStartedAt: number | null
       lastElapsedMs: number
       world: LureWorld | null

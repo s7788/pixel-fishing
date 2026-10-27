@@ -55,7 +55,8 @@ export function anglerAt(venue: Game['venue'], c: number): { anim: AnglerAnim; f
     const r = t - MOTION.castTicks
     return { anim: ((r >> 3) & 1) === 0 ? 'retrieve' : 'twitch', frame: r & 3 }
   }
-  return { anim: 'idle', frame: ((t - MOTION.retrieveEnd) >> 1) & 3 }
+  // Keep working the lure while AI is busy, even between retrieves and casts.
+  return { anim: 'twitch', frame: ((t - MOTION.retrieveEnd) >> 1) & 3 }
 }
 
 function placeAngler(g: Game, anim: AnglerAnim, frame: number): { angler: Placed; grip: Point } {

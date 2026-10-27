@@ -9,7 +9,7 @@ import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, lose, newGame, 
 import { idleAction } from './extras'
 import { fishFrame, fishIcon, fishPortrait, fishUnknown } from './sprites'
 import { t } from './i18n'
-import { layoutOf } from './layout'
+import { anglerAt, layoutOf } from './layout'
 import { lureSvg, statsSvg, statsText } from './svg'
 
 const PANE = {
@@ -27,6 +27,16 @@ const PANE = {
 } as const
 
 const MIN = 60_000
+
+test('AI work always uses fishing animations, including the pause between casts', () => {
+  for (const venue of VENUE_ORDER) {
+    const g = beginTurn(chooseVenue(newGame(7), venue))
+    for (let tick = 0; tick < MOTION.cycle * 3; tick++) {
+      expect(anglerAt(venue, tick).anim).not.toBe('idle')
+      expect(idleAction({ ...g, modeT: tick })).toBeNull()
+    }
+  }
+})
 
 test('chosen spots persist across casts, lock while fishing, and migrate from old saves', () => {
   let g = chooseVenue(newGame(31), 'coast')
@@ -450,6 +460,21 @@ test('main turns cast, answers bring the fish in, interrupts lose it; subagent t
   expect(await mode()).toBe('8-bit lure fishing: working')
   await $.turn.complete({ reason: 'aborted', turnId: 't2' } as never)
   expect(await mode()).toBe('8-bit lure fishing: lost')
+})
+
+test('a late completion from the previous turn cannot stop fishing during current AI work', async ($, on) => {
+  await boot($, on)
+  await $.turn.start({ text: 'first', turnId: 'old' })
+  await $.turn.start({ text: 'still thinking', turnId: 'current' })
+  await $.turn.complete({ reason: 'answer', turnId: 'old' } as never)
+  let ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect((await ui.find({ type: 'Svg' }))?.props.alt).toBe('8-bit lure fishing: working')
+  expect(await ui.find({ key: 'venue-coast' })).toBeUndefined()
+  await ui.unmount()
+  await $.turn.complete({ reason: 'answer', turnId: 'current' } as never)
+  ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect(['8-bit lure fishing: bite', '8-bit lure fishing: empty']).toContain((await ui.find({ type: 'Svg' }))?.props.alt)
+  await ui.unmount()
 })
 
 test('the terminal draws the pane as text, with the tally; the desktop draws two Svgs', async ($, on) => {
