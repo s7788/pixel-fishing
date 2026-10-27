@@ -1,7 +1,7 @@
 import type { LureGame as Game, LureLang, LurePhase } from '../types'
 import { CANVAS, FISH, MOTION, SCENE_SCALE } from './data'
 import { idleAction } from './extras'
-import { dexCount } from './engine'
+import { dexCount, gameForPhase } from './engine'
 import type { TextId } from './i18n'
 import { cmText, kgText, t } from './i18n'
 import type { Layout, Placed } from './layout'
@@ -172,6 +172,7 @@ const CSS =
 
 /** The picture at one tick, in `lang`. */
 export function lureSvg(phase: LurePhase, g: Game, tick: number, clock: string, lang: LureLang = 'en'): string {
+  g = gameForPhase(g, phase)
   const lay = layoutOf(g, tick)
   let actors = ''
   if (lay.fish !== null && !lay.isCard && g.mode !== 'land') actors += placed(lay.fish, lay.fish.shadow, lay.fish.shadow ? 0.6 : undefined)
@@ -192,6 +193,7 @@ export function lureSvg(phase: LurePhase, g: Game, tick: number, clock: string, 
 
 /** The words a surface without Svg shows: phase, venue, lure, the clock. */
 export function hudText(phase: LurePhase, g: Game, clock: string, lang: LureLang = 'en'): string {
+  g = gameForPhase(g, phase)
   const sep = t(lang, 'hudSep')
   return `${t(lang, idleAction(g) ?? PHASE_TEXT[phase])}${sep}${t(lang, g.venue)}${sep}${t(lang, g.lure)}${sep}${clock}`
 }

@@ -5,12 +5,12 @@ import type { TestBody } from 'claude-code/testing'
 import type { LureLang, LureVenue } from '../types'
 import { FISH, LURE_CHOICES, MOTION, ODDS, VENUES, VENUE_ORDER } from './data'
 import type { Game } from './engine'
-import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, lose, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
+import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, gameForPhase, lose, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
 import { idleAction } from './extras'
 import { fishFrame, fishIcon, fishPortrait, fishUnknown } from './sprites'
 import { t } from './i18n'
 import { anglerAt, layoutOf } from './layout'
-import { lureSvg, statsSvg, statsText } from './svg'
+import { hudText, lureSvg, statsSvg, statsText } from './svg'
 
 const PANE = {
   plugin: 'pixel-fishing',
@@ -27,6 +27,40 @@ const PANE = {
 } as const
 
 const MIN = 60_000
+
+test('the host fishing phase overrides a stale resting character in both desktop and terminal', () => {
+  for (const venue of VENUE_ORDER) {
+    for (const modeT of [48, 128, 208]) {
+      const stale = { ...chooseVenue(newGame(7), venue), modeT }
+      const svg = lureSvg('fishing', stale, modeT, '01:23', 'zh-TW')
+      expect(svg).not.toContain('修理釣具')
+      expect(svg).not.toContain('營火烤魚')
+      expect(svg).not.toContain('坐著發呆')
+      expect(hudText('fishing', stale, '01:23', 'zh-TW')).toContain('垂釣中')
+      const resumed = gameForPhase(stale, 'fishing')
+      expect(resumed.mode).toBe('working')
+      expect(resumed.modeT).toBe(0)
+      expect(resumed.seed).toBe(stale.seed)
+      expect(resumed.castNo).toBe(stale.castNo)
+      expect(resumed.venue).toBe(stale.venue)
+      expect(resumed.lure).toBe(stale.lure)
+      expect(gameForPhase(resumed, 'fishing')).toBe(resumed)
+      expect(gameForPhase(stale, 'idle')).toBe(stale)
+    }
+  }
+})
+
+test('recovered fishing advances from a cast and settles once without changing existing records', () => {
+  let g = { ...newGame(7), modeT: 128, caught: 2, dex: { largemouth_bass: { count: 2, maxMm: 600, maxG: 3000 } } }
+  const recovered = gameForPhase(g, 'fishing')
+  expect(anglerAt(recovered.venue, recovered.modeT).anim).toBe('cast')
+  expect(step(recovered).modeT).toBe(1)
+  const settled = endTurn(recovered, MIN)
+  expect(['bite', 'empty']).toContain(settled.mode)
+  expect(settled.caught + settled.skunks).toBe(3)
+  expect(settled.dex.largemouth_bass!.maxMm).toBe(600)
+  expect(endTurn(settled, MIN)).toBe(settled)
+})
 
 test('AI work always uses fishing animations, including the pause between casts', () => {
   for (const venue of VENUE_ORDER) {
@@ -484,6 +518,7 @@ test('the terminal draws the pane as text, with the tally; the desktop draws two
   expect(await ui.find({ type: 'Text', text: /Caught 0/ })).toBeDefined()
   await ui.unmount()
   const desk = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect(await desk.find({ type: 'Text', text: 'pixel-fishing v0.2.1' })).toBeDefined()
   const svgs = await desk.findAll({ type: 'Svg' })
   expect(svgs.map(s => s.props.alt)).toEqual(['8-bit lure fishing: idle', 'Caught 0'])
   await desk.unmount()

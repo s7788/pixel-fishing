@@ -1,4 +1,4 @@
-import type { FishId, LureCatch, LureChoice, LureGame as Game, LureId, LureMode, LureVenue, VenueChoice } from '../types'
+import type { FishId, LureCatch, LureChoice, LureGame as Game, LureId, LureMode, LurePhase, LureVenue, VenueChoice } from '../types'
 import type { FishDef } from './data'
 import { FISH, MOTION, ODDS, SIZE_SKEW, TIER_UP_TO_MS, VENUES, VENUE_ORDER } from './data'
 
@@ -74,6 +74,13 @@ const say = (g: Game, label: string): Game => ({ ...g, label, labelT: 0 })
 
 /** True while the lure is in the water: the modes a turn's end or interrupt acts on. */
 export const isWorking = (g: Game): boolean => g.mode === 'working'
+
+/** The host's running turn takes priority over a stale idle/landing animation. */
+export function gameForPhase(g: Game, phase: LurePhase): Game {
+  if (phase !== 'fishing' || isWorking(g)) return g
+  // Resume this cast at the current spot without rerolling its lure or records.
+  return say(enter(g, 'working', { catch: null, outcome: null, biteT: 0 }), 'castOut')
+}
 
 /** The lure a venue ties on for a pick: the pick when the venue allows it, else the venue's first; `random` draws one. */
 export function lureFor(venue: LureVenue, choice: LureChoice, seed: number): [LureId, number] {

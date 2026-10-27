@@ -2,9 +2,9 @@ import { atom, read, update } from 'claude-code'
 import type { EngineInterface, Register, Timer } from 'claude-code'
 
 import type { LureEvent, LureLang, LurePhase, LureWorld, VenueChoice } from '../types'
-import { FISH, LURE_CHOICES, SAVE_EVERY, TICK_MS, VENUE_ORDER, VENUES } from './data'
+import { FISH, GAME_VERSION, LURE_CHOICES, SAVE_EVERY, TICK_MS, VENUE_ORDER, VENUES } from './data'
 import type { Game } from './engine'
-import { beginTurn, chooseVenue, chooseLure, endTurn, lose, newGame, restore, step } from './engine'
+import { beginTurn, chooseVenue, chooseLure, endTurn, gameForPhase, lose, newGame, restore, step } from './engine'
 import { cmText, kgText, pickLang, t } from './i18n'
 import { LURE_SIZE, STATS_SIZE, hudText, lureSvg, statsSvg, statsText } from './svg'
 
@@ -60,7 +60,7 @@ async function advance($: EngineInterface): Promise<void> {
   let isIdle = false
   await update($, world, w => {
     if (w === null) return w
-    const game = step(w.game, started === null ? 0 : Math.max(0, n - started))
+    const game = step(gameForPhase(w.game, p), started === null ? 0 : Math.max(0, n - started))
     if ((w.tick + 1) % SAVE_EVERY === 0 || game.mode !== w.game.mode) saved = game
     isIdle = game.mode === 'idle'
     return { tick: w.tick + 1, now: n, game }
@@ -118,6 +118,7 @@ async function startTurn($: EngineInterface, label: string, turnId: string | nul
 async function finishTurn($: EngineInterface, reason: string, turnId?: string): Promise<void> {
   // Delayed/duplicate completion events must not end a newer running turn.
   if (turnId !== undefined && turnId !== await read($, activeTurnId)) return
+  const p = await read($, phase)
   await update($, activeTurnId, () => null)
   const started = await read($, turnStartedAt)
   const now = await $.clock.now()
@@ -125,7 +126,10 @@ async function finishTurn($: EngineInterface, reason: string, turnId?: string): 
   await update($, lastElapsedMs, () => elapsed)
   await update($, turnStartedAt, () => null)
   await update($, phase, () => 'landing')
-  const game = await changeGame($, g => (reason === 'answer' ? endTurn(g, elapsed) : lose(g)))
+  const game = await changeGame($, g => {
+    const current = gameForPhase(g, p)
+    return reason === 'answer' ? endTurn(current, elapsed) : lose(current)
+  })
   await save($, game)
   const c = game.catch
   const what = game.outcome === 'fish' && c !== null ? `${c.fishId} ${cmText(c.mm)}cm ${kgText(c.g)}kg${c.isNew ? ' new' : ''}` : (game.outcome ?? '-')
@@ -215,7 +219,7 @@ export const register: Register = on => {
     const lg = await read($, lang)
     const isDex = await read($, dexOpen)
     if (w === null) return <Text dimColor>{t(lg, 'loading')}</Text>
-    const g = w.game
+    const g = gameForPhase(w.game, p)
     const elapsed = started === null ? last : Math.max(0, w.now - started)
     const clock = fmt(elapsed)
     // pickable as soon as the turn ends, whether or not the fish is landed yet (engine.ts chooseLure)
@@ -266,6 +270,7 @@ export const register: Register = on => {
           </Text>
         )}
         <Text dimColor>{t(lg, showPool ? 'poolHint' : 'fishHint', { fish: fishHint })}</Text>
+        <Text dimColor>{`pixel-fishing v${GAME_VERSION}`}</Text>
         <Button key="dex" plain onPress={() => toggleDex($)}>
           {t(lg, isDex ? 'dexOpen' : 'dexClosed')}
         </Button>
