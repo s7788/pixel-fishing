@@ -8,7 +8,7 @@ import type { FishId, LureChoice, LureId, LureVenue } from '../types'
 
 /** One frame per tick: the hooks step the game and send the frame on show. */
 export const TICK_MS = 125
-export const GAME_VERSION = '0.2.1'
+export const GAME_VERSION = '0.2.2'
 
 /** The picture: the pack's 384x216 canvas; scene layers are 128x72 shown at 3x. */
 export const CANVAS = { width: 384, height: 216 } as const

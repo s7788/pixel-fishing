@@ -116,6 +116,10 @@ Try `/pixel-fishing`. If the command is missing, run `/plugin`, check that `pixe
 
 A normal answer can still end with an empty cast. Interruptions and errors lose the fish. In Auto rotate, each trip moves to the next spot, and an incompatible lure is replaced with that spot's default. The boat, for example, only uses the Boat Jig.
 
+### Why is the spot stuck after an update?
+
+Check that Auto rotate is selected. Version 0.2.2 fixes hot reload retaining older live state without `venueChoice`, which could prevent spot rotation. Loading the update fills and saves missing fields while preserving the current cast and records. On earlier versions, start a new session or select Auto rotate after the turn ends.
+
 ## Contributing
 
 Open a shell in the repository root to load a local copy:

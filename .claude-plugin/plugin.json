@@ -1,6 +1,6 @@
 {
   "name": "pixel-fishing",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "description": "An 8-bit lure angler in a side pane who casts while Claude works and lands (or loses) the fish when Claude answers. Lake, coast and boat, eighteen species, six lures. Local only: no model calls, no network.",
   "author": {

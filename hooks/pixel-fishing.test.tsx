@@ -5,7 +5,7 @@ import type { TestBody } from 'claude-code/testing'
 import type { LureLang, LureVenue } from '../types'
 import { FISH, LURE_CHOICES, MOTION, ODDS, VENUES, VENUE_ORDER } from './data'
 import type { Game } from './engine'
-import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, gameForPhase, lose, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
+import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, gameForPhase, lose, migrateGame, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
 import { idleAction } from './extras'
 import { fishFrame, fishIcon, fishPortrait, fishUnknown } from './sprites'
 import { t } from './i18n'
@@ -27,6 +27,41 @@ const PANE = {
 } as const
 
 const MIN = 60_000
+
+test('a legacy live state without venueChoice rotates from coast to boat instead of throwing', () => {
+  const legacy = { ...newGame(57), castNo: 20, venue: 'coast' as const } as Partial<Game>
+  delete legacy.venueChoice
+  let g = beginTurn(legacy as Game)
+  expect(g.venue).toBe('boat')
+  expect(g.venueChoice).toBe('auto')
+  expect(g.castNo).toBe(21)
+  g = beginTurn(run(lose(g), 40))
+  expect(g.venue).toBe('lake')
+  g = beginTurn(run(lose(g), 40))
+  expect(g.venue).toBe('coast')
+})
+
+test('hot reload migrates missing fields while preserving a live cast and its records', () => {
+  const live = { ...beginTurn(newGame(57)), modeT: 123, caught: 2,
+    dex: { mahi_mahi: { count: 2, maxMm: 1234, maxG: 9876 } },
+    longest: { fishId: 'mahi_mahi' as const, mm: 1234 },
+  }
+  const old = { ...live } as Partial<Game>
+  delete old.venueChoice
+  delete old.heaviest
+  const migrated = migrateGame(old as Game)
+  expect(migrated.venueChoice).toBe('auto')
+  expect(migrated.heaviest).toBeNull()
+  expect(migrated.mode).toBe('working')
+  expect(migrated.modeT).toBe(123)
+  expect(migrated.seed).toBe(live.seed)
+  expect(migrated.castNo).toBe(live.castNo)
+  expect(migrated.dex).toEqual(live.dex)
+  expect(migrated.longest).toEqual(live.longest)
+  expect(migrated.caught).toBe(2)
+  const fixed = chooseVenue(run(lose(live), 40), 'coast')
+  expect(migrateGame(fixed).venueChoice).toBe('coast')
+})
 
 test('the host fishing phase overrides a stale resting character in both desktop and terminal', () => {
   for (const venue of VENUE_ORDER) {
@@ -518,7 +553,7 @@ test('the terminal draws the pane as text, with the tally; the desktop draws two
   expect(await ui.find({ type: 'Text', text: /Caught 0/ })).toBeDefined()
   await ui.unmount()
   const desk = await $.ui.mount({ ...PANE, surface: 'desktop' })
-  expect(await desk.find({ type: 'Text', text: 'pixel-fishing v0.2.1' })).toBeDefined()
+  expect(await desk.find({ type: 'Text', text: 'pixel-fishing v0.2.2' })).toBeDefined()
   const svgs = await desk.findAll({ type: 'Svg' })
   expect(svgs.map(s => s.props.alt)).toEqual(['8-bit lure fishing: idle', 'Caught 0'])
   await desk.unmount()

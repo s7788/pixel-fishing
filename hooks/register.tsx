@@ -4,7 +4,7 @@ import type { EngineInterface, Register, Timer } from 'claude-code'
 import type { LureEvent, LureLang, LurePhase, LureWorld, VenueChoice } from '../types'
 import { FISH, GAME_VERSION, LURE_CHOICES, SAVE_EVERY, TICK_MS, VENUE_ORDER, VENUES } from './data'
 import type { Game } from './engine'
-import { beginTurn, chooseVenue, chooseLure, endTurn, gameForPhase, lose, newGame, restore, step } from './engine'
+import { beginTurn, chooseVenue, chooseLure, endTurn, gameForPhase, lose, migrateGame, newGame, restore, step } from './engine'
 import { cmText, kgText, pickLang, t } from './i18n'
 import { LURE_SIZE, STATS_SIZE, hudText, lureSvg, statsSvg, statsText } from './svg'
 
@@ -158,8 +158,15 @@ export const register: Register = on => {
     const isDex = await $.store.get(DEX_KEY)
     if (typeof isDex === 'boolean') await update($, dexOpen, () => isDex)
     const now = await $.clock.now()
-    // a hot reload keeps the session's world; a new session restores the save
-    await update($, world, w => (w !== null ? w : { tick: 0, now, game: stored === undefined ? newGame(now) : restore(stored) }))
+    // Hot reload migrates live state without resetting its current cast or clock.
+    await serial(async () => {
+      let game: Game | undefined
+      await update($, world, w => {
+        game = w !== null ? migrateGame(w.game) : stored === undefined ? newGame(now) : restore(stored)
+        return w !== null ? { ...w, game } : { tick: 0, now, game }
+      })
+      if (game !== undefined) await save($, game)
+    })
     void $.ui.open({ id: PANE, title: TITLE })
     await note($, stored === undefined ? 'session.start (new angler)' : 'session.start (save restored)')
     animation?.cancel()

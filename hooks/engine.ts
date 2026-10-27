@@ -69,6 +69,16 @@ export function newGame(seed: number): Game {
   }
 }
 
+/** Fill new fields in both saved and live pre-upgrade state without ending a cast. */
+export function migrateGame(saved: Game): Game {
+  return {
+    ...newGame(saved.seed), ...saved,
+    saveSchemaVersion: SAVE_SCHEMA_VERSION,
+    venueChoice: saved.venueChoice ?? 'auto',
+    dex: { ...(saved.dex ?? {}) },
+  }
+}
+
 const enter = (g: Game, mode: LureMode, extra: Partial<Game> = {}): Game => ({ ...g, ...extra, mode, modeT: 0 })
 const say = (g: Game, label: string): Game => ({ ...g, label, labelT: 0 })
 
@@ -92,6 +102,8 @@ export function lureFor(venue: LureVenue, choice: LureChoice, seed: number): [Lu
 
 /** A main turn starts: the next venue, a lure for it, and the first cast. Anything under way is cut short. */
 export function beginTurn(g: Game): Game {
+  // A live state can predate venue selection when plugins are hot-reloaded.
+  if (g.venueChoice == null) g = { ...g, venueChoice: 'auto' }
   if (isWorking(g)) return g
   const venue = g.venueChoice === 'auto' ? VENUE_ORDER[g.castNo % VENUE_ORDER.length]! : g.venueChoice
   const [lure, seed] = lureFor(venue, g.lureChoice, g.seed)
@@ -246,8 +258,7 @@ export function step(g: Game, elapsedMs = 0): Game {
  * Fields a newer save has and an older one lacks take the new game's values.
  */
 export function restore(saved: Game): Game {
-  const base = newGame(saved.seed)
-  const g: Game = { ...base, ...saved, saveSchemaVersion: SAVE_SCHEMA_VERSION, dex: { ...(saved.dex ?? {}) }, label: '', labelT: MOTION.labelTicks }
+  const g: Game = { ...migrateGame(saved), label: '', labelT: MOTION.labelTicks }
   return g.mode === 'idle' ? g : enter(g, 'idle', { catch: isWorking(g) ? null : g.catch })
 }
 
