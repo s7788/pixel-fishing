@@ -6,7 +6,7 @@
 
 A side pane plugin for Claude Code (`pixel-fishing`). Send a prompt and your angler casts, retrieves, and works a lure. When Claude finishes answering, the cast ends with a catch or an empty line. A catch plays out automatically: hookset, fight, landing net, catch card, and release. Interrupt the turn and the fish gets away.
 
-Rotate between a lake, the coast, and a boat. Choose from six lures, collect 12 fish species, and set separate records for your longest and heaviest catches. Longer turns improve your chances of larger and rarer fish.
+Rotate between a lake, the coast, and a boat. Choose from six lures, collect 18 fish species, and set separate records for your longest and heaviest catches. Longer turns improve your chances of larger and rarer fish.
 
 ![pixel-fishing gameplay: casting, fighting, landing, catch cards, and release at the lake, coast, and boat](docs/media/demo.gif)
 
@@ -52,9 +52,10 @@ To try it without a Claude turn, run `/pixel-fishing-demo` to cast, wait a while
 ## How it plays
 
 - **One main turn, one fishing trip.** A prompt starts the trip; a normal answer decides the catch. An interruption or error loses the fish. Subagent turns do not affect your trip.
-- **Three spots rotate automatically.** Lake → coast → boat → lake. On shore, your angler casts, retrieves, and twitches the lure. On the boat, it drops a jig vertically and works it up and down.
-- **Choose a lure between turns.** There are six lures plus **Random**. You cannot change lures during a cast. If your selection does not fit the next spot, the game uses that spot's default lure. Random picks from the available lures each trip.
+- **Choose a spot or rotate automatically.** Pick Lake, Coast, or Boat between turns to stay at that spot. Auto rotate follows Lake → coast → boat → lake. On shore, your angler casts, retrieves, and twitches the lure. On the boat, it drops a jig vertically and works it up and down.
+- **Choose a lure between turns.** There are six lures plus **Random**; the picker shows lures available at the current spot, with a hint listing the species that favor the tied lure. You cannot change lures during a cast. If your selection does not fit the next spot, the game uses that spot's default lure. Random picks from the available lures each trip.
 - **Time affects the catch.** Longer turns reduce the chance of an empty cast and improve the odds of rarer species and larger sizes. The underwater shadow grows with the time tier; it is a hint about the tier, not the species. The species is drawn when the turn ends.
+- **Relax between casts.** After five idle seconds, the angler cycles through repairing tackle, grilling a fish by a shore campfire, and sitting and daydreaming, ten seconds per activity. On the boat, daydreaming replaces the campfire. A new turn starts fishing immediately. These are cosmetic activities and do not change catches or records.
 - **Build your collection and records.** Undiscovered fish appear as silhouettes. Discovered entries show the species, catch count, longest length, and heaviest weight. Records are kept per species and across all catches. Length and weight records can belong to different fish.
 - **Catches are released automatically.** The fight, netting, and release are animations. The catch is recorded as soon as the turn ends, so sending another prompt immediately does not lose it.
 
@@ -62,11 +63,11 @@ To try it without a Claude turn, run `/pixel-fishing-demo` to cast, wait a while
 
 | Spot | Available lures (default first) | Fish |
 |---|---|---|
-| Lake | Minnow, Popper, Pencil, Soft Worm | Largemouth Bass, Topmouth Culter, Striped Snakehead, Peacock Bass★ |
-| Coast | Minnow, Popper, Pencil, Shore Jig | Spotted Seabass, Great Barracuda, Indo-Pacific Tarpon, Malabar Grouper★ |
-| Boat | Boat Jig | Spanish Mackerel, Mahi-mahi, Greater Amberjack, Yellowfin Tuna★ |
+| Lake | Minnow, Popper, Pencil, Soft Worm | Largemouth Bass, Topmouth Culter, Striped Snakehead, Peacock Bass★, Rainbow Trout, Mandarin Fish★ |
+| Coast | Minnow, Popper, Pencil, Shore Jig | Spotted Seabass, Great Barracuda, Indo-Pacific Tarpon, Malabar Grouper★, Black Porgy, Giant Trevally★ |
+| Boat | Boat Jig | Spanish Mackerel, Mahi-mahi, Greater Amberjack, Yellowfin Tuna★, Red Seabream, Dogtooth Tuna★ |
 
-Each spot has two common species, one uncommon species, and one rare species (★). Each lake and coast species favors two lures; a favored lure doubles that species' selection weight. All boat species use the Boat Jig. Fish pools and sizes are game settings.
+Each spot has two common species, two uncommon species, and two rare species (★). Lake and coast species favor one or two lures; a favored lure doubles that species' selection weight. All boat species use the Boat Jig. Fish pools and sizes are game settings.
 
 | Claude main turn duration | Chance of an empty cast |
 |---|---|
@@ -87,7 +88,7 @@ Turns under 30 seconds cannot draw rare fish. Other tiers use weighted draws bas
 ## Saves and runtime
 
 - **Fishing runs locally.** The game updates eight times a second, makes no model calls, and sends no network requests. It does not call a model to decide your catch. Your normal Claude work is billed as usual.
-- **Progress survives sessions.** The collection, catch counts, lure selection, and length/weight records live in the plugin's own store. Sessions share one angler.
+- **Progress survives sessions.** The collection, catch counts, lure selection, and length/weight records live in the plugin's own store. Sessions share one angler. The chosen spot is saved too; older saves default to Auto rotate and retain their collection and records.
 - **Reopening returns you to idle.** If you close a session during a cast, reopening does not resume that trip or count it as a lost fish. Saved catch records remain.
 
 ## Updates and troubleshooting
@@ -113,7 +114,7 @@ Try `/pixel-fishing`. If the command is missing, run `/plugin`, check that `pixe
 
 ### Why did I catch nothing, or why did my lure change?
 
-A normal answer can still end with an empty cast. Interruptions and errors lose the fish. Each trip moves to the next spot, and an incompatible lure is replaced with that spot's default. The boat, for example, only uses the Boat Jig.
+A normal answer can still end with an empty cast. Interruptions and errors lose the fish. In Auto rotate, each trip moves to the next spot, and an incompatible lure is replaced with that spot's default. The boat, for example, only uses the Boat Jig.
 
 ## Contributing
 
@@ -142,7 +143,9 @@ This runs the game engine and SVG renderer with deterministic example casts and 
 
 ## Asset pack and preview
 
-The repository includes **252 game PNGs** covering three layered fishing spots, 12 fish species, nine angler animations, six lures, tackle, effects, and record UI. It also includes source images, atlases, animation sequences, anchors, and RLE pixel data.
+The original asset pack includes **252 game PNGs** covering three layered fishing spots, 12 fish species, nine angler animations, six lures, tackle, effects, and record UI. It also includes source images, atlases, animation sequences, anchors, and RLE pixel data.
+
+The game adds six native pixel fish designs and seated idle poses, tackle, and campfire props in `hooks/extras.ts`; these additions are separate from the original downloadable pack.
 
 - [Download the full asset pack ZIP](fishing-mod-assets-v1.zip)
 - [Asset usage guide (Traditional Chinese)](fishing-mod-assets-v1/README.zh-TW.md)

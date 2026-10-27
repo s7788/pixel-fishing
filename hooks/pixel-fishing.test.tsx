@@ -5,7 +5,9 @@ import type { TestBody } from 'claude-code/testing'
 import type { LureLang, LureVenue } from '../types'
 import { FISH, LURE_CHOICES, MOTION, ODDS, VENUES, VENUE_ORDER } from './data'
 import type { Game } from './engine'
-import { beginTurn, chooseLure, drawCatch, endTurn, lose, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
+import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, lose, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
+import { idleAction } from './extras'
+import { fishFrame, fishIcon, fishPortrait, fishUnknown } from './sprites'
 import { t } from './i18n'
 import { layoutOf } from './layout'
 import { lureSvg, statsSvg, statsText } from './svg'
@@ -25,6 +27,83 @@ const PANE = {
 } as const
 
 const MIN = 60_000
+
+test('chosen spots persist across casts, lock while fishing, and migrate from old saves', () => {
+  let g = chooseVenue(newGame(31), 'coast')
+  expect(g.venue).toBe('coast')
+  g = chooseLure(g, 'shore_jig')
+  for (let i = 0; i < 4; i++) {
+    g = beginTurn(g)
+    expect(g.venue).toBe('coast')
+    expect(g.lure).toBe('shore_jig')
+    expect(chooseVenue(g, 'boat')).toEqual(g)
+    g = run(lose(g), 40)
+  }
+  expect(restore(g).venueChoice).toBe('coast')
+  const old = { ...g } as Partial<Game>
+  delete old.venueChoice
+  expect(restore(old as Game).venueChoice).toBe('auto')
+  g = chooseVenue(g, 'auto')
+  expect(beginTurn(g).venue).toBe(VENUE_ORDER[g.castNo % 3])
+})
+
+test('all 18 species can be caught only at their own spot and have complete artwork', () => {
+  expect(FISH.length).toBe(18)
+  for (const venue of VENUE_ORDER) {
+    expect(poolOf(venue).length).toBe(6)
+    let g = beginTurn(chooseVenue(newGame(57), venue))
+    const seen = new Set<string>()
+    for (let i = 0; i < 2500; i++) {
+      const drawn = drawCatch(g, 10 * MIN)
+      g = { ...g, seed: drawn.seed }
+      if (drawn.catch) {
+        expect(poolOf(venue).map(f => f.id)).toContain(drawn.catch.fishId)
+        seen.add(drawn.catch.fishId)
+      }
+    }
+    expect(seen.size).toBe(6)
+  }
+  for (const fish of FISH) {
+    for (const sprite of [fishIcon(fish.id), fishPortrait(fish.id), fishUnknown(fish.id), ...Array.from({ length: 8 }, (_, i) => fishFrame(fish.id, i))]) {
+      expect(sprite.rows.length).toBe(sprite.h)
+    }
+  }
+})
+
+test('lure choices change species odds within a chosen venue', () => {
+  const rates = ['popper', 'soft_worm'].map(lure => {
+    let g = beginTurn(chooseLure(chooseVenue(newGame(155), 'lake'), lure as 'popper' | 'soft_worm'))
+    let count = 0
+    for (let i = 0; i < 4000; i++) {
+      const drawn = drawCatch(g, 10 * MIN)
+      g = { ...g, seed: drawn.seed }
+      if (drawn.catch?.fishId === 'mandarin_fish') count++
+    }
+    return count
+  })
+  expect(rates[1]!).toBeGreaterThan(rates[0]! * 1.5)
+})
+
+test('idle activities cycle without changing catches or RNG, and a cast interrupts them', () => {
+  for (const venue of VENUE_ORDER) {
+    const g = chooseVenue(newGame(21), venue)
+    expect(idleAction(g)).toBeNull()
+    expect(idleAction(run(g, 40))).toBe('repair')
+    expect(idleAction(run(g, 120))).toBe(venue === 'boat' ? 'daydream' : 'campfire')
+    expect(idleAction(run(g, 200))).toBe('daydream')
+    for (let tick = 40; tick < 280; tick++) {
+      const resting = run(g, tick)
+      const lay = layoutOf(resting, tick)
+      expect(lay.rod).toBeNull()
+      expect(lay.effects.length).toBe(1)
+      expect(resting.seed).toBe(g.seed)
+      expect(resting.caught).toBe(0)
+      expect(resting.dex).toEqual({})
+      expect(lureSvg('idle', resting, tick, '00:00', 'zh-TW').length).toBeLessThan(131072)
+      expect(idleAction(beginTurn(resting))).toBeNull()
+    }
+  }
+})
 
 const run = (g: Game, ticks: number, elapsedMs = 0): Game => {
   let out = g
@@ -401,6 +480,30 @@ test('/pixel-fishing-demo casts and reels in without a turn, and the lure button
   ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
   expect((await ui.find({ key: 'lure-popper' }))?.text).toContain('●')
   expect((await ui.find({ key: 'lure-random' }))?.text).toContain('○')
+  await ui.unmount()
+})
+
+test('spot buttons switch scenery, available lures and fish hints, then persist after a trip', async ($, on) => {
+  await boot($, on)
+  let ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  await ui.press({ key: 'venue-coast' })
+  await ui.unmount()
+  ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect((await ui.find({ key: 'venue-coast' }))?.text).toContain('●')
+  expect(await ui.find({ key: 'lure-shore_jig' })).toBeDefined()
+  expect(await ui.find({ key: 'lure-soft_worm' })).toBeUndefined()
+  await ui.press({ key: 'lure-shore_jig' })
+  await ui.unmount()
+  ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect(await ui.find({ type: 'Text', text: /Favors this lure:.*Black Porgy/ })).toBeDefined()
+  await $.command.run({ command: 'pixel-fishing-demo', args: '' } as never)
+  await ui.unmount()
+  ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect(await ui.find({ key: 'venue-boat' })).toBeUndefined()
+  await $.command.run({ command: 'pixel-fishing-demo', args: '' } as never)
+  await ui.unmount()
+  ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect((await ui.find({ key: 'venue-coast' }))?.text).toContain('●')
   await ui.unmount()
 })
 

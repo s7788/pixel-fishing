@@ -1,4 +1,5 @@
 import type { FishId, LureId } from '../types'
+import { extraFish } from './extras'
 import { ANGLER } from './gen/angler'
 import { FISH_SPRITES } from './gen/fish'
 import { GEAR } from './gen/gear'
@@ -22,10 +23,10 @@ function must(group: Readonly<Record<string, PixelSprite>>, key: string): PixelS
 export const anglerFrame = (anim: AnglerAnim, i: number): PixelSprite => must(ANGLER, `${anim}/${((i % 4) + 4) % 4}`)
 
 /** A fish's eight frames: swim 0..3, turn 4..5 (facing left), leap 6..7. */
-export const fishFrame = (id: FishId, i: number): PixelSprite => must(FISH_SPRITES, `${id}/${i}`)
-export const fishPortrait = (id: FishId): PixelSprite => must(FISH_SPRITES, `${id}/portrait`)
-export const fishIcon = (id: FishId): PixelSprite => must(FISH_SPRITES, `${id}/icon`)
-export const fishUnknown = (id: FishId): PixelSprite => must(FISH_SPRITES, `${id}/unknown`)
+export const fishFrame = (id: FishId, i: number): PixelSprite => extraFish(id, i) ?? must(FISH_SPRITES, `${id}/${i}`)
+export const fishPortrait = (id: FishId): PixelSprite => extraFish(id, 'portrait') ?? must(FISH_SPRITES, `${id}/portrait`)
+export const fishIcon = (id: FishId): PixelSprite => extraFish(id, 'icon') ?? must(FISH_SPRITES, `${id}/icon`)
+export const fishUnknown = (id: FishId): PixelSprite => extraFish(id, 'unknown') ?? must(FISH_SPRITES, `${id}/unknown`)
 
 export const rodSprite = (id: RodId): PixelSprite => must(GEAR, `rod/${id}`)
 export const netSprite = (): PixelSprite => must(GEAR, 'net')

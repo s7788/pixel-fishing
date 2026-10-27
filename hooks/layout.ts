@@ -1,4 +1,5 @@
 import type { FishId, LureGame as Game, LureId } from '../types'
+import { idleAction, idleProp, restingAngler } from './extras'
 import { MOTION, SHADOW_SCALE, TOPWATER, VENUES } from './data'
 import type { PixelSprite } from './pixels'
 import type { AnglerAnim, EffectId, RodId } from './sprites'
@@ -229,6 +230,14 @@ export function layoutOf(g: Game, tick: number): Layout {
       return out
     }
     default: {
+      const action = idleAction(g)
+      if (action !== null) {
+        const frame = (g.modeT >> 2) & 3
+        const sprite = restingAngler(action, frame)
+        const feet = anchor(sprite, 'feet')
+        const angler = { sprite, x: v.feet[0] - feet[0], y: v.feet[1] - feet[1] }
+        return { ...empty(angler), effects: [{ sprite: idleProp(action, frame), x: v.feet[0] + 22, y: v.feet[1] - (action === 'daydream' ? 60 : 40) }] }
+      }
       const { angler, grip } = placeAngler(g, 'idle', (tick >> 1) & 3)
       const { rod } = placeRod(g, angler.sprite, grip, 'straight')
       return { ...empty(angler), rod }

@@ -10,7 +10,7 @@ import type { LureLang, LurePhase } from '../types'
 import { MOTION, TICK_MS } from '../hooks/data'
 import { beginTurn, chooseLure, endTurn, newGame, step } from '../hooks/engine'
 import type { Game } from '../hooks/engine'
-import { lureSvg, statsSvg } from '../hooks/svg'
+import { lureSvg, statsSvg, STATS_SIZE } from '../hooks/svg'
 
 const out = process.argv[2] ?? 'docs/media'
 await mkdir(out, { recursive: true })
@@ -25,7 +25,7 @@ async function demo(lang: LureLang): Promise<void> {
     const clock = `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`
     const scene = await sharp(Buffer.from(lureSvg(phase, g, tick++, clock, lang))).png().toBuffer()
     const stats = await sharp(Buffer.from(statsSvg(g, lang))).png().toBuffer()
-    frames.push(await sharp({ create: { width: 384, height: 256, channels: 3, background: '#10183a' } })
+    frames.push(await sharp({ create: { width: 384, height: 216 + STATS_SIZE.height, channels: 3, background: '#10183a' } })
       .composite([{ input: scene, top: 0, left: 0 }, { input: stats, top: 216, left: 0 }])
       .removeAlpha().raw().toBuffer())
   }
@@ -74,9 +74,9 @@ async function demo(lang: LureLang): Promise<void> {
   try {
     const encoded = spawnSync('ffmpeg', [
       '-y', '-hide_banner', '-loglevel', 'error',
-      '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', '384x256',
+      '-f', 'rawvideo', '-pixel_format', 'rgb24', '-video_size', `384x${216 + STATS_SIZE.height}`,
       '-framerate', String(1000 / TICK_MS), '-i', rawFile,
-      '-filter_complex', '[0:v]scale=768:512:flags=neighbor,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=none',
+      '-filter_complex', `[0:v]scale=768:${(216 + STATS_SIZE.height) * 2}:flags=neighbor,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=none`,
       '-loop', '0', join(out, name),
     ], { encoding: 'utf8' })
     if (encoded.error) throw encoded.error

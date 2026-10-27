@@ -1,10 +1,10 @@
 import { atom, read, update } from 'claude-code'
 import type { EngineInterface, Register, Timer } from 'claude-code'
 
-import type { LureEvent, LureLang, LurePhase, LureWorld } from '../types'
-import { FISH, LURE_CHOICES, SAVE_EVERY, TICK_MS } from './data'
+import type { LureEvent, LureLang, LurePhase, LureWorld, VenueChoice } from '../types'
+import { FISH, LURE_CHOICES, SAVE_EVERY, TICK_MS, VENUE_ORDER, VENUES } from './data'
 import type { Game } from './engine'
-import { beginTurn, chooseLure, endTurn, lose, newGame, restore, step } from './engine'
+import { beginTurn, chooseVenue, chooseLure, endTurn, lose, newGame, restore, step } from './engine'
 import { cmText, kgText, pickLang, t } from './i18n'
 import { LURE_SIZE, STATS_SIZE, hudText, lureSvg, statsSvg, statsText } from './svg'
 
@@ -91,6 +91,11 @@ async function pickLure($: EngineInterface, choice: (typeof LURE_CHOICES)[number
   await note($, `lure ${choice}`)
 }
 
+async function pickVenue($: EngineInterface, choice: VenueChoice): Promise<void> {
+  await save($, await changeGame($, g => chooseVenue(g, choice)))
+  await note($, `venue ${choice}`)
+}
+
 async function toggleDex($: EngineInterface): Promise<void> {
   const next = !(await read($, dexOpen))
   await update($, dexOpen, () => next)
@@ -175,7 +180,9 @@ export const register: Register = on => {
   on('ui.press', { plugin: PLUGIN }, async ($, e, next) => {
     const lure = LURE_CHOICES.find(c => `lure-${c}` === e.element)
     if (lure !== undefined) await serial(() => pickLure($, lure))
-    else if (e.element === 'dex') await toggleDex($)
+    else if (['auto', ...VENUE_ORDER].some(c => `venue-${c}` === e.element)) {
+      await serial(() => pickVenue($, e.element.slice(6) as VenueChoice))
+    } else if (e.element === 'dex') await toggleDex($)
     else return next(e)
     return { element: e.element }
   })
@@ -208,6 +215,9 @@ export const register: Register = on => {
     const clock = fmt(elapsed)
     // pickable as soon as the turn ends, whether or not the fish is landed yet (engine.ts chooseLure)
     const canChoose = p !== 'fishing'
+    const showPool = g.lureChoice === 'random' && canChoose
+    const fishHint = FISH.filter(f => f.venue === g.venue && (showPool || f.likes.includes(g.lure)))
+      .map(f => t(lg, f.id)).join(lg === 'zh-TW' ? '、' : ', ')
 
     return (
       <Box flexDirection="column">
@@ -225,9 +235,19 @@ export const register: Register = on => {
         ) : (
           <Text>{statsText(g, lg)}</Text>
         )}
+        {canChoose && (
+          <Box flexDirection="row" flexWrap="wrap">
+            <Text dimColor>{t(lg, 'venuePick')} </Text>
+            {(['auto', ...VENUE_ORDER] as const).map(c => (
+              <Button key={`venue-${c}`} plain dimColor={c !== g.venueChoice} onPress={() => serial(() => pickVenue($, c))}>
+                {`${c === g.venueChoice ? '●' : '○'} ${t(lg, c)}  `}
+              </Button>
+            ))}
+          </Box>
+        )}
         {canChoose ? (
           <Box flexDirection="row" flexWrap="wrap">
-            {LURE_CHOICES.map(c => (
+            {LURE_CHOICES.filter(c => c === 'random' || VENUES[g.venue].lures.includes(c)).map(c => (
               <Button key={`lure-${c}`} plain dimColor={c !== g.lureChoice} onPress={() => serial(() => pickLure($, c))}>
                 {`${c === g.lureChoice ? '●' : '○'} ${t(lg, c)}  `}
               </Button>
@@ -240,6 +260,7 @@ export const register: Register = on => {
             {t(lg, 'pickAfterTurn')}
           </Text>
         )}
+        <Text dimColor>{t(lg, showPool ? 'poolHint' : 'fishHint', { fish: fishHint })}</Text>
         <Button key="dex" plain onPress={() => toggleDex($)}>
           {t(lg, isDex ? 'dexOpen' : 'dexClosed')}
         </Button>

@@ -8,13 +8,20 @@ export type LureLang = 'zh-TW' | 'en'
 
 /** The three fishing grounds of the asset pack; casts rotate through them. */
 export type LureVenue = 'lake' | 'coast' | 'boat'
+export type VenueChoice = LureVenue | 'auto'
 
 /** The six lures; `random` draws one the venue allows for each new cast. */
 export type LureId = 'minnow' | 'popper' | 'pencil' | 'soft_worm' | 'shore_jig' | 'boat_jig'
 export type LureChoice = LureId | 'random'
 
-/** The twelve species (hooks/data.ts FISH), four per venue. */
+/** The eighteen species (hooks/data.ts FISH), six per venue. */
 export type FishId =
+  | 'rainbow_trout'
+  | 'mandarin_fish'
+  | 'black_porgy'
+  | 'giant_trevally'
+  | 'red_seabream'
+  | 'dogtooth_tuna'
   | 'largemouth_bass'
   | 'striped_snakehead'
   | 'peacock_bass'
@@ -67,6 +74,7 @@ export type LureGame = {
   /** Casts started so far; the venue rotates with it. */
   castNo: number
   venue: LureVenue
+  venueChoice: VenueChoice
   /** The lure tied on for this cast; never changes while the angler works it. */
   lure: LureId
   /** The pane's pick: a fixed lure, or `random` drawn when a cast starts. */

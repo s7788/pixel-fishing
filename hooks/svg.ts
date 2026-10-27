@@ -1,5 +1,6 @@
 import type { LureGame as Game, LureLang, LurePhase } from '../types'
 import { CANVAS, FISH, MOTION, SCENE_SCALE } from './data'
+import { idleAction } from './extras'
 import { dexCount } from './engine'
 import type { TextId } from './i18n'
 import { cmText, kgText, t } from './i18n'
@@ -131,6 +132,8 @@ function hud(phase: LurePhase, g: Game, clock: string, lang: LureLang, lay: Layo
     `<text x="32" y="21" class="n">${t(lang, g.venue)}</text>` +
     `<text x="32" y="36" class="s">${t(lang, PHASE_TEXT[phase])}</text>` +
     `<text x="120" y="36" class="c">${clock}</text>`
+  const activity = idleAction(g)
+  if (activity !== null) out += `<text x="8" y="56" class="w">${t(lang, activity)}</text>`
   if (g.mode === 'working' && lay.fish !== null) out += `<text x="8" y="56" class="w">${t(lang, 'shadow', { size: t(lang, `size${g.tier}`) })}</text>`
   if (lay.tension !== null) out += tensionBar(lay.tension, lang)
   out += `<text x="8" y="${H - 8}" class="w">${t(lang, 'lureInHand', { lure: t(lang, g.lure) })}${g.lureChoice === 'random' ? t(lang, 'randomSuffix') : ''}</text>`
@@ -190,7 +193,7 @@ export function lureSvg(phase: LurePhase, g: Game, tick: number, clock: string, 
 /** The words a surface without Svg shows: phase, venue, lure, the clock. */
 export function hudText(phase: LurePhase, g: Game, clock: string, lang: LureLang = 'en'): string {
   const sep = t(lang, 'hudSep')
-  return `${t(lang, PHASE_TEXT[phase])}${sep}${t(lang, g.venue)}${sep}${t(lang, g.lure)}${sep}${clock}`
+  return `${t(lang, idleAction(g) ?? PHASE_TEXT[phase])}${sep}${t(lang, g.venue)}${sep}${t(lang, g.lure)}${sep}${clock}`
 }
 
 /** One line of text for a surface without Svg: 漁獲 7：大口黑鱸×3 花鱸×4 (only species caught). */
@@ -199,7 +202,8 @@ export function statsText(g: Game, lang: LureLang = 'en'): string {
   return `${t(lang, 'caughtCount', { n: String(g.caught) })}${parts.length > 0 ? ': ' + parts.join(' ') : ''}`
 }
 
-const STATS_H = 40
+const STATS_H = 80
+const STATS_COLUMNS = 12
 const STATS_CELL = 27
 /**
  * The tally strip under the scene: 漁獲 N, then each species' 24x16 icon
@@ -210,10 +214,11 @@ export function statsSvg(g: Game, lang: LureLang = 'en'): string {
   let cells = ''
   FISH.forEach((f, i) => {
     const n = g.dex[f.id]?.count ?? 0
-    const x = 56 + i * STATS_CELL
+    const x = 56 + (i % STATS_COLUMNS) * STATS_CELL
+    const y = Math.floor(i / STATS_COLUMNS) * 40
     cells +=
-      placed({ sprite: n === 0 ? fishUnknown(f.id) : fishIcon(f.id), x, y: 3 }, false, n === 0 ? 0.55 : undefined) +
-      `<text x="${x + 12}" y="${STATS_H - 6}" class="k${n === 0 ? ' d' : ''}">${n === 0 ? '·' : `×${n}`}</text>`
+      placed({ sprite: n === 0 ? fishUnknown(f.id) : fishIcon(f.id), x, y: y + 3 }, false, n === 0 ? 0.55 : undefined) +
+      `<text x="${x + 12}" y="${y + 34}" class="k${n === 0 ? ' d' : ''}">${n === 0 ? '·' : `×${n}`}</text>`
   })
   return (
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${STATS_H}" width="${W}" height="${STATS_H}" shape-rendering="crispEdges">` +

@@ -1,4 +1,4 @@
-import type { FishId, LureCatch, LureChoice, LureGame as Game, LureId, LureMode, LureVenue } from '../types'
+import type { FishId, LureCatch, LureChoice, LureGame as Game, LureId, LureMode, LureVenue, VenueChoice } from '../types'
 import type { FishDef } from './data'
 import { FISH, MOTION, ODDS, SIZE_SKEW, TIER_UP_TO_MS, VENUES, VENUE_ORDER } from './data'
 
@@ -50,6 +50,7 @@ export function newGame(seed: number): Game {
     modeT: 0,
     castNo: 0,
     venue: 'lake',
+    venueChoice: 'auto',
     lure: 'minnow',
     lureChoice: 'random',
     tier: 0,
@@ -85,7 +86,7 @@ export function lureFor(venue: LureVenue, choice: LureChoice, seed: number): [Lu
 /** A main turn starts: the next venue, a lure for it, and the first cast. Anything under way is cut short. */
 export function beginTurn(g: Game): Game {
   if (isWorking(g)) return g
-  const venue = VENUE_ORDER[g.castNo % VENUE_ORDER.length]!
+  const venue = g.venueChoice === 'auto' ? VENUE_ORDER[g.castNo % VENUE_ORDER.length]! : g.venueChoice
   const [lure, seed] = lureFor(venue, g.lureChoice, g.seed)
   const moved = venue !== g.venue
   return say(enter(g, 'working', { castNo: g.castNo + 1, venue, lure, seed, tier: 0, catch: null, outcome: null }), moved ? venue : 'castOut')
@@ -97,6 +98,17 @@ export function chooseLure(g: Game, choice: LureChoice): Game {
   const next = { ...g, lureChoice: choice }
   if (isWorking(g) || choice === 'random') return next
   return { ...next, lure: lureFor(g.venue, choice, g.seed)[0] }
+}
+
+export function chooseVenue(g: Game, choice: VenueChoice): Game {
+  if (isWorking(g) || choice === g.venueChoice) return g
+  if (choice === 'auto') return { ...g, venueChoice: choice }
+  const lure = lureFor(choice, g.lureChoice, g.seed)[0]
+  return enter(g, 'idle', {
+    venueChoice: choice, venue: choice, lure,
+    lureChoice: g.lureChoice === 'random' ? 'random' : lure,
+    label: '', catch: null,
+  })
 }
 
 export type Draw = { catch: LureCatch | null; seed: number }

@@ -59,20 +59,26 @@ export type FishDef = {
   likes: readonly LureId[]
 }
 
-/** Four species per venue: two common, one uncommon, one rare. The dex lists them in this order. */
+/** Six species per venue: two common, two uncommon, two rare. The dex lists them in this order. */
 export const FISH: readonly FishDef[] = [
   { id: 'largemouth_bass', venue: 'lake', rarity: 0, minCm: 25, maxCm: 60, k: 15, likes: ['soft_worm', 'minnow'] },
   { id: 'topmouth_culter', venue: 'lake', rarity: 0, minCm: 30, maxCm: 80, k: 9, likes: ['minnow', 'pencil'] },
   { id: 'striped_snakehead', venue: 'lake', rarity: 1, minCm: 30, maxCm: 90, k: 11, likes: ['popper', 'soft_worm'] },
   { id: 'peacock_bass', venue: 'lake', rarity: 2, minCm: 30, maxCm: 75, k: 16, likes: ['popper', 'pencil'] },
+  { id: 'rainbow_trout', venue: 'lake', rarity: 1, minCm: 20, maxCm: 65, k: 12, likes: ['minnow', 'soft_worm'] },
+  { id: 'mandarin_fish', venue: 'lake', rarity: 2, minCm: 25, maxCm: 70, k: 17, likes: ['soft_worm', 'minnow'] },
   { id: 'spotted_seabass', venue: 'coast', rarity: 0, minCm: 30, maxCm: 90, k: 12, likes: ['minnow', 'pencil'] },
   { id: 'great_barracuda', venue: 'coast', rarity: 0, minCm: 60, maxCm: 150, k: 7, likes: ['shore_jig', 'pencil'] },
   { id: 'indo_pacific_tarpon', venue: 'coast', rarity: 1, minCm: 30, maxCm: 70, k: 10, likes: ['minnow', 'popper'] },
   { id: 'malabar_grouper', venue: 'coast', rarity: 2, minCm: 40, maxCm: 150, k: 18, likes: ['shore_jig', 'minnow'] },
+  { id: 'black_porgy', venue: 'coast', rarity: 1, minCm: 20, maxCm: 55, k: 20, likes: ['shore_jig'] },
+  { id: 'giant_trevally', venue: 'coast', rarity: 2, minCm: 45, maxCm: 160, k: 22, likes: ['popper', 'pencil'] },
   { id: 'narrow_barred_mackerel', venue: 'boat', rarity: 0, minCm: 60, maxCm: 160, k: 8, likes: ['boat_jig'] },
   { id: 'mahi_mahi', venue: 'boat', rarity: 0, minCm: 60, maxCm: 150, k: 11, likes: ['boat_jig'] },
   { id: 'greater_amberjack', venue: 'boat', rarity: 1, minCm: 60, maxCm: 150, k: 15, likes: ['boat_jig'] },
   { id: 'yellowfin_tuna', venue: 'boat', rarity: 2, minCm: 60, maxCm: 180, k: 20, likes: ['boat_jig'] },
+  { id: 'red_seabream', venue: 'boat', rarity: 1, minCm: 25, maxCm: 85, k: 20, likes: ['boat_jig'] },
+  { id: 'dogtooth_tuna', venue: 'boat', rarity: 2, minCm: 60, maxCm: 200, k: 19, likes: ['boat_jig'] },
 ]
 
 /**
