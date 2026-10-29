@@ -184,6 +184,26 @@ test('idle activities vary with quiet gaps without changing catches or RNG', () 
   }
 })
 
+test('probing shadows remain visible and move continuously across shore recasts', () => {
+  for (const venue of VENUE_ORDER) {
+    const g = beginTurn(chooseVenue(newGame(23), venue))
+    let previousX: number | null = null
+    let frames = 0
+    for (let tick = 0; tick < 768; tick++) {
+      const current = { ...g, modeT: tick }
+      const event = ambientEvent(current)
+      if (event?.kind !== 'probe') { previousX = null; continue }
+      const fish = layoutOf(current, tick).fish
+      expect(fish).not.toBeNull()
+      expect(fish!.shadow).toBe(true)
+      if (previousX !== null) expect(Math.abs(fish!.x - previousX)).toBeLessThan(5)
+      previousX = fish!.x
+      frames++
+    }
+    expect(frames).toBeGreaterThan(0)
+  }
+})
+
 test('ambient events are bounded, deterministic and never change catch draws', () => {
   for (const venue of VENUE_ORDER) {
     const g = beginTurn(chooseVenue(newGame(87), venue))

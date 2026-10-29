@@ -254,10 +254,12 @@ export function layoutOf(g: Game, tick: number): Layout {
   if (event === null) return out
   const v = VENUES[g.venue]
   if (event.kind === 'probe') {
-    if (out.fish === null || out.line === null) return out
     const age = event.age
     const approach = age < 12 ? age / 12 : age < 26 ? 1 : (40 - age) / 14
-    const tie = out.line[1]
+    // Anchor the whole probe to its starting water position. Shore recasts
+    // temporarily remove the base fish/line and move the lure across the scene;
+    // neither should hide or teleport an already-running probe.
+    const tie = lurePointAt(g.venue, g.modeT - age) ?? v.lureAt
     out.fish = placeFish(shadowSpecies(g), (age >> 1) & 3,
       Math.round(tie[0] + 64 - 48 * approach), v.fishY + 10,
       age < 26 ? 'left' : 'right', SHADOW_SCALE[g.tier] ?? 1, true)
