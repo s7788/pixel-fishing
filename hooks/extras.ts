@@ -2,6 +2,7 @@ import type { FishId, LureGame } from '../types'
 import type { PixelSprite } from './pixels'
 import { eachRun } from './pixels'
 import { ANGLER } from './gen/angler'
+import { visualRoll } from './ambience'
 
 // Native pixel artwork: kept separate from the generated asset-pack files.
 const species = {
@@ -58,8 +59,13 @@ export function extraFish(id: FishId, kind: number | 'portrait' | 'icon' | 'unkn
 export type IdleAction = 'repair' | 'campfire' | 'daydream'
 export function idleAction(g: LureGame): IdleAction | null {
   if (g.mode !== 'idle' || g.modeT < 40) return null
-  const action = Math.floor((g.modeT - 40) / 80) % 3
-  return action === 0 ? 'repair' : action === 1 && g.venue !== 'boat' ? 'campfire' : 'daydream'
+  const slot = Math.floor((g.modeT - 40) / 80)
+  // Two seconds standing between activities. Alternate action groups so adjacent
+  // slots cannot repeat, without a growing history or new save fields.
+  if ((g.modeT - 40) % 80 >= 64) return null
+  const offset = visualRoll(g, 0, 47) < 0.5 ? 0 : 1
+  if ((slot + offset) % 2 === 0) return 'daydream'
+  return g.venue !== 'boat' && visualRoll(g, slot, 53) < 0.45 ? 'campfire' : 'repair'
 }
 
 // Reuse the angler's hat and shirt, then draw a seated pose with bent legs.

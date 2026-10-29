@@ -7,6 +7,7 @@ import { FISH, LURE_CHOICES, MOTION, ODDS, VENUES, VENUE_ORDER } from './data'
 import type { Game } from './engine'
 import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, gameForPhase, lose, migrateGame, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
 import { idleAction } from './extras'
+import { ambientEvent } from './ambience'
 import { fishFrame, fishIcon, fishPortrait, fishUnknown } from './sprites'
 import { t } from './i18n'
 import { anglerAt, layoutOf } from './layout'
@@ -163,24 +164,46 @@ test('lure choices change species odds within a chosen venue', () => {
   expect(rates[1]!).toBeGreaterThan(rates[0]! * 1.5)
 })
 
-test('idle activities cycle without changing catches or RNG, and a cast interrupts them', () => {
+test('idle activities vary with quiet gaps without changing catches or RNG', () => {
   for (const venue of VENUE_ORDER) {
     const g = chooseVenue(newGame(21), venue)
     expect(idleAction(g)).toBeNull()
-    expect(idleAction(run(g, 40))).toBe('repair')
-    expect(idleAction(run(g, 120))).toBe(venue === 'boat' ? 'daydream' : 'campfire')
-    expect(idleAction(run(g, 200))).toBe('daydream')
+    expect(idleAction(run(g, 40))).not.toBe(idleAction(run(g, 120)))
+    expect(idleAction(run(g, 104))).toBeNull()
     for (let tick = 40; tick < 280; tick++) {
       const resting = run(g, tick)
       const lay = layoutOf(resting, tick)
-      expect(lay.rod).toBeNull()
-      expect(lay.effects.length).toBe(1)
+      if (idleAction(resting) !== null) expect(lay.rod).toBeNull()
+      if (venue === 'boat') expect(idleAction(resting)).not.toBe('campfire')
       expect(resting.seed).toBe(g.seed)
       expect(resting.caught).toBe(0)
       expect(resting.dex).toEqual({})
       expect(lureSvg('idle', resting, tick, '00:00', 'zh-TW').length).toBeLessThan(131072)
       expect(idleAction(beginTurn(resting))).toBeNull()
     }
+  }
+})
+
+test('ambient events are bounded, deterministic and never change catch draws', () => {
+  for (const venue of VENUE_ORDER) {
+    const g = beginTurn(chooseVenue(newGame(87), venue))
+    const before = JSON.stringify(g)
+    const kinds = new Set<string>()
+    let active = 0
+    for (let tick = 0; tick < 768; tick++) {
+      const current = { ...g, modeT: tick }
+      const event = ambientEvent(current)
+      expect(ambientEvent(current)).toEqual(event)
+      if (event) { kinds.add(event.kind); active++ }
+      expect(ambientEvent({ ...current, mode: 'bite' })).toBeNull()
+      expect(ambientEvent({ ...current, mode: 'lost' })).toBeNull()
+      const svg = lureSvg('fishing', current, tick, '00:00', 'en')
+      expect(svg.length).toBeLessThan(131072)
+      expect(drawCatch(current, MIN)).toEqual(drawCatch(g, MIN))
+    }
+    expect(active).toBe(120)
+    expect(kinds.size).toBe(2)
+    expect(JSON.stringify(g)).toBe(before)
   }
 })
 
