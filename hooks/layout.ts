@@ -1,5 +1,6 @@
 import type { FishId, LureGame as Game, LureId } from '../types'
 import { idleAction, idleProp, restingAngler } from './extras'
+import { ambientEvent, visitorSprite } from './ambience'
 import { MOTION, SHADOW_SCALE, TOPWATER, VENUES } from './data'
 import type { PixelSprite } from './pixels'
 import type { AnglerAnim, EffectId, RodId } from './sprites'
@@ -154,7 +155,7 @@ const shadowSpecies = (g: Game): FishId => (g.venue === 'lake' ? 'largemouth_bas
 const biteTie = (g: Game): Point => lurePointAt(g.venue, g.biteT) ?? VENUES[g.venue].lureAt
 
 /** Everything at this tick. `tick` is the pane's clock, for the idle sway. */
-export function layoutOf(g: Game, tick: number): Layout {
+function baseLayout(g: Game, tick: number): Layout {
   const v = VENUES[g.venue]
   const t = g.modeT
   const fish = g.catch?.fishId ?? shadowSpecies(g)
@@ -244,4 +245,37 @@ export function layoutOf(g: Game, tick: number): Layout {
       return { ...empty(angler), rod }
     }
   }
+}
+
+/** Cosmetic events stop immediately when a bite, interrupt or new cast arrives. */
+export function layoutOf(g: Game, tick: number): Layout {
+  const out = baseLayout(g, tick)
+  const event = ambientEvent(g)
+  if (event === null) return out
+  const v = VENUES[g.venue]
+  if (event.kind === 'probe') {
+    const age = event.age
+    const approach = age < 12 ? age / 12 : age < 26 ? 1 : (40 - age) / 14
+    // Anchor the whole probe to its starting water position. Shore recasts
+    // temporarily remove the base fish/line and move the lure across the scene;
+    // neither should hide or teleport an already-running probe.
+    const tie = lurePointAt(g.venue, g.modeT - age) ?? v.lureAt
+    out.fish = placeFish(shadowSpecies(g), (age >> 1) & 3,
+      Math.round(tie[0] + 64 - 48 * approach), v.fishY + 10,
+      age < 26 ? 'left' : 'right', SHADOW_SCALE[g.tier] ?? 1, true)
+  } else {
+    const age = event.age
+    const sprite = visitorSprite(g.venue, age >> 2)
+    if (g.venue === 'lake') {
+      // Hover above the water, pause, then fly away.
+      const x = age < 12 ? 330 - age * 7 : age < 26 ? 246 : 246 + (age - 26) * 8
+      out.effects.push({ sprite, x, y: 112 + (age & 1) })
+    } else if (g.venue === 'coast') {
+      out.effects.push({ sprite, x: 96 + age, y: 148 })
+    } else {
+      // A distant dolphin arcs above the water alongside the boat.
+      out.effects.push({ sprite, x: 280 + age, y: Math.round(145 - 28 * Math.sin(Math.PI * age / 39)), scale: 2 })
+    }
+  }
+  return out
 }
