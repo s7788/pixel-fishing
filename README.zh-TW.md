@@ -136,7 +136,7 @@ claude plugin validate .
 claude plugin test .
 ```
 
-`hooks/gen/*.ts` 由 `node tools/gen-sprites.cjs` 從素材包的 `pixel-data.json` 與 `manifest.json` 產生。更新素材後請重新產生，不要手改產出檔。設計決策與檔案地圖見 [HANDOFF.md](HANDOFF.md)。
+`hooks/gen/*.ts` 由 `node tools/gen-sprites.cjs` 從素材包的 `pixel-data.json` 與 `manifest.json` 產生。更新素材後請重新產生，不要手改產出檔。
 
 若要重建兩種語言的 README 動圖，先執行 `npm install` 安裝開發依賴，確認 PATH 中有 `ffmpeg`，再執行：
 
