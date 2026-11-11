@@ -113,6 +113,8 @@ declare module 'claude-code' {
       turnStartedAt: number | null
       lastElapsedMs: number
       world: LureWorld | null
+      /** The shared save as this session last wrote or read it, to merge other sessions' catches. */
+      baseline: LureGame | null
       log: LureEvent[]
       /** The language the pane draws in, picked at session start. */
       lang: LureLang

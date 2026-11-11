@@ -4,7 +4,7 @@ import type { EngineInterface, Register, Timer } from 'claude-code'
 import type { LureEvent, LureLang, LurePhase, LureWorld, VenueChoice } from '../types'
 import { FISH, GAME_VERSION, LURE_CHOICES, SAVE_EVERY, TICK_MS, VENUE_ORDER, VENUES } from './data'
 import type { Game } from './engine'
-import { beginTurn, chooseVenue, chooseLure, endTurn, gameForPhase, lose, migrateGame, newGame, restore, step } from './engine'
+import { beginTurn, chooseVenue, chooseLure, endTurn, gameForPhase, lose, mergeSave, migrateGame, newGame, restore, step, withRecords } from './engine'
 import { cmText, kgText, pickLang, t } from './i18n'
 import { LURE_SIZE, STATS_SIZE, hudText, lureSvg, statsSvg, statsText } from './svg'
 
@@ -19,6 +19,7 @@ const activeTurnId = atom({ plugin: 'pixel-fishing', key: 'activeTurnId' } as co
 const turnStartedAt = atom({ plugin: 'pixel-fishing', key: 'turnStartedAt' } as const, null as number | null)
 const lastElapsedMs = atom({ plugin: 'pixel-fishing', key: 'lastElapsedMs' } as const, 0)
 const world = atom({ plugin: 'pixel-fishing', key: 'world' } as const, null as LureWorld | null)
+const baseline = atom({ plugin: 'pixel-fishing', key: 'baseline' } as const, null as Game | null)
 const log = atom({ plugin: 'pixel-fishing', key: 'log' } as const, [] as LureEvent[])
 const lang = atom({ plugin: 'pixel-fishing', key: 'lang' } as const, 'en' as LureLang)
 const dexOpen = atom({ plugin: 'pixel-fishing', key: 'dexOpen' } as const, false)
@@ -37,8 +38,13 @@ async function note($: EngineInterface, text: string): Promise<void> {
   await update($, log, list => [...list, { at, text }].slice(-30))
 }
 
+/** Write the game, folding in what other sessions saved since this one last synced. */
 async function save($: EngineInterface, game: Game): Promise<void> {
-  await $.store.set(SAVE_KEY, game)
+  const stored = (await $.store.get(SAVE_KEY)) as Game | undefined
+  const merged = mergeSave(stored === undefined ? undefined : migrateGame(stored), (await read($, baseline)) ?? undefined, game)
+  await $.store.set(SAVE_KEY, merged)
+  await update($, baseline, () => merged)
+  if (merged !== game) await update($, world, w => (w === null ? w : { ...w, game: withRecords(w.game, merged) }))
 }
 
 async function changeGame($: EngineInterface, fn: (g: Game) => Game): Promise<Game> {
@@ -160,6 +166,7 @@ export const register: Register = on => {
     const now = await $.clock.now()
     // Hot reload migrates live state without resetting its current cast or clock.
     await serial(async () => {
+      if (stored !== undefined && (await read($, baseline)) === null) await update($, baseline, () => migrateGame(stored))
       let game: Game | undefined
       await update($, world, w => {
         game = w !== null ? migrateGame(w.game) : stored === undefined ? newGame(now) : restore(stored)

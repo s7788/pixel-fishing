@@ -5,7 +5,7 @@ import type { TestBody } from 'claude-code/testing'
 import type { LureLang, LureVenue } from '../types'
 import { FISH, LURE_CHOICES, MOTION, ODDS, VENUES, VENUE_ORDER } from './data'
 import type { Game } from './engine'
-import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, gameForPhase, lose, migrateGame, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
+import { beginTurn, chooseVenue, chooseLure, drawCatch, endTurn, gameForPhase, lose, mergeSave, migrateGame, newGame, poolOf, restore, step, tierOf, weightOf } from './engine'
 import { idleAction } from './extras'
 import { ambientEvent } from './ambience'
 import { fishFrame, fishIcon, fishPortrait, fishUnknown } from './sprites'
@@ -521,9 +521,28 @@ test('a save from a session that ended mid-cast comes back idle, dex and records
   expect(migrated.heaviest).toBeNull()
 })
 
-const boot = async ($: Parameters<TestBody>[0], on: On, store?: Record<string, unknown>, language = 'English', observed?: { commands: string[]; panes: { id: string; title: string }[] }) => {
+test('two sessions saving in turn keep both sessions\' catches', () => {
+  const base = { ...newGame(5), caught: 1, losses: 1, dex: { mahi_mahi: { count: 1, maxMm: 1000, maxG: 9000 } }, longest: { fishId: 'mahi_mahi' as const, mm: 1000 } }
+  // session A lands a black porgy and saves first
+  const a = { ...base, caught: 2, dex: { ...base.dex, black_porgy: { count: 1, maxMm: 255, maxG: 366 } } }
+  const afterA = mergeSave(base, base, a)
+  // session B, still on the old base, lands a bigger mahi-mahi and saves
+  const b = { ...base, caught: 2, mode: 'bite' as const, dex: { mahi_mahi: { count: 2, maxMm: 1264, maxG: 19724 } }, longest: { fishId: 'mahi_mahi' as const, mm: 1264 } }
+  const afterB = mergeSave(afterA, base, b)
+  expect(afterB.caught).toBe(3)
+  expect(afterB.losses).toBe(1)
+  expect(afterB.dex.black_porgy).toEqual({ count: 1, maxMm: 255, maxG: 366 })
+  expect(afterB.dex.mahi_mahi).toEqual({ count: 2, maxMm: 1264, maxG: 19724 })
+  expect(afterB.longest).toEqual({ fishId: 'mahi_mahi', mm: 1264 })
+  expect(afterB.mode).toBe('bite')
+  // saving again from the merged state adds nothing twice
+  expect(mergeSave(afterB, afterB, afterB).caught).toBe(3)
+  expect(mergeSave(undefined, undefined, a)).toBe(a)
+})
+
+const boot = async ($: Parameters<TestBody>[0], on: On, store?: Record<string, unknown> | 'shared', language = 'English', observed?: { commands: string[]; panes: { id: string; title: string }[] }) => {
   mock.clock(on)
-  mock.store(on, store)
+  if (store !== 'shared') mock.store(on, store)
   on('settings.read', () => ({ value: { language } }))
   on('ui.open', (_, e) => {
     observed?.panes.push({ id: e.id, title: e.title })
@@ -660,5 +679,30 @@ test('a new session restores the dex and the dex list shows it', async ($, on) =
   expect(await ui.find({ type: 'Text', text: /Peacock Bass longest 61\.2 cm · heaviest 3\.26 kg ×3/ })).toBeDefined()
   expect(await ui.find({ type: 'Text', text: /Longest: Peacock Bass 61\.2 cm/ })).toBeDefined()
   expect(await ui.find({ type: 'Text', text: /Caught 3 \/ skunked 0 \/ lost 0/ })).toBeDefined()
+  await ui.unmount()
+})
+
+test('a catch another session saved meanwhile survives this session\'s next save', async ($, on) => {
+  const saved = { ...newGame(17), caught: 1, dex: { peacock_bass: { count: 1, maxMm: 500, maxG: 2000 } } }
+  const store: Record<string, unknown> = { save: saved, dexOpen: true }
+  // a shared store both sessions read and write
+  on('store.get', (_, e) => ({ value: store[(e as { key: string }).key] }) as never)
+  on('store.set', (_, e) => {
+    const { key, value } = e as { key: string; value: unknown }
+    store[key] = value
+    return { value: undefined } as never
+  })
+  await boot($, on, 'shared')
+  // another session lands a mahi-mahi and writes the shared save
+  store.save = { ...saved, caught: 2, dex: { ...saved.dex, mahi_mahi: { count: 1, maxMm: 1264, maxG: 19724 } } }
+  await $.turn.start({ text: 'go', turnId: 't1' })
+  await $.turn.complete({ reason: 'aborted', turnId: 't1' } as never)
+  const now = store.save as Game
+  expect(now.dex.mahi_mahi).toEqual({ count: 1, maxMm: 1264, maxG: 19724 })
+  expect(now.dex.peacock_bass).toEqual({ count: 1, maxMm: 500, maxG: 2000 })
+  expect(now.caught).toBe(2)
+  expect(now.losses).toBe(1)
+  const ui = await $.ui.mount({ ...PANE, surface: 'desktop' })
+  expect(await ui.find({ type: 'Text', text: /Mahi-mahi/ })).toBeDefined()
   await ui.unmount()
 })

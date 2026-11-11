@@ -262,4 +262,41 @@ export function restore(saved: Game): Game {
   return g.mode === 'idle' ? g : enter(g, 'idle', { catch: isWorking(g) ? null : g.catch })
 }
 
-export const dexCount = (g: Game): number => FISH.filter(f => g.dex[f.id] !== undefined).length
+/**
+ * Several sessions share one save but each keeps its own live game. Merge
+ * this session's changes since it last synced (`base`) onto what is stored
+ * now, so one session's save never erases catches another session recorded.
+ * Counts add the delta; size records keep the larger value; the rest is `mine`.
+ */
+export function mergeSave(stored: Game | undefined, base: Game | undefined, mine: Game): Game {
+  if (stored === undefined || base === undefined) return mine
+  const delta = (s: number, b: number, m: number): number => Math.max(0, s + m - b)
+  const dex: Game['dex'] = { ...stored.dex }
+  for (const id of Object.keys(mine.dex) as FishId[]) {
+    const s = stored.dex[id]
+    const b = base.dex[id]
+    const m = mine.dex[id]!
+    dex[id] = {
+      count: delta(s?.count ?? 0, b?.count ?? 0, m.count),
+      maxMm: Math.max(s?.maxMm ?? 0, m.maxMm),
+      maxG: Math.max(s?.maxG ?? 0, m.maxG),
+    }
+  }
+  const longer = (a: Game['longest'], b: Game['longest']) => (a === null ? b : b === null || a.mm >= b.mm ? a : b)
+  const heavier = (a: Game['heaviest'], b: Game['heaviest']) => (a === null ? b : b === null || a.g >= b.g ? a : b)
+  return {
+    ...mine,
+    dex,
+    caught: delta(stored.caught, base.caught, mine.caught),
+    skunks: delta(stored.skunks, base.skunks, mine.skunks),
+    losses: delta(stored.losses, base.losses, mine.losses),
+    longest: longer(stored.longest, mine.longest),
+    heaviest: heavier(stored.heaviest, mine.heaviest),
+  }
+}
+
+/** Take the merged records back into the live game, leaving its cast untouched. */
+export const withRecords = (g: Game, r: Game): Game =>
+  ({ ...g, dex: r.dex, caught: r.caught, skunks: r.skunks, losses: r.losses, longest: r.longest, heaviest: r.heaviest })
+
+export const dexCount =(g: Game): number => FISH.filter(f => g.dex[f.id] !== undefined).length
